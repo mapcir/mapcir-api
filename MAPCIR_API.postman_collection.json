@@ -1,0 +1,1998 @@
+{
+	"info": {
+		"_postman_id": "896cdb11-fe6e-4559-a712-bdd2d2160133",
+		"name": "MAPCIR_API",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "1639301"
+	},
+	"item": [
+		{
+			"name": "geocode",
+			"item": [
+				{
+					"name": "geocode - {LATLNG}",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://127.0.0.1:8080/geocode?language=en&latlng=37.42826489999999,-122.0844367",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "8080",
+							"path": [
+								"geocode"
+							],
+							"query": [
+								{
+									"key": "language",
+									"value": "en"
+								},
+								{
+									"key": "latlng",
+									"value": "37.42826489999999,-122.0844367"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "geocode - {ADDRESS}",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://127.0.0.1:8080/geocode?language=en&address=1600+Amphitheatre+Parkway,+Mountain+View,+CA",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "8080",
+							"path": [
+								"geocode"
+							],
+							"query": [
+								{
+									"key": "language",
+									"value": "en"
+								},
+								{
+									"key": "address",
+									"value": "1600+Amphitheatre+Parkway,+Mountain+View,+CA"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "geocode - {PLACE_ID}",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://127.0.0.1:8080/geocode?language=en&place_id=ChIJd8BlQ2BZwokRAFUEcm_qrcA",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "8080",
+							"path": [
+								"geocode"
+							],
+							"query": [
+								{
+									"key": "language",
+									"value": "en"
+								},
+								{
+									"key": "place_id",
+									"value": "ChIJd8BlQ2BZwokRAFUEcm_qrcA"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "geocode - {BOUNDS}",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://127.0.0.1:8080/geocode?language=en&address=Winnetka&bounds=34.172684,-118.604794|34.236144,-118.500938",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "8080",
+							"path": [
+								"geocode"
+							],
+							"query": [
+								{
+									"key": "language",
+									"value": "en"
+								},
+								{
+									"key": "address",
+									"value": "Winnetka"
+								},
+								{
+									"key": "bounds",
+									"value": "34.172684,-118.604794|34.236144,-118.500938"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "geocode - {COMPONENTS}",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://127.0.0.1:8080/geocode?language=en&latlng=60.16991397918191,24.938372628997396&components=route:Annankatu|administrative_area:Helsinki|country:Finland",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "8080",
+							"path": [
+								"geocode"
+							],
+							"query": [
+								{
+									"key": "language",
+									"value": "en"
+								},
+								{
+									"key": "latlng",
+									"value": "60.16991397918191,24.938372628997396"
+								},
+								{
+									"key": "components",
+									"value": "route:Annankatu|administrative_area:Helsinki|country:Finland"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "geocode - {REGION}",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://127.0.0.1:8080/geocode?language=en&latlng=37.42826489999999,-122.0844367&region=us",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "8080",
+							"path": [
+								"geocode"
+							],
+							"query": [
+								{
+									"key": "language",
+									"value": "en"
+								},
+								{
+									"key": "latlng",
+									"value": "37.42826489999999,-122.0844367"
+								},
+								{
+									"key": "region",
+									"value": "us"
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "place",
+			"item": [
+				{
+					"name": "place/detail - {PLACE_ID}",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://127.0.0.1:8080/placedetails?language=en&placeid=ChIJjdZlLX-rNTERxklnZBnxNvw",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "8080",
+							"path": [
+								"placedetails"
+							],
+							"query": [
+								{
+									"key": "language",
+									"value": "en"
+								},
+								{
+									"key": "placeid",
+									"value": "ChIJjdZlLX-rNTERxklnZBnxNvw"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "place/detail - {FIELDS}",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://127.0.0.1:8080/placedetails?language=en&placeid=ChIJjdZlLX-rNTERxklnZBnxNvw&fields=name,rating,formatted_phone_number,geometry",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "8080",
+							"path": [
+								"placedetails"
+							],
+							"query": [
+								{
+									"key": "language",
+									"value": "en"
+								},
+								{
+									"key": "placeid",
+									"value": "ChIJjdZlLX-rNTERxklnZBnxNvw"
+								},
+								{
+									"key": "fields",
+									"value": "name,rating,formatted_phone_number,geometry"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "place/findPlace - {TEXT}",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://127.0.0.1:8080/findplacefromtext?language=en&input=Hanoi+Post+Office,+Dinh+Tien+Hoang,+Hoan+Kiem,+Hanoi,+Vietnam&inputtype=textquery&fields=name,rating,geometry,formatted_address,opening_hours,geometry",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "8080",
+							"path": [
+								"findplacefromtext"
+							],
+							"query": [
+								{
+									"key": "language",
+									"value": "en"
+								},
+								{
+									"key": "input",
+									"value": "Hanoi+Post+Office,+Dinh+Tien+Hoang,+Hoan+Kiem,+Hanoi,+Vietnam"
+								},
+								{
+									"key": "inputtype",
+									"value": "textquery"
+								},
+								{
+									"key": "fields",
+									"value": "name,rating,geometry,formatted_address,opening_hours,geometry"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "place/findPlace - {TEXT - POINT}",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://127.0.0.1:8080/findplacefromtext?language=en&input=pagoda&inputtype=textquery&locationbias=point:21.029398202245364,105.85231431630123&fields=name,rating,geometry,formatted_address,opening_hours,geometry",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "8080",
+							"path": [
+								"findplacefromtext"
+							],
+							"query": [
+								{
+									"key": "language",
+									"value": "en"
+								},
+								{
+									"key": "input",
+									"value": "pagoda"
+								},
+								{
+									"key": "inputtype",
+									"value": "textquery"
+								},
+								{
+									"key": "locationbias",
+									"value": "point:21.029398202245364,105.85231431630123"
+								},
+								{
+									"key": "fields",
+									"value": "name,rating,geometry,formatted_address,opening_hours,geometry"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "place/findPlace - {TEXT - RECTANGLE}",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://127.0.0.1:8080/findplacefromtext?language=en&input=Hanoi+Post+Office,+Dinh+Tien+Hoang,+Hoan+Kiem,+Hanoi,+Vietnam&inputtype=textquery&fields=formatted_address,geometry&locationbias=rectangle:21.033194435445186,105.8450100118671|21.0234712366708,105.85990913284353",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "8080",
+							"path": [
+								"findplacefromtext"
+							],
+							"query": [
+								{
+									"key": "language",
+									"value": "en"
+								},
+								{
+									"key": "input",
+									"value": "Hanoi+Post+Office,+Dinh+Tien+Hoang,+Hoan+Kiem,+Hanoi,+Vietnam"
+								},
+								{
+									"key": "inputtype",
+									"value": "textquery"
+								},
+								{
+									"key": "fields",
+									"value": "formatted_address,geometry"
+								},
+								{
+									"key": "locationbias",
+									"value": "rectangle:21.033194435445186,105.8450100118671|21.0234712366708,105.85990913284353"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "place/findPlace - {TEXT - CIRCULAR}",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://127.0.0.1:8080/findplacefromtext?language=en&input=hotel&inputtype=textquery&locationbias=circle:2000@21.02930135829674,105.85233506716608&fields=name,rating,geometry,formatted_address,opening_hours,geometry",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "8080",
+							"path": [
+								"findplacefromtext"
+							],
+							"query": [
+								{
+									"key": "language",
+									"value": "en"
+								},
+								{
+									"key": "input",
+									"value": "hotel"
+								},
+								{
+									"key": "inputtype",
+									"value": "textquery"
+								},
+								{
+									"key": "locationbias",
+									"value": "circle:2000@21.02930135829674,105.85233506716608"
+								},
+								{
+									"key": "fields",
+									"value": "name,rating,geometry,formatted_address,opening_hours,geometry"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "place/findPlace - {PHONE}",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://127.0.0.1:8080/findplacefromtext?language=en&input=%2B842438335588&inputtype=phonenumber&fields=name,rating,geometry,formatted_address,opening_hours,geometry",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "8080",
+							"path": [
+								"findplacefromtext"
+							],
+							"query": [
+								{
+									"key": "language",
+									"value": "en"
+								},
+								{
+									"key": "input",
+									"value": "%2B842438335588"
+								},
+								{
+									"key": "inputtype",
+									"value": "phonenumber"
+								},
+								{
+									"key": "fields",
+									"value": "name,rating,geometry,formatted_address,opening_hours,geometry"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "place/textSearch",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://127.0.0.1:8080/textsearch?language=en&query=restaurants+in+Hanoi&location=21.014116,105.825162&radius=5000&type=restaurant",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "8080",
+							"path": [
+								"textsearch"
+							],
+							"query": [
+								{
+									"key": "language",
+									"value": "en"
+								},
+								{
+									"key": "query",
+									"value": "restaurants+in+Hanoi"
+								},
+								{
+									"key": "location",
+									"value": "21.014116,105.825162"
+								},
+								{
+									"key": "radius",
+									"value": "5000"
+								},
+								{
+									"key": "type",
+									"value": "restaurant"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "place/textSearch - {OPTIONAL}",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://127.0.0.1:8080/textsearch?language=en&query=restaurants+in+Hanoi&location=21.014116,105.825162&radius=5000&type=restaurant&opennow=true&minprice=1&maxprice=4",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "8080",
+							"path": [
+								"textsearch"
+							],
+							"query": [
+								{
+									"key": "language",
+									"value": "en"
+								},
+								{
+									"key": "query",
+									"value": "restaurants+in+Hanoi"
+								},
+								{
+									"key": "location",
+									"value": "21.014116,105.825162"
+								},
+								{
+									"key": "radius",
+									"value": "5000"
+								},
+								{
+									"key": "type",
+									"value": "restaurant"
+								},
+								{
+									"key": "opennow",
+									"value": "true"
+								},
+								{
+									"key": "minprice",
+									"value": "1"
+								},
+								{
+									"key": "maxprice",
+									"value": "4"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "place/nearBySearch - {RADIUS}",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://127.0.0.1:8080/nearbysearch?language=en&location=21.014116,105.825162&radius=500&type=cafe&minprice=1&maxprice=4&opennow=true&keyword=coffe+in+house&name=garden+house",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "8080",
+							"path": [
+								"nearbysearch"
+							],
+							"query": [
+								{
+									"key": "language",
+									"value": "en"
+								},
+								{
+									"key": "location",
+									"value": "21.014116,105.825162"
+								},
+								{
+									"key": "radius",
+									"value": "500"
+								},
+								{
+									"key": "type",
+									"value": "cafe"
+								},
+								{
+									"key": "minprice",
+									"value": "1"
+								},
+								{
+									"key": "maxprice",
+									"value": "4"
+								},
+								{
+									"key": "opennow",
+									"value": "true"
+								},
+								{
+									"key": "keyword",
+									"value": "coffe+in+house"
+								},
+								{
+									"key": "name",
+									"value": "garden+house"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "place/nearBySearch - {RANK_BY_DISTANCE}",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://127.0.0.1:8080/nearbysearch?language=en&location=21.014116,105.825162&rankby=distance&keyword=restaurant",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "8080",
+							"path": [
+								"nearbysearch"
+							],
+							"query": [
+								{
+									"key": "language",
+									"value": "en"
+								},
+								{
+									"key": "location",
+									"value": "21.014116,105.825162"
+								},
+								{
+									"key": "rankby",
+									"value": "distance"
+								},
+								{
+									"key": "keyword",
+									"value": "restaurant"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "place/nearBySearch - {RANK_BY_PROMINENCE}",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://127.0.0.1:8080/nearbysearch?language=en&location=21.014116,105.825162&radius=500&rankby=prominence&keyword=restaurant",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "8080",
+							"path": [
+								"nearbysearch"
+							],
+							"query": [
+								{
+									"key": "language",
+									"value": "en"
+								},
+								{
+									"key": "location",
+									"value": "21.014116,105.825162"
+								},
+								{
+									"key": "radius",
+									"value": "500"
+								},
+								{
+									"key": "rankby",
+									"value": "prominence"
+								},
+								{
+									"key": "keyword",
+									"value": "restaurant"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "place/nearBySearch - {OPTIONAL}",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://127.0.0.1:8080/nearbysearch?language=en&location=21.014116,105.825162&radius=500&rankby=prominence&type=restaurant&keyword=pizza&name=pizza+4p&minprice=0&maxprice=4",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "8080",
+							"path": [
+								"nearbysearch"
+							],
+							"query": [
+								{
+									"key": "language",
+									"value": "en"
+								},
+								{
+									"key": "location",
+									"value": "21.014116,105.825162"
+								},
+								{
+									"key": "radius",
+									"value": "500"
+								},
+								{
+									"key": "rankby",
+									"value": "prominence"
+								},
+								{
+									"key": "type",
+									"value": "restaurant"
+								},
+								{
+									"key": "keyword",
+									"value": "pizza"
+								},
+								{
+									"key": "name",
+									"value": "pizza+4p"
+								},
+								{
+									"key": "minprice",
+									"value": "0"
+								},
+								{
+									"key": "maxprice",
+									"value": "4"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "place/queryAutoComplete",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://127.0.0.1:8080/queryautocomplete?language=en&input=pizza+near+Hanoi+Vietnam&offset=3",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "8080",
+							"path": [
+								"queryautocomplete"
+							],
+							"query": [
+								{
+									"key": "language",
+									"value": "en"
+								},
+								{
+									"key": "input",
+									"value": "pizza+near+Hanoi+Vietnam"
+								},
+								{
+									"key": "offset",
+									"value": "3"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "place/autoComplete",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://127.0.0.1:8080/autocomplete?language=en&input=Benh+Vien+Dong+Da&location=21.02717535794731,105.83580500499002&radius=50&offset=2",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "8080",
+							"path": [
+								"autocomplete"
+							],
+							"query": [
+								{
+									"key": "language",
+									"value": "en"
+								},
+								{
+									"key": "input",
+									"value": "Benh+Vien+Dong+Da"
+								},
+								{
+									"key": "location",
+									"value": "21.02717535794731,105.83580500499002"
+								},
+								{
+									"key": "radius",
+									"value": "50"
+								},
+								{
+									"key": "offset",
+									"value": "2"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "place/autoComplete - {COMPONENTS}",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://127.0.0.1:8080/autocomplete?language=en&input=Benh+Vien+Dong+Da&location=21.014116,105.825162&radius=5000&components=country:vn",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "8080",
+							"path": [
+								"autocomplete"
+							],
+							"query": [
+								{
+									"key": "language",
+									"value": "en"
+								},
+								{
+									"key": "input",
+									"value": "Benh+Vien+Dong+Da"
+								},
+								{
+									"key": "location",
+									"value": "21.014116,105.825162"
+								},
+								{
+									"key": "radius",
+									"value": "5000"
+								},
+								{
+									"key": "components",
+									"value": "country:vn"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "place/autoComplete - {STRICT_BOUNDS}",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://127.0.0.1:8080/autocomplete?language=en&input=Benh+Vien+Dong+Da&location=21.014116,105.825162&radius=5000&&strictbounds=true",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "8080",
+							"path": [
+								"autocomplete"
+							],
+							"query": [
+								{
+									"key": "language",
+									"value": "en"
+								},
+								{
+									"key": "input",
+									"value": "Benh+Vien+Dong+Da"
+								},
+								{
+									"key": "location",
+									"value": "21.014116,105.825162"
+								},
+								{
+									"key": "radius",
+									"value": "5000"
+								},
+								{
+									"key": null,
+									"value": null
+								},
+								{
+									"key": "strictbounds",
+									"value": "true"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "place/autoComplete - {TYPES}",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://127.0.0.1:8080/autocomplete?language=en&input=Benh+Vien+Dong+Da&location=21.014116,105.825162&radius=5000&&types=establishment",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "8080",
+							"path": [
+								"autocomplete"
+							],
+							"query": [
+								{
+									"key": "language",
+									"value": "en"
+								},
+								{
+									"key": "input",
+									"value": "Benh+Vien+Dong+Da"
+								},
+								{
+									"key": "location",
+									"value": "21.014116,105.825162"
+								},
+								{
+									"key": "radius",
+									"value": "5000"
+								},
+								{
+									"key": null,
+									"value": null
+								},
+								{
+									"key": "types",
+									"value": "establishment"
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "directions",
+			"item": [
+				{
+					"name": "directions - {ADDRESS }",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://127.0.0.1:8080/directions?language=en&origin=Yen+Bai,Vietnam&destination=Ha+Noi,Vietnam&mode=driving",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "8080",
+							"path": [
+								"directions"
+							],
+							"query": [
+								{
+									"key": "language",
+									"value": "en"
+								},
+								{
+									"key": "origin",
+									"value": "Yen+Bai,Vietnam"
+								},
+								{
+									"key": "destination",
+									"value": "Ha+Noi,Vietnam"
+								},
+								{
+									"key": "mode",
+									"value": "driving"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "directions - {LATLNG}",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://127.0.0.1:8080/directions?language=en&origin=21.011851,105.861360&destination=21.037739,105.781452",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "8080",
+							"path": [
+								"directions"
+							],
+							"query": [
+								{
+									"key": "language",
+									"value": "en"
+								},
+								{
+									"key": "origin",
+									"value": "21.011851,105.861360"
+								},
+								{
+									"key": "destination",
+									"value": "21.037739,105.781452"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "directions - {TRAVEL_MODE}",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://127.0.0.1:8080/directions?language=en&origin=21.011851,105.861360&destination=21.037739,105.781452&mode=walking",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "8080",
+							"path": [
+								"directions"
+							],
+							"query": [
+								{
+									"key": "language",
+									"value": "en"
+								},
+								{
+									"key": "origin",
+									"value": "21.011851,105.861360"
+								},
+								{
+									"key": "destination",
+									"value": "21.037739,105.781452"
+								},
+								{
+									"key": "mode",
+									"value": "walking"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "directions - {MODE_TRANSIT}",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://127.0.0.1:8080/directions?language=en&units=metric&origin=Brooklyn&destination=Queens&mode=transit&transit_mode=train|tram|subway&departure_time=now",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "8080",
+							"path": [
+								"directions"
+							],
+							"query": [
+								{
+									"key": "language",
+									"value": "en"
+								},
+								{
+									"key": "units",
+									"value": "metric"
+								},
+								{
+									"key": "origin",
+									"value": "Brooklyn"
+								},
+								{
+									"key": "destination",
+									"value": "Queens"
+								},
+								{
+									"key": "mode",
+									"value": "transit"
+								},
+								{
+									"key": "transit_mode",
+									"value": "train|tram|subway"
+								},
+								{
+									"key": "departure_time",
+									"value": "now"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "directions - {ROUTING_PREFERENCE}",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://127.0.0.1:8080/directions?language=en&units=metric&origin=Brooklyn&destination=Queens&mode=transit&transit_mode=bus&departure_time=now&transit_routing_preference=fewer_transfers",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "8080",
+							"path": [
+								"directions"
+							],
+							"query": [
+								{
+									"key": "language",
+									"value": "en"
+								},
+								{
+									"key": "units",
+									"value": "metric"
+								},
+								{
+									"key": "origin",
+									"value": "Brooklyn"
+								},
+								{
+									"key": "destination",
+									"value": "Queens"
+								},
+								{
+									"key": "mode",
+									"value": "transit"
+								},
+								{
+									"key": "transit_mode",
+									"value": "bus"
+								},
+								{
+									"key": "departure_time",
+									"value": "now"
+								},
+								{
+									"key": "transit_routing_preference",
+									"value": "fewer_transfers"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "directions - {MODE_DRIVING}",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://127.0.0.1:8080/directions?language=en&units=metric&origin=Brooklyn&destination=Queens&mode=driving&departure_time=now&traffic_model=best_guess",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "8080",
+							"path": [
+								"directions"
+							],
+							"query": [
+								{
+									"key": "language",
+									"value": "en"
+								},
+								{
+									"key": "units",
+									"value": "metric"
+								},
+								{
+									"key": "origin",
+									"value": "Brooklyn"
+								},
+								{
+									"key": "destination",
+									"value": "Queens"
+								},
+								{
+									"key": "mode",
+									"value": "driving"
+								},
+								{
+									"key": "departure_time",
+									"value": "now"
+								},
+								{
+									"key": "traffic_model",
+									"value": "best_guess"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "directions - {WAYPOINTS - ADDRESS}",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://127.0.0.1:8080/directions?language=en&origin=Boston,MA&destination=Concord,MA&waypoints=via:Charlestown,MA|via:Lexington,MA&departure_time=now&alternatives=true",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "8080",
+							"path": [
+								"directions"
+							],
+							"query": [
+								{
+									"key": "language",
+									"value": "en"
+								},
+								{
+									"key": "origin",
+									"value": "Boston,MA"
+								},
+								{
+									"key": "destination",
+									"value": "Concord,MA"
+								},
+								{
+									"key": "waypoints",
+									"value": "via:Charlestown,MA|via:Lexington,MA"
+								},
+								{
+									"key": "departure_time",
+									"value": "now"
+								},
+								{
+									"key": "alternatives",
+									"value": "true"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "directions - {WAYPOINTS - LATLNG}",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://127.0.0.1:8080/directions?language=en&origin=sydney,au&destination=perth,au&waypoints=via:-37.81223,144.96254|via:-34.92788,138.60008&departure_time=now&alternatives=true",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "8080",
+							"path": [
+								"directions"
+							],
+							"query": [
+								{
+									"key": "language",
+									"value": "en"
+								},
+								{
+									"key": "origin",
+									"value": "sydney,au"
+								},
+								{
+									"key": "destination",
+									"value": "perth,au"
+								},
+								{
+									"key": "waypoints",
+									"value": "via:-37.81223,144.96254|via:-34.92788,138.60008"
+								},
+								{
+									"key": "departure_time",
+									"value": "now"
+								},
+								{
+									"key": "alternatives",
+									"value": "true"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "directions - {WAYPOINTS - OPTIMIZE}",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://127.0.0.1:8080/directions?language=en&origin=Adelaide,SA&destination=Adelaide,SA&waypoints=optimize:true|Barossa+Valley,SA|Clare,SA|Connawarra,SA|McLaren+Vale,SA",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "8080",
+							"path": [
+								"directions"
+							],
+							"query": [
+								{
+									"key": "language",
+									"value": "en"
+								},
+								{
+									"key": "origin",
+									"value": "Adelaide,SA"
+								},
+								{
+									"key": "destination",
+									"value": "Adelaide,SA"
+								},
+								{
+									"key": "waypoints",
+									"value": "optimize:true|Barossa+Valley,SA|Clare,SA|Connawarra,SA|McLaren+Vale,SA"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "directions - {ROUTE_ALTERNATIVES}",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://127.0.0.1:8080/directions?language=en&origin=Boston,MA&destination=Concord,MA&waypoints=via:Charlestown,MA|via:Lexington,MA&departure_time=now&alternatives=true",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "8080",
+							"path": [
+								"directions"
+							],
+							"query": [
+								{
+									"key": "language",
+									"value": "en"
+								},
+								{
+									"key": "origin",
+									"value": "Boston,MA"
+								},
+								{
+									"key": "destination",
+									"value": "Concord,MA"
+								},
+								{
+									"key": "waypoints",
+									"value": "via:Charlestown,MA|via:Lexington,MA"
+								},
+								{
+									"key": "departure_time",
+									"value": "now"
+								},
+								{
+									"key": "alternatives",
+									"value": "true"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "directions - {AVOID}",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://127.0.0.1:8080/directions?language=en&origin=Toronto&destination=Montreal&avoid=highways|tolls",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "8080",
+							"path": [
+								"directions"
+							],
+							"query": [
+								{
+									"key": "language",
+									"value": "en"
+								},
+								{
+									"key": "origin",
+									"value": "Toronto"
+								},
+								{
+									"key": "destination",
+									"value": "Montreal"
+								},
+								{
+									"key": "avoid",
+									"value": "highways|tolls"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "directions - {UNITS}",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://127.0.0.1:8080/directions?language=en&origin=Toronto&destination=Montreal&mode=driving&units=imperial",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "8080",
+							"path": [
+								"directions"
+							],
+							"query": [
+								{
+									"key": "language",
+									"value": "en"
+								},
+								{
+									"key": "origin",
+									"value": "Toronto"
+								},
+								{
+									"key": "destination",
+									"value": "Montreal"
+								},
+								{
+									"key": "mode",
+									"value": "driving"
+								},
+								{
+									"key": "units",
+									"value": "imperial"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "directions - {REGION}",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://127.0.0.1:8080/directions?language=en&origin=20.956714267344235,105.76149594690955&destination=21.03709401936394,105.83480893985586&mode=driving&region=vn",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "8080",
+							"path": [
+								"directions"
+							],
+							"query": [
+								{
+									"key": "language",
+									"value": "en"
+								},
+								{
+									"key": "origin",
+									"value": "20.956714267344235,105.76149594690955"
+								},
+								{
+									"key": "destination",
+									"value": "21.03709401936394,105.83480893985586"
+								},
+								{
+									"key": "mode",
+									"value": "driving"
+								},
+								{
+									"key": "region",
+									"value": "vn"
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "distanceMatrix",
+			"item": [
+				{
+					"name": "distanceMatrix",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://127.0.0.1:8080/distancematrix?language=en&origins=22.700296928915677,105.11612142789889|Yen+Bai,Vietnam&destinations=8.618037202178698,104.83734713182707|Ho+Chi+Minh,Vietnam&mode=driving&transit_mode=train|tram|subway&avoid=tolls&units=imperial&region=vn",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "8080",
+							"path": [
+								"distancematrix"
+							],
+							"query": [
+								{
+									"key": "language",
+									"value": "en"
+								},
+								{
+									"key": "origins",
+									"value": "22.700296928915677,105.11612142789889|Yen+Bai,Vietnam"
+								},
+								{
+									"key": "destinations",
+									"value": "8.618037202178698,104.83734713182707|Ho+Chi+Minh,Vietnam"
+								},
+								{
+									"key": "mode",
+									"value": "driving"
+								},
+								{
+									"key": "transit_mode",
+									"value": "train|tram|subway"
+								},
+								{
+									"key": "avoid",
+									"value": "tolls"
+								},
+								{
+									"key": "units",
+									"value": "imperial"
+								},
+								{
+									"key": "region",
+									"value": "vn"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "distanceMatrix - {TRAVEL_MODE}",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://127.0.0.1:8080/distancematrix?language=en&origins=22.700296928915677,105.11612142789889|Yen+Bai,Vietnam&destinations=8.618037202178698,104.83734713182707|Ho+Chi+Minh,Vietnam&mode=driving",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "8080",
+							"path": [
+								"distancematrix"
+							],
+							"query": [
+								{
+									"key": "language",
+									"value": "en"
+								},
+								{
+									"key": "origins",
+									"value": "22.700296928915677,105.11612142789889|Yen+Bai,Vietnam"
+								},
+								{
+									"key": "destinations",
+									"value": "8.618037202178698,104.83734713182707|Ho+Chi+Minh,Vietnam"
+								},
+								{
+									"key": "mode",
+									"value": "driving"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "distanceMatrix - {MODE_TRANSIT}",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://127.0.0.1:8080/distancematrix?language=en&origins=22.700296928915677,105.11612142789889|Yen+Bai,Vietnam&destinations=8.618037202178698,104.83734713182707|Ho+Chi+Minh,Vietnam&mode=transit&transit_mode=train|tram|subway",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "8080",
+							"path": [
+								"distancematrix"
+							],
+							"query": [
+								{
+									"key": "language",
+									"value": "en"
+								},
+								{
+									"key": "origins",
+									"value": "22.700296928915677,105.11612142789889|Yen+Bai,Vietnam"
+								},
+								{
+									"key": "destinations",
+									"value": "8.618037202178698,104.83734713182707|Ho+Chi+Minh,Vietnam"
+								},
+								{
+									"key": "mode",
+									"value": "transit"
+								},
+								{
+									"key": "transit_mode",
+									"value": "train|tram|subway"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "distanceMatrix - {ROUTING_PREFERENCE}",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://127.0.0.1:8080/distancematrix?language=en&origins=22.700296928915677,105.11612142789889|Yen+Bai,Vietnam&destinations=8.618037202178698,104.83734713182707|Ho+Chi+Minh,Vietnam&mode=transit&transit_mode=train|tram|subway&transit_routing_preference=fewer_transfers",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "8080",
+							"path": [
+								"distancematrix"
+							],
+							"query": [
+								{
+									"key": "language",
+									"value": "en"
+								},
+								{
+									"key": "origins",
+									"value": "22.700296928915677,105.11612142789889|Yen+Bai,Vietnam"
+								},
+								{
+									"key": "destinations",
+									"value": "8.618037202178698,104.83734713182707|Ho+Chi+Minh,Vietnam"
+								},
+								{
+									"key": "mode",
+									"value": "transit"
+								},
+								{
+									"key": "transit_mode",
+									"value": "train|tram|subway"
+								},
+								{
+									"key": "transit_routing_preference",
+									"value": "fewer_transfers"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "distanceMatrix - {MODE_DRIVING}",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://127.0.0.1:8080/distancematrix?language=en&origins=22.700296928915677,105.11612142789889|Yen+Bai,Vietnam&destinations=8.618037202178698,104.83734713182707|Ho+Chi+Minh,Vietnam&mode=driving&departure_time=now&traffic_model=pessimistic",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "8080",
+							"path": [
+								"distancematrix"
+							],
+							"query": [
+								{
+									"key": "language",
+									"value": "en"
+								},
+								{
+									"key": "origins",
+									"value": "22.700296928915677,105.11612142789889|Yen+Bai,Vietnam"
+								},
+								{
+									"key": "destinations",
+									"value": "8.618037202178698,104.83734713182707|Ho+Chi+Minh,Vietnam"
+								},
+								{
+									"key": "mode",
+									"value": "driving"
+								},
+								{
+									"key": "departure_time",
+									"value": "now"
+								},
+								{
+									"key": "traffic_model",
+									"value": "pessimistic"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "distanceMatrix - {AVOID}",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://127.0.0.1:8080/distancematrix?language=en&origins=22.700296928915677,105.11612142789889|Yen+Bai,Vietnam&destinations=8.618037202178698,104.83734713182707|Ho+Chi+Minh,Vietnam&avoid=tolls|highways|ferries",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "8080",
+							"path": [
+								"distancematrix"
+							],
+							"query": [
+								{
+									"key": "language",
+									"value": "en"
+								},
+								{
+									"key": "origins",
+									"value": "22.700296928915677,105.11612142789889|Yen+Bai,Vietnam"
+								},
+								{
+									"key": "destinations",
+									"value": "8.618037202178698,104.83734713182707|Ho+Chi+Minh,Vietnam"
+								},
+								{
+									"key": "avoid",
+									"value": "tolls|highways|ferries"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "distanceMatrix - {UNITS}",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://127.0.0.1:8080/distancematrix?language=en&origins=22.700296928915677,105.11612142789889|Yen+Bai,Vietnam&destinations=8.618037202178698,104.83734713182707|Ho+Chi+Minh,Vietnam&units=imperial",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "8080",
+							"path": [
+								"distancematrix"
+							],
+							"query": [
+								{
+									"key": "language",
+									"value": "en"
+								},
+								{
+									"key": "origins",
+									"value": "22.700296928915677,105.11612142789889|Yen+Bai,Vietnam"
+								},
+								{
+									"key": "destinations",
+									"value": "8.618037202178698,104.83734713182707|Ho+Chi+Minh,Vietnam"
+								},
+								{
+									"key": "units",
+									"value": "imperial"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "distanceMatrix - {REGION}",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://127.0.0.1:8080/distancematrix?language=en&origins=22.700296928915677,105.11612142789889|Yen+Bai,Vietnam&destinations=8.618037202178698,104.83734713182707|Ho+Chi+Minh,Vietnam&mode=driving&transit_mode=train|tram|subway&avoid=tolls|highways|ferries&units=imperial&region=vn",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "8080",
+							"path": [
+								"distancematrix"
+							],
+							"query": [
+								{
+									"key": "language",
+									"value": "en"
+								},
+								{
+									"key": "origins",
+									"value": "22.700296928915677,105.11612142789889|Yen+Bai,Vietnam"
+								},
+								{
+									"key": "destinations",
+									"value": "8.618037202178698,104.83734713182707|Ho+Chi+Minh,Vietnam"
+								},
+								{
+									"key": "mode",
+									"value": "driving"
+								},
+								{
+									"key": "transit_mode",
+									"value": "train|tram|subway"
+								},
+								{
+									"key": "avoid",
+									"value": "tolls|highways|ferries"
+								},
+								{
+									"key": "units",
+									"value": "imperial"
+								},
+								{
+									"key": "region",
+									"value": "vn"
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	]
+}

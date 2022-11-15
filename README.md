@@ -16,11 +16,11 @@ Mapcir API - Client Server For Mapcir Maps API
 > 
 > - Your server API: 
 > 
->   {YOUR_SERVER}/maps/api/directions/json?language=vi&origin=Ho+Chi+Minh,Vietnam&destination=Ha+Noi,Vietnam&mode=driving
+>   http://127.0.0.1:8080/maps/api/directions/json?language=vi&origin=Ho+Chi+Minh,Vietnam&destination=Ha+Noi,Vietnam&mode=driving
 > 
 >   OR
 > 
->   {YOUR_SERVER}/directions?language=vi&origin=Ho+Chi+Minh,Vietnam&destination=Ha+Noi,Vietnam&mode=driving
+>   http://127.0.0.1:8080/directions?language=vi&origin=Ho+Chi+Minh,Vietnam&destination=Ha+Noi,Vietnam&mode=driving
 
 ## Description
 Looking to replace Google Maps API in your application?

@@ -197,7 +197,7 @@ The full list of formatted_address values returned by the previous query is show
 "formatted_address" : "United States",
 ```
 
-enerally, addresses are returned from most specific to least specific; the more exact address is the most prominent result, as it is in this case. Note that we return different types of addresses, from the most specific street address to less specific political entities such as neighborhoods, cities, counties, states, etc. If you wish to match a specific type of address, see the section below on [restricting results by type](https://github.com/mapcirio/mapcir-api/blob/main/docs/reversegeocoding.md#reverse_geocoding_filtered_by_type).
+enerally, addresses are returned from most specific to least specific; the more exact address is the most prominent result, as it is in this case. Note that we return different types of addresses, from the most specific street address to less specific political entities such as neighborhoods, cities, counties, states, etc. If you wish to match a specific type of address, see the section below on [restricting results by type](#reverse-geocoding-filtered-by-type).
 
 > **Note:** Reverse geocoding is an estimate. The geocoder will attempt to find the closest addressable location within a certain tolerance. If no match is found, the geocoder will return zero results.
 

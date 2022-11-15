@@ -290,5 +290,135 @@ http://127.0.0.1:8080/directions?origin=H8MW%2BWP%20Kolkata%20India&destination=
 OR
 
 http://127.0.0.1:8080/maps/api/directions/json?origin=H8MW%2BWP%20Kolkata%20India&destination=GCG2%2B3M%20Kolkata%20India
-``
+```
 
+The following request returns driving directions from Glasgow, UK to Perth, UK using place IDs.
+
+```code
+http://127.0.0.1:8080/directions?origin=place_id%3AChIJ685WIFYViEgRHlHvBbiD5nE&destination=place_id%3AChIJA01I-8YVhkgRGJb0fW4UX7Y
+
+OR
+
+http://127.0.0.1:8080/maps/api/directions/json?origin=place_id%3AChIJ685WIFYViEgRHlHvBbiD5nE&destination=place_id%3AChIJA01I-8YVhkgRGJb0fW4UX7Y
+```
+
+### Travel modes
+When you calculate directions, you may specify the transportation **mode** to use. By default, directions are calculated as **driving** directions. The following travel modes are supported:
+
+* **driving** (default) indicates standard driving directions using the road network.
+
+* **walking** requests walking directions via pedestrian paths & sidewalks (where available).
+
+* **bicycling** requests bicycling directions via bicycle paths & preferred streets (where available).
+
+* **transit** requests directions via public transit routes (where available). If you set the mode to **transit**, you can optionally specify either a **departure_time** or an **arrival_time**. If neither time is specified, the **departure_time** defaults to now (that is, the departure time defaults to the current time). You can also optionally include a **transit_mode** and/or a **transit_routing_preference**.
+
+> **Note:** Both walking and bicycling directions may sometimes not include clear pedestrian or bicycling paths, so these directions will return warnings in the returned result which you must display to the user.
+
+
+### Traffic information
+Traffic information is used when all of the following apply (these are the conditions required to receive the **duration_in_traffic** field in the Directions response):
+
+* The travel mode parameter is driving, or is not specified (driving is the default travel mode).
+
+* The request includes a valid **departure_time** parameter. The **departure_time** can be set to the current time or some time in the future. It cannot be in the past.
+
+* The request does not include stopover waypoints. If the request includes waypoints, prefix each waypoint with via: to influence the route but avoid stopovers. For example:
+
+```code
+&waypoints=via:San Francisco|via:Mountain View|...
+```
+
+Optionally, you can include the **traffic_model** parameter in your request to specify the assumptions to use when calculating time in traffic.
+
+The following URL initiates a Directions request for a journey from Boston, MA to Concord, MA, via Charlestown and Lexington. The request includes a departure time, meeting all the requirements to return the duration_in_traffic field in the Directions response.
+
+```code
+http://127.0.0.1:8080/directions?origin=Boston%2C%20MA&destination=Concord%2C%20MA&waypoints=via%3ACharlestown%2CMA%7Cvia%3ALexington%2CMA&departure_time=now
+
+OR
+
+http://127.0.0.1:8080/maps/api/directions/json?origin=Boston%2C%20MA&destination=Concord%2C%20MA&waypoints=via%3ACharlestown%2CMA%7Cvia%3ALexington%2CMA&departure_time=now
+```
+
+### Waypoints
+
+> **Note:** Requests using more than 10 waypoints (between 11 and 25), or waypoint optimization.
+
+When calculating routes using the Directions API, you may specify waypoints to return a route that includes pass throughs or stopovers at intermediate locations. You can add waypoints to driving, walking or bicycling directions but not transit directions.
+
+**Specify locations in the waypoints parameter.**
+
+You can supply one or more locations separated by the pipe character (| or %7C), in the form of a place ID, an address, or latitude/longitude coordinates. By default, the Directions service calculates a route using the waypoints in the order they are given. The precedence for parsing the value of the waypoint is place ID, latitude/longitude coordinates, then address.
+
+  * If you pass a place ID, you must prefix it with **place_id**:. You can retrieve place IDs from the Geocoding API and the Places API (including Place Autocomplete)
+
+  * If you pass latitude/longitude coordinates, the values go directly to the front-end server to calculate directions without geocoding. The points are snapped to roads and might not provide the accuracy your app needs. Use coordinates when you are confident the values truly specify the points your app needs for routing without regard to possible access points or additional geocoding details. Ensure that a comma (%2C) and not a space (%20) separates the latitude and longitude values.
+
+  * If you pass an address, the Directions service will geocode the string and convert it into latitude/longitude coordinates to calculate directions. If the address value is ambiguous, the value might evoke a search to disambiguate from similar addresses. For example, "1st Street" could be a complete value or a partial value for "1st street NE" or "1st St SE". This result may be different from that returned by the Geocoding API. You can avoid possible misinterpretations using place IDs.
+
+**Influence routes with stopover and pass through points**
+
+For each waypoint in the request, the directions response appends an entry to the legs array to provide the details for stopovers on that leg of the journey.
+
+If you'd like to influence the route using waypoints without adding a stopover, add the prefix via: to the waypoint. Waypoints prefixed with via: will not add an entry to the legs array, but will route the journey through the waypoint.
+
+
+**Optimize your waypoints**
+By default, the Directions service calculates a route through the provided waypoints in their given order. Optionally, you may pass optimize:true as the first argument within the waypoints parameter to allow the Directions service to optimize the provided route by rearranging the waypoints in a more efficient order. (This optimization is an application of the traveling salesperson problem.) Travel time is the primary factor which is optimized, but other factors such as distance, number of turns and many more may be taken into account when deciding which route is the most efficient. All waypoints must be stopovers for the Directions service to optimize their route.
+
+If you instruct the Directions service to optimize the order of its waypoints, their order will be returned in the waypoint_order field within the routes object. The **waypoint_order** field returns values which are zero-based.
+
+### Restrictions
+Directions may be calculated that adhere to certain restrictions. Restrictions are indicated by use of the avoid parameter, and an argument to that parameter indicating the restriction to avoid. The following restrictions are supported:
+
+  * avoid=tolls
+
+  * avoid=highways
+
+  * avoid=ferries
+
+It's possible to request a route that avoids any combination of tolls, highways and ferries by passing both restrictions to the avoid parameter. For example: **avoid=tolls|highways|ferries**.
+
+> **Note:** the addition of restrictions does not preclude routes that include the restricted feature; it biases the result to more favorable routes.
+
+### Unit systems
+Directions results contain text within distance fields that may be displayed to the user to indicate the distance of a particular "step" of the route. By default, this text uses the unit system of the origin's country or region.
+
+For example, a route from "Chicago, IL" to "Toronto, ONT" will display results in miles, while the reverse route will display results in kilometers. You may override this unit system by setting one explicitly within the request's units parameter, passing one of the following values:
+
+  * **metric** specifies usage of the metric system. Textual distances are returned using kilometers and meters.
+
+  * **imperial** specifies usage of the Imperial (English) system. Textual distances are returned using miles and feet.
+
+> **Note:** this unit system setting only affects the text displayed within distance fields. The distance fields also contain values which are always expressed in meters.
+
+### Region biasing
+You can set the Directions service to return results from a specific region by using the region parameter. This parameter takes a two-character [ccTLD](https://en.wikipedia.org/wiki/Country_code_top-level_domain) (country code top-level domain) argument specifying the region bias. Most ccTLD codes are identical to ISO 3166-1 alpha-2 codes, with some notable exceptions. For example, the United Kingdom's ccTLD is "uk" (.co.uk) while its ISO 3166-1 code is "gb" (technically for the entity of "The United Kingdom of Great Britain and Northern Ireland")
+
+You may utilize any domain in which the main Google Maps application has launched driving directions.
+
+### Location Modifiers
+You can use location modifiers to indicate how drivers should approach a particular location, by using the **side_of_road** parameter to specify which side of the road to use, or by specifying a heading to indicate the correct direction of travel. These modifiers may be freely mixed with the via: modifier for intermediate waypoints.
+
+**Specify that routes must pass through a particular side of the road**
+
+When specifying a waypoint, you can request that the route go through whichever side of the road the waypoint is biased towards by using the **side_of_road**: prefix.
+
+The **side_of_road**: modifier may only be used with the following restrictions:
+
+  * The travel mode parameter is driving, or is not specified (driving is the default travel mode).
+
+**Specify that routes should have a particular heading**
+
+When specifying a waypoint, you can request that the route go through the waypoint in a particular heading. This heading is specified with the prefix heading=X:, where X is an integer degree value between 0 (inclusive) and 360 (exclusive). A heading of 0 indicates North, 90 indicates East, and so on, continuing clockwise
+
+The heading=X: modifier may only be used with the following restrictions:
+
+  * The travel mode parameter is driving, bicycling, or is not specified (driving is the default travel mode).
+
+  * The *side_of_road* modifier is not specified for the same location.
+
+  * The location is specified with a latitude/longitude value. You may not use heading with addresses, Place IDs, or encoded polylines.
+
+## Directions responses

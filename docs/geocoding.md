@@ -48,7 +48,7 @@ The rest of this page describes geocoding and [reverse geocoding](https://github
   **components** — A components filter with elements separated by a pipe (**|**). The components filter is also accepted as an optional parameter if an **address** is provided. Each element in the components filter consists of a **component:value** pair, and fully restricts the results from the geocoder. See more information about [component filtering](#component-filtering) below.
 
 #### Optional parameters in a Geocoding request:
-* **bounds** — The bounding box of the viewport within which to bias geocode results more prominently. This parameter will only influence, not fully restrict, results from the geocoder. (For more information see [Viewport Biasing](https://github.com/mapcirio/mapcir-api/blob/main/docs/geocoding.md#viewport_biasing) below.)
+* **bounds** — The bounding box of the viewport within which to bias geocode results more prominently. This parameter will only influence, not fully restrict, results from the geocoder. (For more information see [Viewport Biasing](#viewport-biasing) below.)
 
 * **language** — The language in which to return results.
   * See the [list of supported languages](https://github.com/mapcirio/mapcir-api/blob/main/docs/language.md). Mapcir often updates the supported languages, so this list may not be exhaustive.
@@ -61,7 +61,7 @@ The rest of this page describes geocoding and [reverse geocoding](https://github
   
   * The preferred language has a small influence on the set of results that the API chooses to return, and the order in which they are returned. The geocoder interprets abbreviations differently depending on language, such as the abbreviations for street types, or synonyms that may be valid in one language but not in another. For example, *utca* and *tér* are synonyms for street and square respectively in Hungarian.
  
-* **region** — The region code, specified as a ccTLD ("top-level domain") two-character value. This parameter will only influence, not fully restrict, results from the geocoder. (For more information see [Region Biasing](https://github.com/mapcirio/mapcir-api/blob/main/docs/geocoding.md#region_biasing) below.)
+* **region** — The region code, specified as a ccTLD ("top-level domain") two-character value. This parameter will only influence, not fully restrict, results from the geocoder. (For more information see [Region Biasing](#viewport-biasing) below.)
 
 * **components** — A components filter with elements separated by a pipe (**|**). The components filter is required if the request doesn't include an **address**. Each element in the components filter consists of a **component:value** pair, and fully restricts the results from the geocoder. See more information about [component filtering](#component-filtering) below.
 
@@ -166,7 +166,7 @@ In this example, the Geocoding API requests a json response for a query on the p
 
 Note that the JSON response contains two root elements:
 
-**"status"** contains metadata on the request. (See [Status codes](https://github.com/mapcirio/mapcir-api/blob/main/docs/geocoding.md#status_codes) below).
+**"status"** contains metadata on the request. (See [Status codes](#status-codes) below).
 
 **"results"** contains an array of geocoded address information and geometry information.
 

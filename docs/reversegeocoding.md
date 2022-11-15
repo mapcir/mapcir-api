@@ -22,7 +22,7 @@ These are the optional parameters that you can include in a reverse geocoding re
 
 * **language** — The language in which to return results.
 
-  * See the [list of supported languages](https://github.com/mapcirio/mapcir-api/blob/main/docs/language.md). Mapcir often updates the supported languages, so this list may not be exhaustive.
+  * See the [list of supported languages](./language.md). Mapcir often updates the supported languages, so this list may not be exhaustive.
 
   * If **language** is not supplied, the geocoder attempts to use the preferred language as specified in the Accept-Language header, or the native language of the domain from which the request is sent.
 

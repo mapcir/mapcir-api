@@ -3,8 +3,8 @@ Mapcir API - Client Server For Mapcir Maps API
 
 [![Version](./assets/version.svg)](https://mapcir.io)
 [![Linux](./assets/linux.svg)](https://mapcir.io)
-[![Docker](https://raw.githubusercontent.com/mapcirio/mapcir-api/main/assets/docker.svg)](https://mapcir.io)
-[![License](https://raw.githubusercontent.com/mapcirio/mapcir-api/main/assets/license-mit.svg)](https://mapcir.io)
+[![Docker](./assets/docker.svg)](https://mapcir.io)
+[![License](./assets/license-mit.svg)](https://mapcir.io)
 
 > A drop-in replacement for Google Maps API.
 > 
@@ -24,8 +24,8 @@ Mapcir API - Client Server For Mapcir Maps API
 
 ## Description
 Looking to replace Google Maps API in your application?
-Want to [geocode][Geocoding API](https://github.com/mapcirio/mapcir-api/blob/main/docs/geocoding.md) something? Looking for [directions][Directions API](https://github.com/mapcirio/mapcir-api/blob/main/docs/directions.md)?
-Maybe [matrices of directions][Distance Matrix API](https://github.com/mapcirio/mapcir-api/blob/main/docs/distancematrix.md)? This application brings the [Mapcir Maps API] to your server.
+Want to [geocode][Geocoding API](./docs/geocoding.md) something? Looking for [directions][Directions API](./docs/directions.md)?
+Maybe [matrices of directions][Distance Matrix API](./docs/distancematrix.md)? This application brings the [Mapcir Maps API] to your server.
 
 The Mapcir API is an application for the following Mapcir Maps API:
 
@@ -93,7 +93,7 @@ The Mapcir API is an application for the following Mapcir Maps API:
 > - Google: http://127.0.0.1:8080/maps/api/place/queryautocomplete/json?language=en&input=pizza+near+Hanoi+Vietnam&offset=3
 
 
-- **See more:** [MAPCIR_API.postman.json](https://github.com/mapcirio/mapcir-api/blob/main/MAPCIR_API.postman.json)
+- **See more:** [MAPCIR_API.postman.json](./MAPCIR_API.postman.json)
 
 ## Requirements
 

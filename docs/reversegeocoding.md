@@ -197,27 +197,12 @@ The full list of formatted_address values returned by the previous query is show
 "formatted_address" : "United States",
 ```
 
-enerally, addresses are returned from most specific to least specific; the more exact address is the most prominent result, as it is in this case. Note that we return different types of addresses, from the most specific street address to less specific political entities such as neighborhoods, cities, counties, states, etc. If you wish to match a specific type of address, see the section below on [restricting results by type](#reverse-geocoding-filtered-by-type).
+enerally, addresses are returned from most specific to least specific; the more exact address is the most prominent result, as it is in this case. Note that we return different types of addresses, from the most specific street address to less specific political entities such as neighborhoods, cities, counties, states, etc.
 
 > **Note:** Reverse geocoding is an estimate. The geocoder will attempt to find the closest addressable location within a certain tolerance. If no match is found, the geocoder will return zero results.
 
-### Reverse geocoding filtered by type
-The following example filters the addresses returned to include only those with a location type of **ROOFTOP** and an address type of **street_address**.
-
-```code
-http://127.0.0.1:8080/geocode?latlng=40.714224,-73.961452
-&location_type=ROOFTOP&result_type=street_address
-
-OR
-
-http://127.0.0.1:8080/maps/api/geocode/json?latlng=40.714224,-73.961452
-&location_type=ROOFTOP&result_type=street_address
-```
-
-> **Note:** These filters are only valid for reverse geocoding.
-
 ### Reverse geocoding responses
-The format of the reverse geocoding response is the same as the Geocoding response. See [Geocoding responses](https://github.com/mapcirio/mapcir-api/blob/main/docs/geocoding.md). Below are the status codes possible in a reverse geocoding response.
+The format of the reverse geocoding response is the same as the Geocoding response. See [Geocoding responses](./geocoding.md). Below are the status codes possible in a reverse geocoding response.
 
 ### Reverse geocoding status codes
 The **"status"** field within the Geocoding response object contains the status of the request, and may contain debugging information to help you track down why reverse geocoding is not working. The **"status"** field may contain the following values:

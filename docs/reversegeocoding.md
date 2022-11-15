@@ -1,4 +1,5 @@
 # Reverse geocoding
+> Convert latitude/longitude coordinates to addresses or Place IDs.
 
 ## Overview
 The term *geocoding* generally refers to translating a human-readable address into a location on a map. The process of doing the opposite, translating a location on the map into a human-readable address, is known as *reverse geocoding*.

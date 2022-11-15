@@ -4,7 +4,7 @@
 Mapcir often updates supported languages. This list may not be exhaustive and is subject to change:
 
 | Language code | Language | Language code | Language |
-| --- | ---  |--- |--- |
+| --- | --- | --- | --- |
 | af	| Afrikaans					| ja	| Japanese
 | sq	| Albanian					| kn	| Kannada
 | am	| Amharic					| kk	| Kazakh

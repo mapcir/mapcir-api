@@ -657,7 +657,7 @@ Response:
 }
 ```
 
-### Component filtering
+### Component filtering(#component_filtering)
 In a Geocoding response, the Geocoding API can return address results restricted to a specific area. You can specify the restriction using the **components** filter. A filter consists of a list of **component:value** pairs separated by a pipe (**|**). Filter values support the same methods of spelling correction and partial matching as other Geocoding requests. If the geocoder finds a partial match for a component filter, the response will contain a **partial_match** field.
 
 The **components** that can be filtered include:

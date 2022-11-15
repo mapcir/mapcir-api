@@ -185,16 +185,16 @@ The reverse geocoder matches political entities (countries, provinces, cities an
 The full list of formatted_address values returned by the previous query is shown below.
 
 ```coce
-"formatted_address" : "277 Bedford Avenue, Brooklyn, NY 11211, USA",\
-"formatted_address" : "Grand St/Bedford Av, Brooklyn, NY 11211, USA",\
-"formatted_address" : "Grand St/Bedford Av, Brooklyn, NY 11249, USA",\
-"formatted_address" : "Bedford Av/Grand St, Brooklyn, NY 11211, USA",\
-"formatted_address" : "Brooklyn, NY 11211, USA",\
-"formatted_address" : "Williamsburg, Brooklyn, NY, USA",\
-"formatted_address" : "Brooklyn, NY, USA",\
-"formatted_address" : "New York, NY, USA",\
-"formatted_address" : "New York, USA",\
-"formatted_address" : "United States",\
+"formatted_address" : "277 Bedford Avenue, Brooklyn, NY 11211, USA",
+"formatted_address" : "Grand St/Bedford Av, Brooklyn, NY 11211, USA",
+"formatted_address" : "Grand St/Bedford Av, Brooklyn, NY 11249, USA",
+"formatted_address" : "Bedford Av/Grand St, Brooklyn, NY 11211, USA",
+"formatted_address" : "Brooklyn, NY 11211, USA",
+"formatted_address" : "Williamsburg, Brooklyn, NY, USA",
+"formatted_address" : "Brooklyn, NY, USA",
+"formatted_address" : "New York, NY, USA",
+"formatted_address" : "New York, USA",
+"formatted_address" : "United States",
 ```
 
 enerally, addresses are returned from most specific to least specific; the more exact address is the most prominent result, as it is in this case. Note that we return different types of addresses, from the most specific street address to less specific political entities such as neighborhoods, cities, counties, states, etc. If you wish to match a specific type of address, see the section below on [restricting results by type](https://github.com/mapcirio/mapcir-api/blob/main/docs/reversegeocoding.md#reverse_geocoding_filtered_by_type).

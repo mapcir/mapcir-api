@@ -1,9 +1,9 @@
 # Geocoding Service
 
 ## Overview
-[Geocoding](https://github.com/mapcirio/mapcir-api/blob/main/docs/geocoding.md) is the process of converting addresses (like "1600 Amphitheatre Parkway, Mountain View, CA") into geographic coordinates (like latitude 37.423021 and longitude -122.083739), which you can use to place markers or position the map.
+[Geocoding](./geocoding.md) is the process of converting addresses (like "1600 Amphitheatre Parkway, Mountain View, CA") into geographic coordinates (like latitude 37.423021 and longitude -122.083739), which you can use to place markers or position the map.
 
-[Reverse geocoding](https://github.com/mapcirio/mapcir-api/blob/main/docs/reversegeocoding.md) is the process of converting geographic coordinates into a human-readable address.
+[Reverse geocoding](./reversegeocoding.md) is the process of converting geographic coordinates into a human-readable address.
 
 You can also use the geocoder to find the address for a given place ID.
 
@@ -24,7 +24,7 @@ http://{HOST}:{PORT}/maps/api/geocode/json/?parameters
 
 Some parameters are required while some are optional. As is standard in URLs, parameters are separated using the ampersand (**&**) character.
 
-The rest of this page describes geocoding and [reverse geocoding](https://github.com/mapcirio/mapcir-api/blob/main/docs/reversegeocoding.md) separately, because different parameters are available for each type of request.
+The rest of this page describes geocoding and [reverse geocoding](./reversegeocoding.md) separately, because different parameters are available for each type of request.
 
 ### Geocoding (latitude/longitude lookup) parameters
 > All reserved characters (for example the plus sign "**+**") must be URL-encoded
@@ -51,7 +51,7 @@ The rest of this page describes geocoding and [reverse geocoding](https://github
 * **bounds** — The bounding box of the viewport within which to bias geocode results more prominently. This parameter will only influence, not fully restrict, results from the geocoder. (For more information see [Viewport Biasing](#viewport-biasing) below.)
 
 * **language** — The language in which to return results.
-  * See the [list of supported languages](https://github.com/mapcirio/mapcir-api/blob/main/docs/language.md). Mapcir often updates the supported languages, so this list may not be exhaustive.
+  * See the [list of supported languages](./language.md). Mapcir often updates the supported languages, so this list may not be exhaustive.
   
   * If **language** is not supplied, the geocoder attempts to use the preferred language as specified in the **Accept-Language** header, or the native language of the domain from which the request is sent.
   
@@ -270,7 +270,7 @@ Typically, both the global code and compound code are returned. However, if the 
 Partial matches most often occur for street addresses that do not exist within the locality you pass in the request.\
 Partial matches may also be returned when a request matches two or more locations in the same locality. For example, "Hillpar St, Bristol, UK" will return a partial match for both Henry Street and Henrietta Street. Note that if a request includes a misspelled address component, the geocoding service may suggest an alternative address. Suggestions triggered in this way will also be marked as a partial match.
 
-* **place_id** is a unique identifier that can be used with other Mapcir APIs. For example, you can use the **place_id** in a [Places API](https://github.com/mapcirio/mapcir-api/blob/main/docs/placedetails.md) request to get details of a local business, such as phone number, opening hours, user reviews, and more. See the [place ID overview](https://github.com/mapcirio/mapcir-api/blob/main/docs/placeid.md).
+* **place_id** is a unique identifier that can be used with other Mapcir APIs. For example, you can use the **place_id** in a [Places API](./placedetails.md) request to get details of a local business, such as phone number, opening hours, user reviews, and more. See the [place ID overview](./placeid.md).
 
 ### Address types and address component types
 
@@ -357,7 +357,7 @@ In a Geocoding request, you can instruct the Geocoding service to prefer results
 
 The bounds parameter defines the latitude/longitude coordinates of the southwest and northeast corners of this bounding box using a pipe (**|**) character to separate the coordinates.
 
-> **Note:** this only adds a bias towards results within the viewport, and doesn't guarantee that all or any result(s) will be contained by it. [The Places API's Autocomplete endpoint](https://github.com/mapcirio/mapcir-api/blob/main/docs/placeautocomplete.md) is generally better suited for ambiguous queries, and can restrict results to a specific area.
+> **Note:** this only adds a bias towards results within the viewport, and doesn't guarantee that all or any result(s) will be contained by it. [The Places API's Autocomplete endpoint](./placeautocomplete.md) is generally better suited for ambiguous queries, and can restrict results to a specific area.
 
 For example, a geocode for "Washington" generally returns the U.S. state of Washington:
 

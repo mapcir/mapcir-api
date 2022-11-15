@@ -45,7 +45,7 @@ The rest of this page describes geocoding and [reverse geocoding](https://github
   
   **--OR--**
   
-  **components** — A components filter with elements separated by a pipe (**|**). The components filter is also accepted as an optional parameter if an **address** is provided. Each element in the components filter consists of a **component:value** pair, and fully restricts the results from the geocoder. See more information about [component filtering](#component_filtering) below.
+  **components** — A components filter with elements separated by a pipe (**|**). The components filter is also accepted as an optional parameter if an **address** is provided. Each element in the components filter consists of a **component:value** pair, and fully restricts the results from the geocoder. See more information about [component filtering](#component-filtering) below.
 
 #### Optional parameters in a Geocoding request:
 * **bounds** — The bounding box of the viewport within which to bias geocode results more prominently. This parameter will only influence, not fully restrict, results from the geocoder. (For more information see [Viewport Biasing](https://github.com/mapcirio/mapcir-api/blob/main/docs/geocoding.md#viewport_biasing) below.)
@@ -63,7 +63,7 @@ The rest of this page describes geocoding and [reverse geocoding](https://github
  
 * **region** — The region code, specified as a ccTLD ("top-level domain") two-character value. This parameter will only influence, not fully restrict, results from the geocoder. (For more information see [Region Biasing](https://github.com/mapcirio/mapcir-api/blob/main/docs/geocoding.md#region_biasing) below.)
 
-* **components** — A components filter with elements separated by a pipe (**|**). The components filter is required if the request doesn't include an **address**. Each element in the components filter consists of a **component:value** pair, and fully restricts the results from the geocoder. See more information about [component filtering](https://github.com/mapcirio/mapcir-api/blob/main/docs/geocoding.md#component_filtering) below.
+* **components** — A components filter with elements separated by a pipe (**|**). The components filter is required if the request doesn't include an **address**. Each element in the components filter consists of a **component:value** pair, and fully restricts the results from the geocoder. See more information about [component filtering](#component-filtering) below.
 
 ### Responses
 
@@ -657,7 +657,7 @@ Response:
 }
 ```
 
-### [Component filtering](#component_filtering)
+### Component filtering
 In a Geocoding response, the Geocoding API can return address results restricted to a specific area. You can specify the restriction using the **components** filter. A filter consists of a list of **component:value** pairs separated by a pipe (**|**). Filter values support the same methods of spelling correction and partial matching as other Geocoding requests. If the geocoder finds a partial match for a component filter, the response will contain a **partial_match** field.
 
 The **components** that can be filtered include:

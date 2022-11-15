@@ -1,5 +1,5 @@
 Mapcir API - Client Server For Mapcir Maps API
-=============================================
+==============================================
 
 [![Version](https://raw.githubusercontent.com/mapcirio/mapcir-api/main/assets/version.svg)](https://mapcir.io)
 [![Linux](https://raw.githubusercontent.com/mapcirio/mapcir-api/main/assets/linux.svg)](https://mapcir.io)
@@ -12,11 +12,15 @@ Mapcir API - Client Server For Mapcir Maps API
 > 
 > Example:
 > 
-> - Google Maps API: https://maps.googleapis.com/maps/api/directions/json?language=vi&origin=Yen+Bai,Vietnam&destination=Ha+Noi,Vietnam&mode=driving&key=YOUR_API_KEY
+> - Google Maps API: https://maps.googleapis.com/maps/api/directions/json?language=vi&origin=Ho+Chi+Minh,Vietnam&destination=Ha+Noi,Vietnam&mode=driving&key={YOUR_API_KEY}
 > 
-> - Your server API: https://example.com/maps/api/directions/json?language=vi&origin=Yen+Bai,Vietnam&destination=Ha+Noi,Vietnam&mode=driving
+> - Your server API: 
 > 
-> - OR: https://example.com/directions?language=vi&origin=Yen+Bai,Vietnam&destination=Ha+Noi,Vietnam&mode=driving
+>   {YOUR_SERVER}/maps/api/directions/json?language=vi&origin=Ho+Chi+Minh,Vietnam&destination=Ha+Noi,Vietnam&mode=driving
+> 
+>   OR
+> 
+>   {YOUR_SERVER}/directions?language=vi&origin=Ho+Chi+Minh,Vietnam&destination=Ha+Noi,Vietnam&mode=driving
 
 ## Description
 Looking to replace Google Maps API in your application?
@@ -28,6 +32,7 @@ The Mapcir API is an application for the following Mapcir Maps API:
 - [Directions API](https://github.com/mapcirio/mapcir-api/blob/main/docs/directions.md)
 - [Distance Matrix API](https://github.com/mapcirio/mapcir-api/blob/main/docs/distancematrix.md)
 - [Geocoding API](https://github.com/mapcirio/mapcir-api/blob/main/docs/geocoding.md)
+- [Reverse Geocoding API](https://github.com/mapcirio/mapcir-api/blob/main/docs/reversegeocoding.md)
 - [Places Detail API](https://github.com/mapcirio/mapcir-api/blob/main/docs/placedetail.md)
 - [Find Place API](https://github.com/mapcirio/mapcir-api/blob/main/docs/findplace.md)
 - [Nearby Search API](https://github.com/mapcirio/mapcir-api/blob/main/docs/nearbysearch.md)
@@ -38,50 +43,54 @@ The Mapcir API is an application for the following Mapcir Maps API:
 ## Examples
 
 - **Directions API:**
-> - Default: http://127.0.0.1:8080/directions?language=vi&origin=Yen+Bai,Vietnam&destination=Ha+Noi,Vietnam&mode=driving
+> - Default: http://127.0.0.1:8080/directions?language=en&origin=Ho+Chi+Minh,Vietnam&destination=Ha+Noi,Vietnam&mode=driving
 > 
-> - Google: http://127.0.0.1:8080/maps/api/directions/json?language=vi&origin=Yen+Bai,Vietnam&destination=Ha+Noi,Vietnam&mode=driving
+> - Google: http://127.0.0.1:8080/maps/api/directions/json?language=en&origin=Ho+Chi+Minh,Vietnam&destination=Ha+Noi,Vietnam&mode=driving
 
 - **Distance Matrix API:**
-> - Default: http://127.0.0.1:8080/distancematrix?language=vi&origins=22.700296928915677,105.11612142789889|Yen+Bai,Vietnam&destinations=8.618037202178698,104.83734713182707|Ho+Chi+Minh,Vietnam&mode=driving&transit_mode=train|tram|subway&avoid=tolls&units=imperial&region=vn
+> - Default: http://127.0.0.1:8080/distancematrix?language=en&origins=10.7668869,106.6945967|Ho+Chi+Minh,Vietnam&destinations=21.0160999,105.8181467|Hanoi,Vietnam&mode=driving&transit_mode=train|tram|subway&avoid=tolls&units=imperial&region=vn
 > 
-> - Google: http://127.0.0.1:8080/maps/api/distancematrix/json?language=vi&origins=22.700296928915677,105.11612142789889|Yen+Bai,Vietnam&destinations=8.618037202178698,104.83734713182707|Ho+Chi+Minh,Vietnam&mode=driving&transit_mode=train|tram|subway&avoid=tolls&units=imperial&region=vn
-
+> - Google: http://127.0.0.1:8080/maps/api/distancematrix/json?language=en&origins=10.7668869,106.6945967|Ho+Chi+Minh,Vietnam&destinations=21.0160999,105.8181467|Hanoi,Vietnam&mode=driving&transit_mode=train|tram|subway&avoid=tolls&units=imperial&region=vn
 
 - **Geocoding API:**
-> - Default: http://127.0.0.1:8080/geocode?language=vi&latlng=37.42826489999999,-122.0844367
+> - Default: http://127.0.0.1:8080/geocode?language=en&address=Cong+CaPhe,Hoang+Cau,Dong+Da,Hanoi,Vietnam
 > 
-> - Google: http://127.0.0.1:8080/maps/api/geocode/json?language=vi&latlng=37.42826489999999,-122.0844367
+> - Google: http://127.0.0.1:8080/maps/api/geocode/json?language=en&address=Cong+CaPhe,Hoang+Cau,Dong+Da,Hanoi,Vietnam
+
+- **Reverse Geocoding API:**
+> - Default: http://127.0.0.1:8080/geocode?language=en&latlng=21.0161,105.8226314
+> 
+> - Google: http://127.0.0.1:8080/maps/api/geocode/json?language=en&latlng=21.0161,105.8226314
 
 - **Places Detail API:**
-> - Default: http://127.0.0.1:8080/placedetails?language=vi&placeid=ChIJjdZlLX-rNTERxklnZBnxNvw
+> - Default: http://127.0.0.1:8080/placedetails?language=en&placeid=ChIJv_XlvnmrNTERRW-8rOgXdOg
 > 
-> - Google: http://127.0.0.1:8080/maps/api/place/details/json?language=vi&placeid=ChIJjdZlLX-rNTERxklnZBnxNvw
+> - Google: http://127.0.0.1:8080/maps/api/place/details/json?language=en&placeid=ChIJv_XlvnmrNTERRW-8rOgXdOg
 
 - **Find Place API:**
-> - Default: http://127.0.0.1:8080/findplacefromtext?language=vi&input=Hanoi+Post+Office,+Dinh+Tien+Hoang,+Hoan+Kiem,+Hanoi,+Vietnam&inputtype=textquery&fields=name,rating,geometry,formatted_address,opening_hours,geometry
+> - Default: http://127.0.0.1:8080/findplacefromtext?language=en&input=Hanoi+Post+Office,+Dinh+Tien+Hoang,+Hoan+Kiem,+Hanoi,+Vietnam&inputtype=textquery&fields=name,rating,geometry,formatted_address,opening_hours,geometry
 > 
-> - Google: http://127.0.0.1:8080/maps/api/place/findplacefromtext/json?language=vi&input=Hanoi+Post+Office,+Dinh+Tien+Hoang,+Hoan+Kiem,+Hanoi,+Vietnam&inputtype=textquery&fields=name,rating,geometry,formatted_address,opening_hours,geometry
+> - Google: http://127.0.0.1:8080/maps/api/place/findplacefromtext/json?language=en&input=Hanoi+Post+Office,+Dinh+Tien+Hoang,+Hoan+Kiem,+Hanoi,+Vietnam&inputtype=textquery&fields=name,rating,geometry,formatted_address,opening_hours,geometry
 
 - **Nearby Search API:**
-> - Default: http://127.0.0.1:8080/nearbysearch?language=vi&location=21.014116,105.825162&radius=500&type=cafe&minprice=1&maxprice=4&opennow=true&keyword=coffe+in+house&name=garden+house
+> - Default: http://127.0.0.1:8080/nearbysearch?language=en&location=21.014116,105.825162&radius=500&type=cafe&minprice=1&maxprice=4&opennow=true&keyword=coffe+in+house&name=garden+house
 > 
-> - Google: http://127.0.0.1:8080/maps/api/place/nearbysearch/json?language=vi&location=21.014116,105.825162&radius=500&type=cafe&minprice=1&maxprice=4&opennow=true&keyword=coffe+in+house&name=garden+house
+> - Google: http://127.0.0.1:8080/maps/api/place/nearbysearch/json?language=en&location=21.014116,105.825162&radius=500&type=cafe&minprice=1&maxprice=4&opennow=true&keyword=coffe+in+house&name=garden+house
 
 - **Text Search API:**
-> - Default: http://127.0.0.1:8080/textsearch?language=vi&query=restaurants+in+Hanoi&location=21.014116,105.825162&radius=5000&type=restaurant
+> - Default: http://127.0.0.1:8080/textsearch?language=en&query=restaurants+in+Hanoi&location=21.014116,105.825162&radius=5000&type=restaurant
 > 
-> - Google: http://127.0.0.1:8080/maps/api/place/textsearch/json?language=vi&query=restaurants+in+Hanoi&location=21.014116,105.825162&radius=5000&type=restaurant
+> - Google: http://127.0.0.1:8080/maps/api/place/textsearch/json?language=en&query=restaurants+in+Hanoi&location=21.014116,105.825162&radius=5000&type=restaurant
 
 - **Place Autocomplete API:**
-> - Default: http://127.0.0.1:8080/autocomplete?language=vi&input=Benh+Vien+Dong+Da&location=21.02717535794731,105.83580500499002&radius=50&offset=2
+> - Default: http://127.0.0.1:8080/autocomplete?language=en&input=cafe&location=21.02717535794731,105.83580500499002&radius=50&offset=2
 > 
-> - Google: http://127.0.0.1:8080/maps/api/place/autocomplete/json?language=vi&input=Benh+Vien+Dong+Da&location=21.02717535794731,105.83580500499002&radius=50&offset=2
+> - Google: http://127.0.0.1:8080/maps/api/place/autocomplete/json?language=en&input=cafe&location=21.02717535794731,105.83580500499002&radius=50&offset=2
 
 - **Query Autocomplete API:**
-> - Default: http://127.0.0.1:8080/queryautocomplete?language=vi&input=pizza+near+Hanoi+Vietnam&offset=3
+> - Default: http://127.0.0.1:8080/queryautocomplete?language=en&input=pizza+near+Hanoi+Vietnam&offset=3
 > 
-> - Google: http://127.0.0.1:8080/maps/api/place/queryautocomplete/json?language=vi&input=Benh+Vien+Dong+Da&location=21.02717535794731,105.83580500499002&radius=50&offset=2
+> - Google: http://127.0.0.1:8080/maps/api/place/queryautocomplete/json?language=en&input=pizza+near+Hanoi+Vietnam&offset=3
 
 
 - **See more:** [MAPCIR_API.postman.json](https://github.com/mapcirio/mapcir-api/blob/main/MAPCIR_API.postman.json)
@@ -93,7 +102,7 @@ The Mapcir API is an application for the following Mapcir Maps API:
 
 ### API account
 
-Each Mapcir API requires an API account, includes: client_id and client_key.
+Each Mapcir API requires an API account, includes: **client_id** and **client_key**.
 
 To get an API account: [Request a demo](https://mapcir.io/request-demo)
 

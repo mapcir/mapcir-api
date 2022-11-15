@@ -1,9 +1,9 @@
 {
 	"info": {
-		"_postman_id": "896cdb11-fe6e-4559-a712-bdd2d2160133",
+		"_postman_id": "11111",
 		"name": "MAPCIR_API",
 		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
-		"_exporter_id": "1639301"
+		"_exporter_id": "1"
 	},
 	"item": [
 		{
@@ -15,7 +15,7 @@
 						"method": "GET",
 						"header": [],
 						"url": {
-							"raw": "http://127.0.0.1:8080/geocode?language=en&latlng=37.42826489999999,-122.0844367",
+							"raw": "http://127.0.0.1:8080/geocode?language=en&latlng=21.0161,105.8226314",
 							"protocol": "http",
 							"host": [
 								"127",
@@ -34,7 +34,7 @@
 								},
 								{
 									"key": "latlng",
-									"value": "37.42826489999999,-122.0844367"
+									"value": "21.0161,105.8226314"
 								}
 							]
 						}
@@ -47,7 +47,7 @@
 						"method": "GET",
 						"header": [],
 						"url": {
-							"raw": "http://127.0.0.1:8080/geocode?language=en&address=1600+Amphitheatre+Parkway,+Mountain+View,+CA",
+							"raw": "http://127.0.0.1:8080/geocode?language=en&address=Cong+CaPhe,Hoang+Cau,Dong+Da,Hanoi,Vietnam",
 							"protocol": "http",
 							"host": [
 								"127",
@@ -66,7 +66,7 @@
 								},
 								{
 									"key": "address",
-									"value": "1600+Amphitheatre+Parkway,+Mountain+View,+CA"
+									"value": "Cong+CaPhe,Hoang+Cau,Dong+Da,Hanoi,Vietnam"
 								}
 							]
 						}
@@ -79,7 +79,7 @@
 						"method": "GET",
 						"header": [],
 						"url": {
-							"raw": "http://127.0.0.1:8080/geocode?language=en&place_id=ChIJd8BlQ2BZwokRAFUEcm_qrcA",
+							"raw": "http://127.0.0.1:8080/geocode?language=en&place_id=ChIJv_XlvnmrNTERRW-8rOgXdOg",
 							"protocol": "http",
 							"host": [
 								"127",
@@ -98,7 +98,7 @@
 								},
 								{
 									"key": "place_id",
-									"value": "ChIJd8BlQ2BZwokRAFUEcm_qrcA"
+									"value": "ChIJv_XlvnmrNTERRW-8rOgXdOg"
 								}
 							]
 						}
@@ -111,7 +111,7 @@
 						"method": "GET",
 						"header": [],
 						"url": {
-							"raw": "http://127.0.0.1:8080/geocode?language=en&address=Winnetka&bounds=34.172684,-118.604794|34.236144,-118.500938",
+							"raw": "http://127.0.0.1:8080/geocode?language=en&address=Cong+CaPhe,+Hoang+Cau&bounds=21.0174963802915,105.8239796302915|21.01479841970849,105.8212816697085",
 							"protocol": "http",
 							"host": [
 								"127",
@@ -130,11 +130,11 @@
 								},
 								{
 									"key": "address",
-									"value": "Winnetka"
+									"value": "Cong+CaPhe,+Hoang+Cau"
 								},
 								{
 									"key": "bounds",
-									"value": "34.172684,-118.604794|34.236144,-118.500938"
+									"value": "21.0174963802915,105.8239796302915|21.01479841970849,105.8212816697085"
 								}
 							]
 						}
@@ -147,7 +147,7 @@
 						"method": "GET",
 						"header": [],
 						"url": {
-							"raw": "http://127.0.0.1:8080/geocode?language=en&latlng=60.16991397918191,24.938372628997396&components=route:Annankatu|administrative_area:Helsinki|country:Finland",
+							"raw": "http://127.0.0.1:8080/geocode?language=en&latlng=21.0161,105.8226314&components=route:Hoang+Cau|administrative_area:Hanoi|country:Vietnam",
 							"protocol": "http",
 							"host": [
 								"127",
@@ -166,11 +166,11 @@
 								},
 								{
 									"key": "latlng",
-									"value": "60.16991397918191,24.938372628997396"
+									"value": "21.0161,105.8226314"
 								},
 								{
 									"key": "components",
-									"value": "route:Annankatu|administrative_area:Helsinki|country:Finland"
+									"value": "route:Hoang+Cau|administrative_area:Hanoi|country:Vietnam"
 								}
 							]
 						}
@@ -183,7 +183,7 @@
 						"method": "GET",
 						"header": [],
 						"url": {
-							"raw": "http://127.0.0.1:8080/geocode?language=en&latlng=37.42826489999999,-122.0844367&region=us",
+							"raw": "http://127.0.0.1:8080/geocode?language=en&latlng=21.0161,105.8226314&region=vn",
 							"protocol": "http",
 							"host": [
 								"127",
@@ -202,11 +202,11 @@
 								},
 								{
 									"key": "latlng",
-									"value": "37.42826489999999,-122.0844367"
+									"value": "21.0161,105.8226314"
 								},
 								{
 									"key": "region",
-									"value": "us"
+									"value": "vn"
 								}
 							]
 						}
@@ -224,7 +224,7 @@
 						"method": "GET",
 						"header": [],
 						"url": {
-							"raw": "http://127.0.0.1:8080/placedetails?language=en&placeid=ChIJjdZlLX-rNTERxklnZBnxNvw",
+							"raw": "http://127.0.0.1:8080/placedetails?language=en&placeid=ChIJv_XlvnmrNTERRW-8rOgXdOg",
 							"protocol": "http",
 							"host": [
 								"127",
@@ -243,7 +243,7 @@
 								},
 								{
 									"key": "placeid",
-									"value": "ChIJjdZlLX-rNTERxklnZBnxNvw"
+									"value": "ChIJv_XlvnmrNTERRW-8rOgXdOg"
 								}
 							]
 						}
@@ -256,7 +256,7 @@
 						"method": "GET",
 						"header": [],
 						"url": {
-							"raw": "http://127.0.0.1:8080/placedetails?language=en&placeid=ChIJjdZlLX-rNTERxklnZBnxNvw&fields=name,rating,formatted_phone_number,geometry",
+							"raw": "http://127.0.0.1:8080/placedetails?language=en&placeid=ChIJv_XlvnmrNTERRW-8rOgXdOg&fields=name,rating,formatted_phone_number,geometry",
 							"protocol": "http",
 							"host": [
 								"127",
@@ -275,7 +275,7 @@
 								},
 								{
 									"key": "placeid",
-									"value": "ChIJjdZlLX-rNTERxklnZBnxNvw"
+									"value": "ChIJv_XlvnmrNTERRW-8rOgXdOg"
 								},
 								{
 									"key": "fields",
@@ -844,7 +844,7 @@
 						"method": "GET",
 						"header": [],
 						"url": {
-							"raw": "http://127.0.0.1:8080/autocomplete?language=en&input=Benh+Vien+Dong+Da&location=21.02717535794731,105.83580500499002&radius=50&offset=2",
+							"raw": "http://127.0.0.1:8080/autocomplete?language=en&input=cafe&location=21.02717535794731,105.83580500499002&radius=50&offset=2",
 							"protocol": "http",
 							"host": [
 								"127",
@@ -863,7 +863,7 @@
 								},
 								{
 									"key": "input",
-									"value": "Benh+Vien+Dong+Da"
+									"value": "cafe"
 								},
 								{
 									"key": "location",
@@ -888,7 +888,7 @@
 						"method": "GET",
 						"header": [],
 						"url": {
-							"raw": "http://127.0.0.1:8080/autocomplete?language=en&input=Benh+Vien+Dong+Da&location=21.014116,105.825162&radius=5000&components=country:vn",
+							"raw": "http://127.0.0.1:8080/autocomplete?language=en&input=cafe&location=21.014116,105.825162&radius=5000&components=country:vn",
 							"protocol": "http",
 							"host": [
 								"127",
@@ -907,7 +907,7 @@
 								},
 								{
 									"key": "input",
-									"value": "Benh+Vien+Dong+Da"
+									"value": "cafe"
 								},
 								{
 									"key": "location",
@@ -932,7 +932,7 @@
 						"method": "GET",
 						"header": [],
 						"url": {
-							"raw": "http://127.0.0.1:8080/autocomplete?language=en&input=Benh+Vien+Dong+Da&location=21.014116,105.825162&radius=5000&&strictbounds=true",
+							"raw": "http://127.0.0.1:8080/autocomplete?language=en&input=cafe&location=21.014116,105.825162&radius=5000&&strictbounds=true",
 							"protocol": "http",
 							"host": [
 								"127",
@@ -951,7 +951,7 @@
 								},
 								{
 									"key": "input",
-									"value": "Benh+Vien+Dong+Da"
+									"value": "cafe"
 								},
 								{
 									"key": "location",
@@ -980,7 +980,7 @@
 						"method": "GET",
 						"header": [],
 						"url": {
-							"raw": "http://127.0.0.1:8080/autocomplete?language=en&input=Benh+Vien+Dong+Da&location=21.014116,105.825162&radius=5000&&types=establishment",
+							"raw": "http://127.0.0.1:8080/autocomplete?language=en&input=cafe&location=21.014116,105.825162&radius=5000&&types=establishment",
 							"protocol": "http",
 							"host": [
 								"127",
@@ -999,7 +999,7 @@
 								},
 								{
 									"key": "input",
-									"value": "Benh+Vien+Dong+Da"
+									"value": "cafe"
 								},
 								{
 									"key": "location",
@@ -1033,7 +1033,7 @@
 						"method": "GET",
 						"header": [],
 						"url": {
-							"raw": "http://127.0.0.1:8080/directions?language=en&origin=Yen+Bai,Vietnam&destination=Ha+Noi,Vietnam&mode=driving",
+							"raw": "http://127.0.0.1:8080/directions?language=en&origin=Ho+Chi+Minh,Vietnam&destination=Ha+Noi,Vietnam&mode=driving",
 							"protocol": "http",
 							"host": [
 								"127",
@@ -1052,7 +1052,7 @@
 								},
 								{
 									"key": "origin",
-									"value": "Yen+Bai,Vietnam"
+									"value": "Ho+Chi+Minh,Vietnam"
 								},
 								{
 									"key": "destination",
@@ -1073,7 +1073,7 @@
 						"method": "GET",
 						"header": [],
 						"url": {
-							"raw": "http://127.0.0.1:8080/directions?language=en&origin=21.011851,105.861360&destination=21.037739,105.781452",
+							"raw": "http://127.0.0.1:8080/directions?language=en&origin=10.8230989,106.6296638&destination=21.0277644,105.8341598",
 							"protocol": "http",
 							"host": [
 								"127",
@@ -1092,11 +1092,11 @@
 								},
 								{
 									"key": "origin",
-									"value": "21.011851,105.861360"
+									"value": "10.8230989,106.6296638"
 								},
 								{
 									"key": "destination",
-									"value": "21.037739,105.781452"
+									"value": "21.0277644,105.8341598"
 								}
 							]
 						}
@@ -1109,7 +1109,7 @@
 						"method": "GET",
 						"header": [],
 						"url": {
-							"raw": "http://127.0.0.1:8080/directions?language=en&origin=21.011851,105.861360&destination=21.037739,105.781452&mode=walking",
+							"raw": "http://127.0.0.1:8080/directions?language=en&language=en&origin=10.8230989,106.6296638&destination=21.0277644,105.8341598&mode=walking",
 							"protocol": "http",
 							"host": [
 								"127",
@@ -1127,12 +1127,16 @@
 									"value": "en"
 								},
 								{
+									"key": "language",
+									"value": "en"
+								},
+								{
 									"key": "origin",
-									"value": "21.011851,105.861360"
+									"value": "10.8230989,106.6296638"
 								},
 								{
 									"key": "destination",
-									"value": "21.037739,105.781452"
+									"value": "21.0277644,105.8341598"
 								},
 								{
 									"key": "mode",
@@ -1149,7 +1153,7 @@
 						"method": "GET",
 						"header": [],
 						"url": {
-							"raw": "http://127.0.0.1:8080/directions?language=en&units=metric&origin=Brooklyn&destination=Queens&mode=transit&transit_mode=train|tram|subway&departure_time=now",
+							"raw": "http://127.0.0.1:8080/directions?language=en&units=metric&origin=Ho+Chi+Minh,Vietnam&destination=Hanoi,Vietnam&mode=driving&transit_mode=train|tram|subway&departure_time=now",
 							"protocol": "http",
 							"host": [
 								"127",
@@ -1172,15 +1176,15 @@
 								},
 								{
 									"key": "origin",
-									"value": "Brooklyn"
+									"value": "Ho+Chi+Minh,Vietnam"
 								},
 								{
 									"key": "destination",
-									"value": "Queens"
+									"value": "Hanoi,Vietnam"
 								},
 								{
 									"key": "mode",
-									"value": "transit"
+									"value": "driving"
 								},
 								{
 									"key": "transit_mode",
@@ -1201,7 +1205,7 @@
 						"method": "GET",
 						"header": [],
 						"url": {
-							"raw": "http://127.0.0.1:8080/directions?language=en&units=metric&origin=Brooklyn&destination=Queens&mode=transit&transit_mode=bus&departure_time=now&transit_routing_preference=fewer_transfers",
+							"raw": "http://127.0.0.1:8080/directions?language=en&units=metric&origin=Ho+Chi+Minh,Vietnam&destination=Hanoi,Vietnam&mode=driving&transit_mode=bus&departure_time=now&transit_routing_preference=fewer_transfers",
 							"protocol": "http",
 							"host": [
 								"127",
@@ -1224,15 +1228,15 @@
 								},
 								{
 									"key": "origin",
-									"value": "Brooklyn"
+									"value": "Ho+Chi+Minh,Vietnam"
 								},
 								{
 									"key": "destination",
-									"value": "Queens"
+									"value": "Hanoi,Vietnam"
 								},
 								{
 									"key": "mode",
-									"value": "transit"
+									"value": "driving"
 								},
 								{
 									"key": "transit_mode",
@@ -1257,7 +1261,7 @@
 						"method": "GET",
 						"header": [],
 						"url": {
-							"raw": "http://127.0.0.1:8080/directions?language=en&units=metric&origin=Brooklyn&destination=Queens&mode=driving&departure_time=now&traffic_model=best_guess",
+							"raw": "http://127.0.0.1:8080/directions?language=en&units=metric&origin=Ho+Chi+Minh,Vietnam&destination=Hanoi,Vietnam&mode=driving&departure_time=now&traffic_model=best_guess",
 							"protocol": "http",
 							"host": [
 								"127",
@@ -1280,11 +1284,11 @@
 								},
 								{
 									"key": "origin",
-									"value": "Brooklyn"
+									"value": "Ho+Chi+Minh,Vietnam"
 								},
 								{
 									"key": "destination",
-									"value": "Queens"
+									"value": "Hanoi,Vietnam"
 								},
 								{
 									"key": "mode",
@@ -1309,7 +1313,7 @@
 						"method": "GET",
 						"header": [],
 						"url": {
-							"raw": "http://127.0.0.1:8080/directions?language=en&origin=Boston,MA&destination=Concord,MA&waypoints=via:Charlestown,MA|via:Lexington,MA&departure_time=now&alternatives=true",
+							"raw": "http://127.0.0.1:8080/directions?language=en&origin=Ho+Chi+Minh,Vietnam&destination=Hanoi,Vietnam&waypoints=via:Ninh+Binh,Vietnam|via:Da+Nang,Vietnam&departure_time=now&alternatives=true",
 							"protocol": "http",
 							"host": [
 								"127",
@@ -1328,15 +1332,15 @@
 								},
 								{
 									"key": "origin",
-									"value": "Boston,MA"
+									"value": "Ho+Chi+Minh,Vietnam"
 								},
 								{
 									"key": "destination",
-									"value": "Concord,MA"
+									"value": "Hanoi,Vietnam"
 								},
 								{
 									"key": "waypoints",
-									"value": "via:Charlestown,MA|via:Lexington,MA"
+									"value": "via:Ninh+Binh,Vietnam|via:Da+Nang,Vietnam"
 								},
 								{
 									"key": "departure_time",
@@ -1357,7 +1361,7 @@
 						"method": "GET",
 						"header": [],
 						"url": {
-							"raw": "http://127.0.0.1:8080/directions?language=en&origin=sydney,au&destination=perth,au&waypoints=via:-37.81223,144.96254|via:-34.92788,138.60008&departure_time=now&alternatives=true",
+							"raw": "http://127.0.0.1:8080/directions?language=en&origin=Ho+Chi+Minh,Vietnam&destination=Hanoi,Vietnam&waypoints=via:20.2506149,105.9744536|via:16.0544563,108.0717219&departure_time=now&alternatives=true",
 							"protocol": "http",
 							"host": [
 								"127",
@@ -1376,15 +1380,15 @@
 								},
 								{
 									"key": "origin",
-									"value": "sydney,au"
+									"value": "Ho+Chi+Minh,Vietnam"
 								},
 								{
 									"key": "destination",
-									"value": "perth,au"
+									"value": "Hanoi,Vietnam"
 								},
 								{
 									"key": "waypoints",
-									"value": "via:-37.81223,144.96254|via:-34.92788,138.60008"
+									"value": "via:20.2506149,105.9744536|via:16.0544563,108.0717219"
 								},
 								{
 									"key": "departure_time",
@@ -1405,7 +1409,7 @@
 						"method": "GET",
 						"header": [],
 						"url": {
-							"raw": "http://127.0.0.1:8080/directions?language=en&origin=Adelaide,SA&destination=Adelaide,SA&waypoints=optimize:true|Barossa+Valley,SA|Clare,SA|Connawarra,SA|McLaren+Vale,SA",
+							"raw": "http://127.0.0.1:8080/directions?language=en&origin=Ho+Chi+Minh,Vietnam&destination=Hanoi,Vietnam&waypoints=optimize:true|Hue,Vietnam|Da+nang,Vietnam|Ninh+Binh,Vietnam",
 							"protocol": "http",
 							"host": [
 								"127",
@@ -1424,15 +1428,15 @@
 								},
 								{
 									"key": "origin",
-									"value": "Adelaide,SA"
+									"value": "Ho+Chi+Minh,Vietnam"
 								},
 								{
 									"key": "destination",
-									"value": "Adelaide,SA"
+									"value": "Hanoi,Vietnam"
 								},
 								{
 									"key": "waypoints",
-									"value": "optimize:true|Barossa+Valley,SA|Clare,SA|Connawarra,SA|McLaren+Vale,SA"
+									"value": "optimize:true|Hue,Vietnam|Da+nang,Vietnam|Ninh+Binh,Vietnam"
 								}
 							]
 						}
@@ -1445,7 +1449,7 @@
 						"method": "GET",
 						"header": [],
 						"url": {
-							"raw": "http://127.0.0.1:8080/directions?language=en&origin=Boston,MA&destination=Concord,MA&waypoints=via:Charlestown,MA|via:Lexington,MA&departure_time=now&alternatives=true",
+							"raw": "http://127.0.0.1:8080/directions?language=en&origin=Ho+Chi+Minh,Vietnam&destination=Hanoi,Vietnam&waypoints=via:Ninh+Binh,Vietnam|via:Da+Nang,Vietnam&departure_time=now&alternatives=true",
 							"protocol": "http",
 							"host": [
 								"127",
@@ -1464,15 +1468,15 @@
 								},
 								{
 									"key": "origin",
-									"value": "Boston,MA"
+									"value": "Ho+Chi+Minh,Vietnam"
 								},
 								{
 									"key": "destination",
-									"value": "Concord,MA"
+									"value": "Hanoi,Vietnam"
 								},
 								{
 									"key": "waypoints",
-									"value": "via:Charlestown,MA|via:Lexington,MA"
+									"value": "via:Ninh+Binh,Vietnam|via:Da+Nang,Vietnam"
 								},
 								{
 									"key": "departure_time",
@@ -1493,7 +1497,7 @@
 						"method": "GET",
 						"header": [],
 						"url": {
-							"raw": "http://127.0.0.1:8080/directions?language=en&origin=Toronto&destination=Montreal&avoid=highways|tolls",
+							"raw": "http://127.0.0.1:8080/directions?language=en&origin=Ho+Chi+Minh,Vietnam&destination=Hanoi,Vietnam&avoid=highways|tolls",
 							"protocol": "http",
 							"host": [
 								"127",
@@ -1512,11 +1516,11 @@
 								},
 								{
 									"key": "origin",
-									"value": "Toronto"
+									"value": "Ho+Chi+Minh,Vietnam"
 								},
 								{
 									"key": "destination",
-									"value": "Montreal"
+									"value": "Hanoi,Vietnam"
 								},
 								{
 									"key": "avoid",
@@ -1533,7 +1537,7 @@
 						"method": "GET",
 						"header": [],
 						"url": {
-							"raw": "http://127.0.0.1:8080/directions?language=en&origin=Toronto&destination=Montreal&mode=driving&units=imperial",
+							"raw": "http://127.0.0.1:8080/directions?language=en&origin=Ho+Chi+Minh,Vietnam&destination=Hanoi,Vietnam&mode=driving&units=imperial",
 							"protocol": "http",
 							"host": [
 								"127",
@@ -1552,11 +1556,11 @@
 								},
 								{
 									"key": "origin",
-									"value": "Toronto"
+									"value": "Ho+Chi+Minh,Vietnam"
 								},
 								{
 									"key": "destination",
-									"value": "Montreal"
+									"value": "Hanoi,Vietnam"
 								},
 								{
 									"key": "mode",
@@ -1577,7 +1581,7 @@
 						"method": "GET",
 						"header": [],
 						"url": {
-							"raw": "http://127.0.0.1:8080/directions?language=en&origin=20.956714267344235,105.76149594690955&destination=21.03709401936394,105.83480893985586&mode=driving&region=vn",
+							"raw": "http://127.0.0.1:8080/directions?language=en&origin=Ho+Chi+Minh,Vietnam&destination=Hanoi,Vietnam&mode=driving&region=vn",
 							"protocol": "http",
 							"host": [
 								"127",
@@ -1596,11 +1600,11 @@
 								},
 								{
 									"key": "origin",
-									"value": "20.956714267344235,105.76149594690955"
+									"value": "Ho+Chi+Minh,Vietnam"
 								},
 								{
 									"key": "destination",
-									"value": "21.03709401936394,105.83480893985586"
+									"value": "Hanoi,Vietnam"
 								},
 								{
 									"key": "mode",
@@ -1626,7 +1630,7 @@
 						"method": "GET",
 						"header": [],
 						"url": {
-							"raw": "http://127.0.0.1:8080/distancematrix?language=en&origins=22.700296928915677,105.11612142789889|Yen+Bai,Vietnam&destinations=8.618037202178698,104.83734713182707|Ho+Chi+Minh,Vietnam&mode=driving&transit_mode=train|tram|subway&avoid=tolls&units=imperial&region=vn",
+							"raw": "http://127.0.0.1:8080/distancematrix?language=en&origins=10.7668869,106.6945967|Ho+Chi+Minh,Vietnam&destinations=21.0160999,105.8181467|Hanoi,Vietnam&mode=driving&transit_mode=train|tram|subway&avoid=tolls&units=imperial&region=vn",
 							"protocol": "http",
 							"host": [
 								"127",
@@ -1645,11 +1649,11 @@
 								},
 								{
 									"key": "origins",
-									"value": "22.700296928915677,105.11612142789889|Yen+Bai,Vietnam"
+									"value": "10.7668869,106.6945967|Ho+Chi+Minh,Vietnam"
 								},
 								{
 									"key": "destinations",
-									"value": "8.618037202178698,104.83734713182707|Ho+Chi+Minh,Vietnam"
+									"value": "21.0160999,105.8181467|Hanoi,Vietnam"
 								},
 								{
 									"key": "mode",
@@ -1682,7 +1686,7 @@
 						"method": "GET",
 						"header": [],
 						"url": {
-							"raw": "http://127.0.0.1:8080/distancematrix?language=en&origins=22.700296928915677,105.11612142789889|Yen+Bai,Vietnam&destinations=8.618037202178698,104.83734713182707|Ho+Chi+Minh,Vietnam&mode=driving",
+							"raw": "http://127.0.0.1:8080/distancematrix?language=en&origins=10.7668869,106.6945967|Ho+Chi+Minh,Vietnam&destinations=21.0160999,105.8181467|Hanoi,Vietnam&mode=driving",
 							"protocol": "http",
 							"host": [
 								"127",
@@ -1701,11 +1705,11 @@
 								},
 								{
 									"key": "origins",
-									"value": "22.700296928915677,105.11612142789889|Yen+Bai,Vietnam"
+									"value": "10.7668869,106.6945967|Ho+Chi+Minh,Vietnam"
 								},
 								{
 									"key": "destinations",
-									"value": "8.618037202178698,104.83734713182707|Ho+Chi+Minh,Vietnam"
+									"value": "21.0160999,105.8181467|Hanoi,Vietnam"
 								},
 								{
 									"key": "mode",
@@ -1722,7 +1726,7 @@
 						"method": "GET",
 						"header": [],
 						"url": {
-							"raw": "http://127.0.0.1:8080/distancematrix?language=en&origins=22.700296928915677,105.11612142789889|Yen+Bai,Vietnam&destinations=8.618037202178698,104.83734713182707|Ho+Chi+Minh,Vietnam&mode=transit&transit_mode=train|tram|subway",
+							"raw": "http://127.0.0.1:8080/distancematrix?language=en&origins=10.7668869,106.6945967|Ho+Chi+Minh,Vietnam&destinations=21.0160999,105.8181467|Hanoi,Vietnam&mode=driving&transit_mode=train|tram|subway",
 							"protocol": "http",
 							"host": [
 								"127",
@@ -1741,15 +1745,15 @@
 								},
 								{
 									"key": "origins",
-									"value": "22.700296928915677,105.11612142789889|Yen+Bai,Vietnam"
+									"value": "10.7668869,106.6945967|Ho+Chi+Minh,Vietnam"
 								},
 								{
 									"key": "destinations",
-									"value": "8.618037202178698,104.83734713182707|Ho+Chi+Minh,Vietnam"
+									"value": "21.0160999,105.8181467|Hanoi,Vietnam"
 								},
 								{
 									"key": "mode",
-									"value": "transit"
+									"value": "driving"
 								},
 								{
 									"key": "transit_mode",
@@ -1766,7 +1770,7 @@
 						"method": "GET",
 						"header": [],
 						"url": {
-							"raw": "http://127.0.0.1:8080/distancematrix?language=en&origins=22.700296928915677,105.11612142789889|Yen+Bai,Vietnam&destinations=8.618037202178698,104.83734713182707|Ho+Chi+Minh,Vietnam&mode=transit&transit_mode=train|tram|subway&transit_routing_preference=fewer_transfers",
+							"raw": "http://127.0.0.1:8080/distancematrix?language=en&origins=10.7668869,106.6945967|Ho+Chi+Minh,Vietnam&destinations=21.0160999,105.8181467|Hanoi,Vietnam&mode=driving&transit_mode=train|tram|subway&transit_routing_preference=fewer_transfers",
 							"protocol": "http",
 							"host": [
 								"127",
@@ -1785,15 +1789,15 @@
 								},
 								{
 									"key": "origins",
-									"value": "22.700296928915677,105.11612142789889|Yen+Bai,Vietnam"
+									"value": "10.7668869,106.6945967|Ho+Chi+Minh,Vietnam"
 								},
 								{
 									"key": "destinations",
-									"value": "8.618037202178698,104.83734713182707|Ho+Chi+Minh,Vietnam"
+									"value": "21.0160999,105.8181467|Hanoi,Vietnam"
 								},
 								{
 									"key": "mode",
-									"value": "transit"
+									"value": "driving"
 								},
 								{
 									"key": "transit_mode",
@@ -1814,7 +1818,7 @@
 						"method": "GET",
 						"header": [],
 						"url": {
-							"raw": "http://127.0.0.1:8080/distancematrix?language=en&origins=22.700296928915677,105.11612142789889|Yen+Bai,Vietnam&destinations=8.618037202178698,104.83734713182707|Ho+Chi+Minh,Vietnam&mode=driving&departure_time=now&traffic_model=pessimistic",
+							"raw": "http://127.0.0.1:8080/distancematrix?language=en&origins=10.7668869,106.6945967|Ho+Chi+Minh,Vietnam&destinations=21.0160999,105.8181467|Hanoi,Vietnam&mode=driving&departure_time=now&traffic_model=pessimistic",
 							"protocol": "http",
 							"host": [
 								"127",
@@ -1833,11 +1837,11 @@
 								},
 								{
 									"key": "origins",
-									"value": "22.700296928915677,105.11612142789889|Yen+Bai,Vietnam"
+									"value": "10.7668869,106.6945967|Ho+Chi+Minh,Vietnam"
 								},
 								{
 									"key": "destinations",
-									"value": "8.618037202178698,104.83734713182707|Ho+Chi+Minh,Vietnam"
+									"value": "21.0160999,105.8181467|Hanoi,Vietnam"
 								},
 								{
 									"key": "mode",
@@ -1862,7 +1866,7 @@
 						"method": "GET",
 						"header": [],
 						"url": {
-							"raw": "http://127.0.0.1:8080/distancematrix?language=en&origins=22.700296928915677,105.11612142789889|Yen+Bai,Vietnam&destinations=8.618037202178698,104.83734713182707|Ho+Chi+Minh,Vietnam&avoid=tolls|highways|ferries",
+							"raw": "http://127.0.0.1:8080/distancematrix?language=en&origins=10.7668869,106.6945967|Ho+Chi+Minh,Vietnam&destinations=21.0160999,105.8181467|Hanoi,Vietnam&avoid=tolls|highways|ferries",
 							"protocol": "http",
 							"host": [
 								"127",
@@ -1881,11 +1885,11 @@
 								},
 								{
 									"key": "origins",
-									"value": "22.700296928915677,105.11612142789889|Yen+Bai,Vietnam"
+									"value": "10.7668869,106.6945967|Ho+Chi+Minh,Vietnam"
 								},
 								{
 									"key": "destinations",
-									"value": "8.618037202178698,104.83734713182707|Ho+Chi+Minh,Vietnam"
+									"value": "21.0160999,105.8181467|Hanoi,Vietnam"
 								},
 								{
 									"key": "avoid",
@@ -1902,7 +1906,7 @@
 						"method": "GET",
 						"header": [],
 						"url": {
-							"raw": "http://127.0.0.1:8080/distancematrix?language=en&origins=22.700296928915677,105.11612142789889|Yen+Bai,Vietnam&destinations=8.618037202178698,104.83734713182707|Ho+Chi+Minh,Vietnam&units=imperial",
+							"raw": "http://127.0.0.1:8080/distancematrix?language=en&origins=10.7668869,106.6945967|Ho+Chi+Minh,Vietnam&destinations=21.0160999,105.8181467|Hanoi,Vietnam&units=imperial",
 							"protocol": "http",
 							"host": [
 								"127",
@@ -1921,11 +1925,11 @@
 								},
 								{
 									"key": "origins",
-									"value": "22.700296928915677,105.11612142789889|Yen+Bai,Vietnam"
+									"value": "10.7668869,106.6945967|Ho+Chi+Minh,Vietnam"
 								},
 								{
 									"key": "destinations",
-									"value": "8.618037202178698,104.83734713182707|Ho+Chi+Minh,Vietnam"
+									"value": "21.0160999,105.8181467|Hanoi,Vietnam"
 								},
 								{
 									"key": "units",
@@ -1942,7 +1946,7 @@
 						"method": "GET",
 						"header": [],
 						"url": {
-							"raw": "http://127.0.0.1:8080/distancematrix?language=en&origins=22.700296928915677,105.11612142789889|Yen+Bai,Vietnam&destinations=8.618037202178698,104.83734713182707|Ho+Chi+Minh,Vietnam&mode=driving&transit_mode=train|tram|subway&avoid=tolls|highways|ferries&units=imperial&region=vn",
+							"raw": "http://127.0.0.1:8080/distancematrix?language=en&origins=10.7668869,106.6945967|Ho+Chi+Minh,Vietnam&destinations=21.0160999,105.8181467|Hanoi,Vietnam&mode=driving&transit_mode=train|tram|subway&avoid=tolls|highways|ferries&units=imperial&region=vn",
 							"protocol": "http",
 							"host": [
 								"127",
@@ -1961,11 +1965,11 @@
 								},
 								{
 									"key": "origins",
-									"value": "22.700296928915677,105.11612142789889|Yen+Bai,Vietnam"
+									"value": "10.7668869,106.6945967|Ho+Chi+Minh,Vietnam"
 								},
 								{
 									"key": "destinations",
-									"value": "8.618037202178698,104.83734713182707|Ho+Chi+Minh,Vietnam"
+									"value": "21.0160999,105.8181467|Hanoi,Vietnam"
 								},
 								{
 									"key": "mode",

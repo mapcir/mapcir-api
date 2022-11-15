@@ -255,7 +255,7 @@ A typical result contains the following fields:
 
   * bounds (optionally returned) stores the bounding box which can fully contain the returned result. Note that these bounds may not match the recommended viewport. (For example, San Francisco includes the Farallon islands, which are technically part of the city, but probably should not be returned in the viewport.)
 
-* **plus_code** (see [Open Location Code](https://en.wikipedia.org/wiki/Open_Location_Code){:target="_blank" rel="noopener"}) is an encoded location reference, derived from latitude and longitude coordinates, that represents an area: 1/8000th of a degree by 1/8000th of a degree (about 14m x 14m at the equator) or smaller. Plus codes can be used as a replacement for street addresses in places where they do not exist (where buildings are not numbered or streets are not named).
+* **plus_code** (see [Open Location Code](https://en.wikipedia.org/wiki/Open_Location_Code)) is an encoded location reference, derived from latitude and longitude coordinates, that represents an area: 1/8000th of a degree by 1/8000th of a degree (about 14m x 14m at the equator) or smaller. Plus codes can be used as a replacement for street addresses in places where they do not exist (where buildings are not numbered or streets are not named).
 
   The plus code is formatted as a global code and a compound code:
   
@@ -503,7 +503,7 @@ Response:
 ```
 
 ### Region biasing
-In a Geocoding request, you can instruct the Geocoding service to return results biased to a particular region by using the region parameter. This parameter takes a [ccTLD](https://en.wikipedia.org/wiki/Country_code_top-level_domain){:target="_blank" rel="noopener"} (country code top-level domain) argument specifying the region bias. Most ccTLD codes are identical to ISO 3166-1 codes, with some notable exceptions. For example, the United Kingdom's ccTLD is "uk" (.co.uk) while its ISO 3166-1 code is "gb" (technically for the entity of "The United Kingdom of Great Britain and Northern Ireland").
+In a Geocoding request, you can instruct the Geocoding service to return results biased to a particular region by using the region parameter. This parameter takes a [ccTLD](https://en.wikipedia.org/wiki/Country_code_top-level_domain) (country code top-level domain) argument specifying the region bias. Most ccTLD codes are identical to ISO 3166-1 codes, with some notable exceptions. For example, the United Kingdom's ccTLD is "uk" (.co.uk) while its ISO 3166-1 code is "gb" (technically for the entity of "The United Kingdom of Great Britain and Northern Ireland").
 
 For example, a geocode for "Toledo" returns this result, as the default domain for the Geocoding API is set to the United States. 
 
@@ -664,9 +664,9 @@ The **components** that can be filtered include:
 
 * **postal_code** matches **postal_code** and **postal_code_prefix**.
 
-* **country** matches a country name or a two letter [ISO 3166-1](https://en.wikipedia.org/wiki/ISO_3166-1){:target="_blank" rel="noopener"} country code. The API follows the ISO standard for defining countries, and the filtering works best when using the corresponding ISO code of the country.
+* **country** matches a country name or a two letter [ISO 3166-1](https://en.wikipedia.org/wiki/ISO_3166-1) country code. The API follows the ISO standard for defining countries, and the filtering works best when using the corresponding ISO code of the country.
 
-  > **Note:** If you receive unexpected results with a country code, verify that you are using a code which includes the countries, dependent territories, and special areas of geographical interest you intend. You can find code information at [Wikipedia: List of ISO 3166 country codes](https://en.wikipedia.org/wiki/List_of_ISO_3166_country_codes){:target="_blank" rel="noopener"} or the [ISO Online Browsing Platform](https://www.iso.org/obp/ui/#search){:target="_blank" rel="noopener"}.
+  > **Note:** If you receive unexpected results with a country code, verify that you are using a code which includes the countries, dependent territories, and special areas of geographical interest you intend. You can find code information at [Wikipedia: List of ISO 3166 country codes](https://en.wikipedia.org/wiki/List_of_ISO_3166_country_codes) or the [ISO Online Browsing Platform](https://www.iso.org/obp/ui/#search).
 
 The following **components** may be used to influence results, but will not be enforced:
 

@@ -1,8 +1,8 @@
 Mapcir API - Client Server For Mapcir Maps API
 ==============================================
 
-[![Version](https://raw.githubusercontent.com/mapcirio/mapcir-api/main/assets/version.svg)](https://mapcir.io)
-[![Linux](https://raw.githubusercontent.com/mapcirio/mapcir-api/main/assets/linux.svg)](https://mapcir.io)
+[![Version](./assets/version.svg)](https://mapcir.io)
+[![Linux](./assets/linux.svg)](https://mapcir.io)
 [![Docker](https://raw.githubusercontent.com/mapcirio/mapcir-api/main/assets/docker.svg)](https://mapcir.io)
 [![License](https://raw.githubusercontent.com/mapcirio/mapcir-api/main/assets/license-mit.svg)](https://mapcir.io)
 
@@ -30,15 +30,15 @@ Maybe [matrices of directions][Distance Matrix API](https://github.com/mapcirio/
 The Mapcir API is an application for the following Mapcir Maps API:
 
 - [Directions API](./docs/directions.md)
-- [Distance Matrix API](https://github.com/mapcirio/mapcir-api/blob/main/docs/distancematrix.md)
-- [Geocoding API](https://github.com/mapcirio/mapcir-api/blob/main/docs/geocoding.md)
-- [Reverse Geocoding API](https://github.com/mapcirio/mapcir-api/blob/main/docs/reversegeocoding.md)
-- [Places Detail API](https://github.com/mapcirio/mapcir-api/blob/main/docs/placedetails.md)
-- [Find Place API](https://github.com/mapcirio/mapcir-api/blob/main/docs/findplace.md)
-- [Nearby Search API](https://github.com/mapcirio/mapcir-api/blob/main/docs/nearbysearch.md)
-- [Text Search API](https://github.com/mapcirio/mapcir-api/blob/main/docs/textsearch.md)
-- [Place Autocomplete API](https://github.com/mapcirio/mapcir-api/blob/main/docs/placeautocomplete.md)
-- [Query Autocomplete API](https://github.com/mapcirio/mapcir-api/blob/main/docs/queryautocomplete.md)
+- [Distance Matrix API](./docs/distancematrix.md)
+- [Geocoding API](./docs/geocoding.md)
+- [Reverse Geocoding API](./docs/reversegeocoding.md)
+- [Places Detail API](./docs/placedetails.md)
+- [Find Place API](./docs/findplace.md)
+- [Nearby Search API](./docs/nearbysearch.md)
+- [Text Search API](./docs/textsearch.md)
+- [Place Autocomplete API](./docs/placeautocomplete.md)
+- [Query Autocomplete API](./docs/queryautocomplete.md)
 
 ## Examples
 

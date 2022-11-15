@@ -12,7 +12,7 @@ You can also use the geocoder to find the address for a given place ID.
 
 ### Request
 A Geocoding API request takes the following form:
-```url
+```code
 http://{HOST}:{PORT}/geocode/?parameters
 
 OR
@@ -45,10 +45,10 @@ The rest of this page describes geocoding and [reverse geocoding](https://github
   
   **--OR--**
   
-  **components** — A components filter with elements separated by a pipe (**|**). The components filter is also accepted as an optional parameter if an **address** is provided. Each element in the components filter consists of a **component:value** pair, and fully restricts the results from the geocoder. See more information about [component filtering](https://github.com/mapcirio/mapcir-api/edit/main/docs/geocoding.md#component_filtering) below.
+  **components** — A components filter with elements separated by a pipe (**|**). The components filter is also accepted as an optional parameter if an **address** is provided. Each element in the components filter consists of a **component:value** pair, and fully restricts the results from the geocoder. See more information about [component filtering](https://github.com/mapcirio/mapcir-api/blob/main/docs/geocoding.md#component_filtering) below.
 
 #### Optional parameters in a Geocoding request:
-* **bounds** — The bounding box of the viewport within which to bias geocode results more prominently. This parameter will only influence, not fully restrict, results from the geocoder. (For more information see [Viewport Biasing](https://github.com/mapcirio/mapcir-api/edit/main/docs/geocoding.md#viewport_biasing) below.)
+* **bounds** — The bounding box of the viewport within which to bias geocode results more prominently. This parameter will only influence, not fully restrict, results from the geocoder. (For more information see [Viewport Biasing](https://github.com/mapcirio/mapcir-api/blob/main/docs/geocoding.md#viewport_biasing) below.)
 
 * **language** — The language in which to return results.
   * See the [list of supported languages](https://github.com/mapcirio/mapcir-api/blob/main/docs/language.md). Mapcir often updates the supported languages, so this list may not be exhaustive.
@@ -61,9 +61,9 @@ The rest of this page describes geocoding and [reverse geocoding](https://github
   
   * The preferred language has a small influence on the set of results that the API chooses to return, and the order in which they are returned. The geocoder interprets abbreviations differently depending on language, such as the abbreviations for street types, or synonyms that may be valid in one language but not in another. For example, *utca* and *tér* are synonyms for street and square respectively in Hungarian.
  
-* **region** — The region code, specified as a ccTLD ("top-level domain") two-character value. This parameter will only influence, not fully restrict, results from the geocoder. (For more information see [Region Biasing](https://github.com/mapcirio/mapcir-api/edit/main/docs/geocoding.md#region_biasing) below.)
+* **region** — The region code, specified as a ccTLD ("top-level domain") two-character value. This parameter will only influence, not fully restrict, results from the geocoder. (For more information see [Region Biasing](https://github.com/mapcirio/mapcir-api/blob/main/docs/geocoding.md#region_biasing) below.)
 
-* **components** — A components filter with elements separated by a pipe (**|**). The components filter is required if the request doesn't include an **address**. Each element in the components filter consists of a **component:value** pair, and fully restricts the results from the geocoder. See more information about [component filtering](https://github.com/mapcirio/mapcir-api/edit/main/docs/geocoding.md#component_filtering) below.
+* **components** — A components filter with elements separated by a pipe (**|**). The components filter is required if the request doesn't include an **address**. Each element in the components filter consists of a **component:value** pair, and fully restricts the results from the geocoder. See more information about [component filtering](https://github.com/mapcirio/mapcir-api/blob/main/docs/geocoding.md#component_filtering) below.
 
 ### Responses
 
@@ -73,7 +73,7 @@ In this example, the Geocoding API requests a json response for a query on the p
 
 > Plus codes are rectangular encoded location references derived from latitude and longitude coordinates. Requests with fully specified street addresses, such as "1600 Amphitheatre Parkway, Mountain View, CA", may not return a plus code when the result is a building, because buildings generally contain multiple plus code regions.
 
-```json
+```code
 {
     "results": [
         {
@@ -166,7 +166,7 @@ In this example, the Geocoding API requests a json response for a query on the p
 
 Note that the JSON response contains two root elements:
 
-**"status"** contains metadata on the request. (See [Status codes](https://github.com/mapcirio/mapcir-api/edit/main/docs/geocoding.md#status_codes) below).
+**"status"** contains metadata on the request. (See [Status codes](https://github.com/mapcirio/mapcir-api/blob/main/docs/geocoding.md#status_codes) below).
 
 **"results"** contains an array of geocoded address information and geometry information.
 
@@ -270,7 +270,7 @@ Typically, both the global code and compound code are returned. However, if the 
 Partial matches most often occur for street addresses that do not exist within the locality you pass in the request.\
 Partial matches may also be returned when a request matches two or more locations in the same locality. For example, "Hillpar St, Bristol, UK" will return a partial match for both Henry Street and Henrietta Street. Note that if a request includes a misspelled address component, the geocoding service may suggest an alternative address. Suggestions triggered in this way will also be marked as a partial match.
 
-* **place_id** is a unique identifier that can be used with other Mapcir APIs. For example, you can use the **place_id** in a [Places API](https://github.com/mapcirio/mapcir-api/blob/main/docs/placedetail.md) request to get details of a local business, such as phone number, opening hours, user reviews, and more. See the [place ID overview](https://github.com/mapcirio/mapcir-api/blob/main/docs/place_id.md).
+* **place_id** is a unique identifier that can be used with other Mapcir APIs. For example, you can use the **place_id** in a [Places API](https://github.com/mapcirio/mapcir-api/blob/main/docs/placedetails.md) request to get details of a local business, such as phone number, opening hours, user reviews, and more. See the [place ID overview](https://github.com/mapcirio/mapcir-api/blob/main/docs/place_id.md).
 
 ### Address types and address component types
 
@@ -364,7 +364,7 @@ For example, a geocode for "Washington" generally returns the U.S. state of Wash
 Request:
 
 
-```url
+```code
 http://127.0.0.1:8080/geocode?address=Washington
 
 OR
@@ -374,7 +374,7 @@ http://127.0.0.1:8080/maps/api/geocode/json?address=Washington
 
 Response:
 
-```json
+```code
 {
    "results" : [
       {
@@ -430,7 +430,7 @@ However, adding a bounds argument defining a bounding box around the north-east 
 
 Request:
 
-```url
+```code
 http://127.0.0.1:8080/geocode?address=Washington&bounds=36.47,-84.72%7C43.39,-65.90
 
 OR 
@@ -440,7 +440,7 @@ http://127.0.0.1:8080/maps/api/geocode/json?address=Washington&bounds=36.47,-84.
 
 Response:
 
-```json
+```code
 {
    "results" : [
       {
@@ -509,7 +509,7 @@ For example, a geocode for "Toledo" returns this result, as the default domain f
 
 Request:
 
-```url
+```code
 http://127.0.0.1:8080/geocode?address=Toledo
 
 OR
@@ -519,7 +519,7 @@ http://127.0.0.1:8080/maps/api/geocode/json?address=Toledo
 
 Response:
 
-```json
+```code
 {
    "results" : [
       {
@@ -585,7 +585,7 @@ A Geocoding request for "Toledo" with **region=es** (Spain) will return the Span
 
 Request:
 
-```url
+```code
 http://127.0.0.1:8080/geocode?address=Toledo&region=es
 
 OR
@@ -595,7 +595,7 @@ http://127.0.0.1:8080/maps/api/geocode/json?address=Toledo&region=es
 
 Response:
 
-```json
+```code
 {
    "results" : [
       {
@@ -686,7 +686,7 @@ A geocode for "High St, Hastings" with **components=country:GB** returns a resul
 
 Request:
 
-```url
+```code
 http://127.0.0.1:8080/geocode?address=high+st+hasting&components=country:GB
 
 OR
@@ -696,7 +696,7 @@ http://127.0.0.1:8080/maps/api/geocode/json?address=high+st+hasting&components=c
 
 Response:
 
-```json
+```code
 {
    "results" : [
       {
@@ -773,7 +773,7 @@ A geocode request for the locality of "Santa Cruz" with **components=country:ES*
 
 Request:
 
-```url
+```code
 http://127.0.0.1:8080/geocode?components=locality:santa+cruz|country:ES
 
 OR
@@ -783,7 +783,7 @@ http://127.0.0.1:8080/maps/api/geocode/json?components=locality:santa+cruz|count
 
 Response:
 
-```json
+```code
 {
    "results" : [
       {
@@ -849,7 +849,7 @@ Component filtering returns a **ZERO_RESULTS** response only if you provide filt
 
 Request:
 
-```url
+```code
 http://127.0.0.1:8080/geocode?components=administrative_area:TX|country:FR
 
 OR
@@ -861,7 +861,7 @@ You can make valid queries without the address parameter, using the components f
 
 Request:
 
-```url
+```code
 http://127.0.0.1:8080/geocode?components=route:Annankatu|administrative_area:Helsinki|country:Finland
 
 OR
@@ -871,7 +871,7 @@ http://127.0.0.1:8080/maps/api/geocode/json?components=route:Annankatu|administr
 
 Response:
 
-```json
+```code
 {
    "results" : [
       {

@@ -33,7 +33,7 @@ The Mapcir API is an application for the following Mapcir Maps API:
 - [Distance Matrix API](https://github.com/mapcirio/mapcir-api/blob/main/docs/distancematrix.md)
 - [Geocoding API](https://github.com/mapcirio/mapcir-api/blob/main/docs/geocoding.md)
 - [Reverse Geocoding API](https://github.com/mapcirio/mapcir-api/blob/main/docs/reversegeocoding.md)
-- [Places Detail API](https://github.com/mapcirio/mapcir-api/blob/main/docs/placedetail.md)
+- [Places Detail API](https://github.com/mapcirio/mapcir-api/blob/main/docs/placedetails.md)
 - [Find Place API](https://github.com/mapcirio/mapcir-api/blob/main/docs/findplace.md)
 - [Nearby Search API](https://github.com/mapcirio/mapcir-api/blob/main/docs/nearbysearch.md)
 - [Text Search API](https://github.com/mapcirio/mapcir-api/blob/main/docs/textsearch.md)

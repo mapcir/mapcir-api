@@ -45,7 +45,7 @@ The rest of this page describes geocoding and [reverse geocoding](https://github
   
   **--OR--**
   
-  **components** — A components filter with elements separated by a pipe (**|**). The components filter is also accepted as an optional parameter if an **address** is provided. Each element in the components filter consists of a **component:value** pair, and fully restricts the results from the geocoder. See more information about [component filtering](https://github.com/mapcirio/mapcir-api/blob/main/docs/geocoding.md#component_filtering) below.
+  **components** — A components filter with elements separated by a pipe (**|**). The components filter is also accepted as an optional parameter if an **address** is provided. Each element in the components filter consists of a **component:value** pair, and fully restricts the results from the geocoder. See more information about [component filtering](#component_filtering) below.
 
 #### Optional parameters in a Geocoding request:
 * **bounds** — The bounding box of the viewport within which to bias geocode results more prominently. This parameter will only influence, not fully restrict, results from the geocoder. (For more information see [Viewport Biasing](https://github.com/mapcirio/mapcir-api/blob/main/docs/geocoding.md#viewport_biasing) below.)

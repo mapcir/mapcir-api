@@ -1,7 +1,7 @@
 # Language
 
 ## Supported Languages:
-Mapcir often updates supported languages. This list may not be exhaustive and is subject to change.:
+Mapcir often updates supported languages. This list may not be exhaustive and is subject to change:
 
 | Language code | Language | Language code | Language |
 | --- | ---  |--- |--- |

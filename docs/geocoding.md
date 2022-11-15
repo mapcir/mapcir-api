@@ -61,7 +61,7 @@ The rest of this page describes geocoding and [reverse geocoding](https://github
   
   * The preferred language has a small influence on the set of results that the API chooses to return, and the order in which they are returned. The geocoder interprets abbreviations differently depending on language, such as the abbreviations for street types, or synonyms that may be valid in one language but not in another. For example, *utca* and *tér* are synonyms for street and square respectively in Hungarian.
  
-* **region** — The region code, specified as a ccTLD ("top-level domain") two-character value. This parameter will only influence, not fully restrict, results from the geocoder. (For more information see [Region Biasing](#viewport-biasing) below.)
+* **region** — The region code, specified as a ccTLD ("top-level domain") two-character value. This parameter will only influence, not fully restrict, results from the geocoder. (For more information see [Region Biasing](#region-biasing) below.)
 
 * **components** — A components filter with elements separated by a pipe (**|**). The components filter is required if the request doesn't include an **address**. Each element in the components filter consists of a **component:value** pair, and fully restricts the results from the geocoder. See more information about [component filtering](#component-filtering) below.
 
@@ -270,7 +270,7 @@ Typically, both the global code and compound code are returned. However, if the 
 Partial matches most often occur for street addresses that do not exist within the locality you pass in the request.\
 Partial matches may also be returned when a request matches two or more locations in the same locality. For example, "Hillpar St, Bristol, UK" will return a partial match for both Henry Street and Henrietta Street. Note that if a request includes a misspelled address component, the geocoding service may suggest an alternative address. Suggestions triggered in this way will also be marked as a partial match.
 
-* **place_id** is a unique identifier that can be used with other Mapcir APIs. For example, you can use the **place_id** in a [Places API](https://github.com/mapcirio/mapcir-api/blob/main/docs/placedetails.md) request to get details of a local business, such as phone number, opening hours, user reviews, and more. See the [place ID overview](https://github.com/mapcirio/mapcir-api/blob/main/docs/place_id.md).
+* **place_id** is a unique identifier that can be used with other Mapcir APIs. For example, you can use the **place_id** in a [Places API](https://github.com/mapcirio/mapcir-api/blob/main/docs/placedetails.md) request to get details of a local business, such as phone number, opening hours, user reviews, and more. See the [place ID overview](https://github.com/mapcirio/mapcir-api/blob/main/docs/placeid.md).
 
 ### Address types and address component types
 

@@ -42,24 +42,24 @@ As is standard in URLs, all parameters are separated using the ampersand (&) cha
 
     * Place IDs must be prefixed with **place_id**:. You can retrieve place IDs from the Geocoding API and the Places API (including Place Autocomplete).
 
-    ```code
-    origin=place_id:ChIJ3S-JXmauEmsRUcIaWtf4MzE
-    ```
+      ```code
+      origin=place_id:ChIJ3S-JXmauEmsRUcIaWtf4MzE
+      ```
 
     * If you pass an address, the Directions service geocodes the string and converts it to a latitude/longitude coordinate to calculate directions. This coordinate may be different from that returned by the Geocoding API, for example a building entrance rather than its center.
 
-    ```code
-    origin=24+Sussex+Drive+Ottawa+ON
-    ```
+      ```code
+      origin=24+Sussex+Drive+Ottawa+ON
+      ```
 
     Using place IDs is preferred over using addresses or latitude/longitude coordinates. Using coordinates will always result in the point being snapped to the road nearest to those coordinates - which may not be an access point to the property, or even a road that will quickly or safely lead to the destination.
 
     * If you pass coordinates, the point will snap to the nearest road. Passing a place ID is preferred. If you do pass coordinates, ensure that no space exists between the latitude and longitude values.
-    ```code
-    origin=41.43206,-81.38992
-    ```
+      ```code
+      origin=41.43206,-81.38992
+      ```
 
-    > Note: For efficiency and accuracy, use place ID's when possible. These ID's are uniquely explicit like a lat/lng value pair and provide geocoding benefits for routing such as access points and traffic variables. Unlike an address, ID's do not require the service to perform a search or an intermediate request for place details; therefore, performance is better.
+  > Note: For efficiency and accuracy, use place ID's when possible. These ID's are uniquely explicit like a lat/lng value pair and provide geocoding benefits for routing such as access points and traffic variables. Unlike an address, ID's do not require the service to perform a search or an intermediate request for place details; therefore, performance is better.
 
 ## Optional parameters
 * **alternatives**
@@ -70,4 +70,4 @@ As is standard in URLs, all parameters are separated using the ampersand (&) cha
   
   Specifies the desired time of arrival for transit directions, in seconds since midnight, January 1, 1970 UTC. You can specify either **departure_time** or **arrival_time**, but not both. Note that **arrival_time** must be specified as an integer.
 
-  
+

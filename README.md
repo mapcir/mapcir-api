@@ -29,7 +29,7 @@ Maybe [matrices of directions][Distance Matrix API](https://github.com/mapcirio/
 
 The Mapcir API is an application for the following Mapcir Maps API:
 
-- [Directions API](https://github.com/mapcirio/mapcir-api/blob/main/docs/directions.md)
+- [Directions API](./docs/directions.md)
 - [Distance Matrix API](https://github.com/mapcirio/mapcir-api/blob/main/docs/distancematrix.md)
 - [Geocoding API](https://github.com/mapcirio/mapcir-api/blob/main/docs/geocoding.md)
 - [Reverse Geocoding API](https://github.com/mapcirio/mapcir-api/blob/main/docs/reversegeocoding.md)

@@ -86,8 +86,6 @@ Certain parameters are required while others are optional. As is standard in URL
 
   * See the [list of supported languages](./language.md). Mapcir often updates the supported languages, so this list may not be exhaustive.
 
-  * If **language** is not supplied, the API attempts to use the preferred language as specified in the **Accept-Language** header.
-
   * The API does its best to provide a street address that is readable for both the user and locals. To achieve that goal, it returns street addresses in the local language, transliterated to a script readable by the user if necessary, observing the preferred language. All other addresses are returned in the preferred language. Address components are all returned in the same language, which is chosen from the first component.
 
   * If a name is not available in the preferred language, the API uses the closest match.
@@ -432,6 +430,24 @@ Results are returned in rows, each row containing one origin paired with each de
 | error_message | optional | string | A string containing the human-readable text of any errors encountered while the request was being processed. |
 
 
+## DistanceMatrixElementStatus
+* **OK** indicates the response contains a valid result.
+
+* **NOT_FOUND** indicates that the origin and/or destination of this pairing could not be geocoded.
+
+* **ZERO_RESULTS** indicates no route could be found between the origin and destination.
+
+* **MAX_ROUTE_LENGTH_EXCEEDED** indicates the requested route is too long and cannot be processed.
+
+## TextValueObject
+An object containing a numeric value and its formatted text representation.
+
+| Field | Required | Type | Description |
+| --- | --- | --- | --- |
+| **text** | **required** | string | String value. |
+| **value** | **required** | number | Numeric value. |
+
+
 ## DistanceMatrixStatus
 Status codes returned by service.
 
@@ -492,26 +508,3 @@ The total fare for the route.
 | **currency** | **required** | string | An [ISO 4217 currency code](https://en.wikipedia.org/wiki/ISO_4217) indicating the currency that the amount is expressed in. |
 | **text** | **required** | string | The total fare amount, formatted in the requested language. |
 | **value** | **required** | number | The total fare amount, in the currency specified. |
-
-## DistanceMatrixElementStatus
-* **OK** indicates the response contains a valid result.
-
-* **NOT_FOUND** indicates that the origin and/or destination of this pairing could not be geocoded.
-
-* **ZERO_RESULTS** indicates no route could be found between the origin and destination.
-
-* **MAX_ROUTE_LENGTH_EXCEEDED** indicates the requested route is too long and cannot be processed.
-
-## TextValueObject
-An object containing a numeric value and its formatted text representation.
-
-| Field | Required | Type | Description |
-| --- | --- | --- | --- |
-| **text** | **required** | string | String value. |
-| **value** | **required** | number | Numeric value. |
-
-
-
-
-
-

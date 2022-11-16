@@ -107,8 +107,6 @@ As is standard in URLs, all parameters are separated using the ampersand (&) cha
 
   * See the [list of supported languages](./language.md). Mapcir often updates the supported languages, so this list may not be exhaustive.
 
-  * If **language** is not supplied, the API attempts to use the preferred language as specified in the Accept-Language header.
-
   * The API does its best to provide a street address that is readable for both the user and locals. To achieve that goal, it returns street addresses in the local language, transliterated to a script readable by the user if necessary, observing the preferred language. All other addresses are returned in the preferred language. Address components are all returned in the same language, which is chosen from the first component.
 
   * If a name is not available in the preferred language, the API uses the closest match.
@@ -532,6 +530,38 @@ Response:
 | **geocoded_waypoints** | optional | Array<[DirectionsGeocodedWaypoint](#DirectionsGeocodedWaypoint)> | Contains an array with details about the geocoding of origin, destination and waypoints. Elements in the geocoded_waypoints array correspond, by their zero-based position, to the origin, the waypoints in the order they are specified, and the destination. <br><br>These details will not be present for waypoints specified as textual latitude/longitude values if the service returns no results. This is because such waypoints are only reverse geocoded to obtain their representative address after a route has been found. An empty JSON object will occupy the corresponding places in the geocoded_waypoints array. |
 
 
+### DirectionsStatus
+The status field within the Directions response object contains the status of the request, and may contain debugging information to help you track down why the Directions service failed. The status field may contain the following values:
+
+* **OK** indicates the response contains a valid result.
+
+* **NOT_FOUND** indicates at least one of the locations specified in the request's origin, destination, or waypoints could not be geocoded.
+
+* **ZERO_RESULTS** indicates no route could be found between the origin and destination.
+
+* **MAX_WAYPOINTS_EXCEEDED** indicates that too many waypoints were provided in the request. For applications using the Directions API as a web service.
+
+* **MAX_ROUTE_LENGTH_EXCEEDED** indicates the requested route is too long and cannot be processed. This error occurs when more complex directions are returned. Try reducing the number of waypoints, turns, or instructions.
+
+* **INVALID_REQUEST** indicates that the provided request was invalid. Common causes of this status include an invalid parameter or parameter value.
+
+* **OVER_DAILY_LIMIT** indicates any of the following:
+  
+  * The API account is missing or invalid.
+    
+  * Billing has not been enabled on your account.
+    
+  * A self-imposed usage cap has been exceeded.
+    
+  * The provided method of payment is no longer valid (for example, a credit card has expired).
+
+* **OVER_QUERY_LIMIT** indicates the service has received too many requests from your application within the allowed time period.
+
+* **REQUEST_DENIED** indicates that the service denied use of the directions service by your application.
+
+* **UNKNOWN_ERROR** indicates a directions request could not be processed due to a server error. The request may succeed if you try again.
+
+
 ### DirectionsRoute
 Routes consist of nested legs and steps.
 
@@ -735,34 +765,3 @@ The total fare for the route.
 | **partial_match** | optional |  | Indicates that the geocoder did not return an exact match for the original request, though it was able to match part of the requested address. You may wish to examine the original request for misspellings and/or an incomplete address.<br><br>Partial matches most often occur for street addresses that do not exist within the locality you pass in the request. Partial matches may also be returned when a request matches two or more locations in the same locality. For example, "21 Henr St, Bristol, UK" will return a partial match for both Henry Street and Henrietta Street. Note that if a request includes a misspelled address component, the geocoding service may suggest an alternative address. Suggestions triggered in this way will also be marked as a partial match. |
 | **place_id** | optional | string | A unique identifier that can be used with other Mapcir APIs. |
 | **types** | optional | Array<string> | Indicates the address type of the geocoding result used for calculating directions.<br><br><li>**administrative_area_level_1** indicates a first-order civil entity below the country level. Within the United States, these administrative levels are states. Not all nations exhibit these administrative levels. In most cases, administrative_area_level_1 short names will closely match ISO 3166-2 subdivisions and other widely circulated lists; however this is not guaranteed as our geocoding results are based on a variety of signals and location data.<li>**administrative_area_level_2** indicates a second-order civil entity below the country level. Within the United States, these administrative levels are counties. Not all nations exhibit these administrative levels.<li>**administrative_area_level_3** indicates a third-order civil entity below the country level. This type indicates a minor civil division. Not all nations exhibit these administrative levels.<li>**administrative_area_level_4** indicates a fourth-order civil entity below the country level. This type indicates a minor civil division. Not all nations exhibit these administrative levels.<li>**administrative_area_level_5** indicates a fifth-order civil entity below the country level. This type indicates a minor civil division. Not all nations exhibit these administrative levels.<li>**airport** indicates an airport.<li>**colloquial_area** indicates a commonly-used alternative name for the entity.<li>**country** indicates the national political entity, and is typically the highest order type returned by the Geocoder.<li>**intersection** indicates a major intersection, usually of two major roads.<li>**locality** indicates an incorporated city or town political entity.<li>**natural_feature** indicates a prominent natural feature.<li>**neighborhood** indicates a named neighborhood<li>**park** indicates a named park.<li>**plus_code** indicates an encoded location reference, derived from latitude and longitude. Plus codes can be used as a replacement for street addresses in places where they do not exist (where buildings are not numbered or streets are not named).<li>**point_of_interest** indicates a named point of interest. Typically, these "POI"s are prominent local entities that don't easily fit in another category, such as "Empire State Building" or "Eiffel Tower".<li>**political** indicates a political entity. Usually, this type indicates a polygon of some civil administration.<li>**postal_code** indicates a postal code as used to address postal mail within the country.<li>**premise** indicates a named location, usually a building or collection of buildings with a common name.<li>**route** indicates a named route (such as "US 101").<li>**street_address** indicates a precise street address.<li>**sublocality** indicates a first-order civil entity below a locality. For some locations may receive one of the additional types: sublocality_level_1 to sublocality_level_5. Each sublocality level is a civil entity. Larger numbers indicate a smaller geographic area.<li>**subpremise** indicates a first-order entity below a named location, usually a singular building within a collection of buildings with a common name.<li>**tourist_attraction** indicates a tourist attraction.<li>**train_station** indicates a train station.<li>**transit_station** indicates a transit station.<br><br>An empty list of types indicates there are no known types for the particular address component, for example, Lieu-dit in France. |
-
-### DirectionsStatus
-The status field within the Directions response object contains the status of the request, and may contain debugging information to help you track down why the Directions service failed. The status field may contain the following values:
-
-* **OK** indicates the response contains a valid result.
-
-* **NOT_FOUND** indicates at least one of the locations specified in the request's origin, destination, or waypoints could not be geocoded.
-
-* **ZERO_RESULTS** indicates no route could be found between the origin and destination.
-
-* **MAX_WAYPOINTS_EXCEEDED** indicates that too many waypoints were provided in the request. For applications using the Directions API as a web service.
-
-* **MAX_ROUTE_LENGTH_EXCEEDED** indicates the requested route is too long and cannot be processed. This error occurs when more complex directions are returned. Try reducing the number of waypoints, turns, or instructions.
-
-* **INVALID_REQUEST** indicates that the provided request was invalid. Common causes of this status include an invalid parameter or parameter value.
-
-* **OVER_DAILY_LIMIT** indicates any of the following:
-  
-  * The API account is missing or invalid.
-    
-  * Billing has not been enabled on your account.
-    
-  * A self-imposed usage cap has been exceeded.
-    
-  * The provided method of payment is no longer valid (for example, a credit card has expired).
-
-* **OVER_QUERY_LIMIT** indicates the service has received too many requests from your application within the allowed time period.
-
-* **REQUEST_DENIED** indicates that the service denied use of the directions service by your application.
-
-* **UNKNOWN_ERROR** indicates a directions request could not be processed due to a server error. The request may succeed if you try again.

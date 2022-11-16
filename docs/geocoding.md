@@ -51,8 +51,6 @@ The rest of this page describes geocoding and [reverse geocoding](./reversegeoco
 * **language** — The language in which to return results.
   * See the [list of supported languages](./language.md). Mapcir often updates the supported languages, so this list may not be exhaustive.
   
-  * If **language** is not supplied, the geocoder attempts to use the preferred language as specified in the **Accept-Language** header, or the native language of the domain from which the request is sent.
-  
   * The geocoder does its best to provide a street address that is readable for both the user and locals. To achieve that goal, it returns street addresses in the local language, transliterated to a script readable by the user if necessary, observing the preferred language. All other addresses are returned in the preferred language. Address components are all returned in the same language, which is chosen from the first component.
   
   * If a name is not available in the preferred language, the geocoder uses the closest match.

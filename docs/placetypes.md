@@ -47,6 +47,40 @@ For more details on these types, refer to [Address Types](./geocoding.md#Address
 
     administrative_area_level_7        postal_code_suffix 
 
+    archipelago                        postal_town
+
+    colloquial_area                    premise
+
+    continent                          room
+
+    country                            route
+
+    establishment                      street_address
+
+    finance                            street_number
+
+    floor                              sublocality
+
+    food                               sublocality_level_1
+
+    general_contractor                 sublocality_level_2
+
+    geocode                            sublocality_level_3
+
+    health                             sublocality_level_4
+
+    intersection                       sublocality_level_5
+
+    landmark                           subpremise
+
+    locality                           town_square
+
+    natural_feature
+
+    neighborhood
+
+    place_of_worship
+
 
 ## Table 3: Type collections supported in Place Autocomplete requests
 Use the Place type values in Table 3, or the values in Table 1 and Table 2, as part of a Place Autocomplete request to restrict the results to a specific type.

@@ -535,6 +535,7 @@ Response:
 Routes consist of nested legs and steps.
 
 | Field | Required | Type | Description |
+| --- | --- | --- | --- |
 | **bounds** | **required** | [Bounds](#Bounds) | Contains the viewport bounding box of the **overview_polyline**. |
 | **copyrights** | **required** | string | Contains an array of warnings to be displayed when showing these directions. You must handle and display these warnings yourself. |
 | **legs** | **required** | Array<[DirectionsLeg](#DirectionsLeg)> | An array which contains information about a leg of the route, between two locations within the given route. A separate leg will be present for each waypoint or destination specified. (A route with no waypoints will contain exactly one leg within the legs array.) Each leg consists of a series of steps. |

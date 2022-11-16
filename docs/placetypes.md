@@ -19,6 +19,7 @@ The Place type values in Table 1 are used in the following ways:
 
 * In the **type** parameter for [place searches](./textsearch.md) (Places API only), to restrict the results to places matching the specified type.
 
+```code
   accounting              lawyer 
 
   airport                 library 
@@ -114,6 +115,7 @@ The Place type values in Table 1 are used in the following ways:
   jewelry_store            veterinary_care 
 
   laundry                  zoo 
+```
 
 
 ## Table 2: Additional types returned by the Places service

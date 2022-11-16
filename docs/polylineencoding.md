@@ -21,9 +21,9 @@ The steps for encoding such a signed value are specified below.
 
   3. Convert the decimal value to binary. Note that a negative value must be calculated using its two's complement by inverting the binary value and adding one to the result:
 
-    **00000001 00010010 10100001 11110001<br>
-    11111110 11101101 01011110 00001110<br>
-    11111110 11101101 01011110 00001111**
+    **00000001 00010010 10100001 11110001**<br>
+    **11111110 11101101 01011110 00001110**<br>
+    **11111110 11101101 01011110 00001111**
 
   4. Left-shift the binary value one bit:
 
@@ -68,4 +68,4 @@ Points: (38.5, -120.2), (40.7, -120.95), (43.252, -126.453)
 | 40.7 | -120.95 | 4070000 | -12095000 | +220000 | -75000 | _ulL | nnqC	_ulLnnqC |
 | 43.252 | -126.453 | 4325200 | -12645300 | +255200 | -550300 | _mqN | vxq\`@ | _mqNvxq\`@ |
 
-**Encoded polyline:** _p~iF~ps|U_ulLnnqC_mqNvxq`@
+**Encoded polyline:** _p\~iF\~ps\|U_ulLnnqC_mqNvxq\`@

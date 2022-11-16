@@ -350,12 +350,6 @@ OR
 http://127.0.0.1:8080/maps/api/distancematrix/json?origins=Vancouver%20BC%7CSeattle&destinations=San%20Francisco%7CVictoria%20BC&mode=bicycling&language=fr-FR
 ```
 
-This request will return four elements - two origins times two destinations:
-
-| --- | --- |
-| Vancouver to San Francisco | Vancouver to Victoria |
-| Seattle to San Francisco | Seattle to Victoria |
-
 Results are returned in rows, each row containing one origin paired with each destination.
 
 ```code

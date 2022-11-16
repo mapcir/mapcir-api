@@ -132,53 +132,53 @@ For more details on these types, refer to [Address Types](./geocoding.md#Address
 > **Note:** The types below are not supported in the type filter of a place search.
 
 ```code
-    administrative_area_level_1        plus_code 
+  administrative_area_level_1        plus_code 
 
-    administrative_area_level_2        point_of_interest 
+  administrative_area_level_2        point_of_interest 
 
-    administrative_area_level_3        political 
+  administrative_area_level_3        political 
 
-    administrative_area_level_4        post_box
+  administrative_area_level_4        post_box
 
-    administrative_area_level_5        postal_code 
+  administrative_area_level_5        postal_code 
 
-    administrative_area_level_6        postal_code_prefix 
+  administrative_area_level_6        postal_code_prefix 
 
-    administrative_area_level_7        postal_code_suffix 
+  administrative_area_level_7        postal_code_suffix 
 
-    archipelago                        postal_town
+  archipelago                        postal_town
 
-    colloquial_area                    premise
+  colloquial_area                    premise
 
-    continent                          room
+  continent                          room
 
-    country                            route
+  country                            route
 
-    establishment                      street_address
+  establishment                      street_address
 
-    finance                            street_number
+  finance                            street_number
 
-    floor                              sublocality
+  floor                              sublocality
 
-    food                               sublocality_level_1
+  food                               sublocality_level_1
 
-    general_contractor                 sublocality_level_2
+  general_contractor                 sublocality_level_2
 
-    geocode                            sublocality_level_3
+  geocode                            sublocality_level_3
 
-    health                             sublocality_level_4
+  health                             sublocality_level_4
 
-    intersection                       sublocality_level_5
+  intersection                       sublocality_level_5
 
-    landmark                           subpremise
+  landmark                           subpremise
 
-    locality                           town_square
+  locality                           town_square
 
-    natural_feature
+  natural_feature
 
-    neighborhood
+  neighborhood
 
-    place_of_worship
+  place_of_worship
 ```
 
 

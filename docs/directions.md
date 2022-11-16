@@ -525,29 +525,29 @@ Response:
 ### DirectionsResponse
 | Field | Required | Type | Description |
 | --- | --- | --- | --- |
-| **routes** | **required** | Array<[DirectionsRoute](#DirectionsResponse)> | Contains an array of routes from the origin to the destination. Routes consist of nested Legs and Steps. |
+| **routes** | **required** | Array<[DirectionsRoute](#DirectionsRoute)> | Contains an array of routes from the origin to the destination. Routes consist of nested Legs and Steps. |
 | **status** | **required** | [DirectionsStatus](#DirectionsStatus) | Contains the status of the request, and may contain debugging information to help you track down why the request failed. |
 | **available_travel_modes** |optional | Array<[TravelMode](#TravelMode)> | Contains an array of available travel modes. This field is returned when a request specifies a travel mode and gets no results. The array contains the available travel modes in the countries of the given set of waypoints. This field is not returned if one or more of the waypoints are 'via waypoints'. |
 | error_message | optional | string | When the service returns a status code other than OK, there may be an additional **error_message** field within the response object. This field contains more detailed information about the reasons behind the given status code. This field is not always returned, and its content is subject to change. |
-| **geocoded_waypoints** | optional | Array<[DirectionsGeocodedWaypoint](#DirectionsGeocodedWaypoint)> | Contains an array with details about the geocoding of origin, destination and waypoints. Elements in the geocoded_waypoints array correspond, by their zero-based position, to the origin, the waypoints in the order they are specified, and the destination. \\ These details will not be present for waypoints specified as textual latitude/longitude values if the service returns no results. This is because such waypoints are only reverse geocoded to obtain their representative address after a route has been found. An empty JSON object will occupy the corresponding places in the geocoded_waypoints array. |
+| **geocoded_waypoints** | optional | Array<[DirectionsGeocodedWaypoint](#DirectionsGeocodedWaypoint)> | Contains an array with details about the geocoding of origin, destination and waypoints. Elements in the geocoded_waypoints array correspond, by their zero-based position, to the origin, the waypoints in the order they are specified, and the destination. <br><br>These details will not be present for waypoints specified as textual latitude/longitude values if the service returns no results. This is because such waypoints are only reverse geocoded to obtain their representative address after a route has been found. An empty JSON object will occupy the corresponding places in the geocoded_waypoints array. |
 
-### DirectionsResponse
+### DirectionsRoute
+Routes consist of nested legs and steps.
+
 | Field | Required | Type | Description |
-| --- | --- | --- | --- |
-| --- | --- | --- | --- |
-| --- | --- | --- | --- |
-| --- | --- | --- | --- |
-| --- | --- | --- | --- |
-| --- | --- | --- | --- |
-| --- | --- | --- | --- |
-| --- | --- | --- | --- |
-| --- | --- | --- | --- |
-| --- | --- | --- | --- |
-| --- | --- | --- | --- |
-
-
+| **bounds** | **required** | [Bounds](#Bounds) | Contains the viewport bounding box of the **overview_polyline**. |
+| **copyrights** | **required** | string | Contains an array of warnings to be displayed when showing these directions. You must handle and display these warnings yourself. |
+| **legs** | **required** | Array<[DirectionsLeg](#DirectionsLeg)> | An array which contains information about a leg of the route, between two locations within the given route. A separate leg will be present for each waypoint or destination specified. (A route with no waypoints will contain exactly one leg within the legs array.) Each leg consists of a series of steps. |
+| **overview_polyline** | **required** | [DirectionsPolyline](#DirectionsPolyline) | Contains an object that holds an encoded polyline representation of the route. This polyline is an approximate (smoothed) path of the resulting directions. |
+| **summary** | **required** | string | Contains a short textual description for the route, suitable for naming and disambiguating the route from alternatives. |
+| **warnings** | **required** | Array<string> | Contains an array of warnings to be displayed when showing these directions. You must handle and display these warnings yourself. |
+| **waypoint_order** | **required** | Array<integer> | An array indicating the order of any waypoints in the calculated route. This waypoints may be reordered if the request was passed optimize:true within its waypoints parameter. |
+| **fare** | optional |[Fare](#Fare) | If present, contains the total fare (that is, the total ticket costs) on this route. This property is only returned for transit requests and only for routes where fare information is available for all transit legs. |
 
 ### DirectionsStatus
 ### TravelMode
-
+### DirectionsLeg
+### DirectionsPolyline
+### Bounds
+### Fare
 

@@ -564,29 +564,87 @@ An object describing a specific location with Latitude and Longitude in decimal 
 ### DirectionsLeg
 | Field | Required | Type | Description |
 | --- | --- | --- | --- |
+
 | **end_address** | **required** | string | Contains the human-readable address (typically a street address) from reverse geocoding the **end_location** of this leg. This content is meant to be read as-is. Do not programmatically parse the formatted address. |
+
 | **end_location** | **required** | [LatLngLiteral](#LatLngLiteral) | The latitude/longitude coordinates of the given destination of this leg. Because the Directions API calculates directions between locations by using the nearest transportation option (usually a road) at the start and end points, **end_location** may be different than the provided destination of this leg if, for example, a road is not near the destination. |
+
 | **start_address** | **required** | string | Contains the human-readable address (typically a street address) resulting from reverse geocoding the **start_location** of this leg. This content is meant to be read as-is. Do not programmatically parse the formatted address. |
+
 | **start_location** | **required** | [LatLngLiteral](#LatLngLiteral) | The latitude/longitude coordinates of the origin of this leg. Because the Directions API calculates directions between locations by using the nearest transportation option (usually a road) at the start and end points, **start_location** may be different than the provided origin of this leg if, for example, a road is not near the origin. |
+
 | **steps** | **required** | Array<[DirectionsStep](#DirectionsStep)> | An array of steps denoting information about each separate step of the leg of the journey. |
+
 | **traffic_speed_entry** | **required** | Array<[DirectionsTrafficSpeedEntry](#DirectionsTrafficSpeedEntry)> | Information about traffic speed along the leg. |
+
 | **via_waypoint** | **required** | Array<[DirectionsViaWaypoint](#DirectionsViaWaypoint)> | The locations of via waypoints along this leg. |
-| **arrival_time** | optional | [TimeZoneTextValueObject](#TimeZoneTextValueObject) | Contains the estimated time of departure for this leg, specified as a Time object. The **departure_time** is only available for transit directions. |
-| **departure_time** | optional | [TextValueObject](#TextValueObject) | The total distance covered by this leg. |
+
+| **arrival_time** | optional | [TimeZoneTextValueObject](#TimeZoneTextValueObject) | Contains the estimated time of arrival for this leg. This property is only returned for transit directions. |
+
+| **departure_time** | optional | [TimeZoneTextValueObject](#TimeZoneTextValueObject) | Contains the estimated time of departure for this leg, specified as a Time object. The **departure_time** is only available for transit directions. |
+
+| **distance** | optional | [TextValueObject](#TextValueObject) | The total distance covered by this leg. |
+
 | **duration** | optional | [TextValueObject](#TextValueObject) | The total duration of this leg. |
-| **duration_in_traffic** | optional | [TextValueObject](#TextValueObject) | Indicates the total duration of this leg. This value is an estimate of the time in traffic based on current and historical traffic conditions. See the **traffic_model** request parameter for the options you can use to request that the returned value is optimistic, pessimistic, or a best-guess estimate. The duration in traffic is returned only if all of the following are true: <br> <li> The request does not include stopover waypoints. If the request includes waypoints, they must be prefixed with via: to avoid stopovers. <li> The request is specifically for driving directions—the mode parameter is set to driving. <li> The request includes a departure_time parameter. * Traffic conditions are available for the requested route.|
-| **aaaaaa** | optional | aaaaa | aaaaaa |
+
+| **duration_in_traffic** | optional | [TextValueObject](#TextValueObject) | Indicates the total duration of this leg. This value is an estimate of the time in traffic based on current and historical traffic conditions. See the **traffic_model** request parameter for the options you can use to request that the returned value is optimistic, pessimistic, or a best-guess estimate. The duration in traffic is returned only if all of the following are true: <br> <li> The request does not include stopover waypoints. If the request includes waypoints, they must be prefixed with **via**: to avoid stopovers. <li> The request is specifically for driving directions—the mode parameter is set to **driving**. <li> The request includes a **departure_time** parameter. <li> Traffic conditions are available for the requested route. |
+
+### DirectionsStep
+Each element in the steps array defines a single step of the calculated directions. A step is the most atomic unit of a direction's route, containing a single step describing a specific, single instruction on the journey. E.g. "Turn left at W. 4th St." The step not only describes the instruction but also contains distance and duration information relating to how this step relates to the following step. For example, a step denoted as "Merge onto I-80 West" may contain a duration of "37 miles" and "40 minutes," indicating that the next step is 37 miles/40 minutes from this step.
+
+When using the Directions API to search for transit directions, the steps array will include additional transit details in the form of a transit_details array. If the directions include multiple modes of transportation, detailed directions will be provided for walking or driving steps in an inner steps array. For example, a walking step will include directions from the start and end locations: "Walk to Innes Ave & Fitch St". That step will include detailed walking directions for that route in the inner steps array, such as: "Head north-west", "Turn left onto Arelious Walker", and "Turn left onto Innes Ave".
+
+| Field | Required | Type | Description |
+| --- | --- | --- | --- |
+| **duration** | **required** | [TextValueObject](#TextValueObject) | Contains the typical time required to perform the step, until the next step. This field may be undefined if the duration is unknown. |
+
+| **end_location** | **required** | [LatLngLiteral](#LatLngLiteral) | Contains the location of the last point of this step. |
+
+| **html_instructions** | **required** | string | Contains formatted instructions for this step, presented as an HTML text string. This content is meant to be read as-is. Do not programmatically parse this display-only content. |
+
+| **polyline** | **required** | [DirectionsPolyline](#DirectionsPolyline) | Contains a single points object that holds an encoded polyline representation of the step. This polyline is an approximate (smoothed) path of the step. |
+
+| **start_location** | **required** | [LatLngLiteral](#LatLngLiteral) | Contains the location of the starting point of this step. |
+
+| **travel_mode** | **required** | [TravelMode](#TravelMode) | Contains the type of travel mode used. |
+
+| **distance** | optional | [TextValueObject](#TextValueObject) | Contains the distance covered by this step until the next step. This field may be undefined if the distance is unknown. |
+
+| **maneuver** | optional | string | Contains the action to take for the current step (turn left, merge, straight, etc.). Values are subject to change, and new values may be introduced without prior notice.<br>The allowed values include: turn-slight-left, turn-sharp-left, turn-left, turn-slight-right, turn-sharp-right, keep-right, keep-left, uturn-left, uturn-right, turn-right, straight, ramp-left, ramp-right, merge, fork-left, fork-right, ferry, ferry-train, roundabout-left, and roundabout-right |
+
+| **steps** | optional |  | Contains detailed directions for walking or driving steps in transit directions. Substeps are only available when travel_mode is set to "transit". The inner steps array is of the same type as steps. |
+
+| **transit_details** | optional | [DirectionsTransitDetails](#DirectionsTransitDetails) | Details pertaining to this step if the travel mode is TRANSIT. |
+
+### TextValueObject
+An object containing a numeric value and its formatted text representation.
+
+| Field | Required | Type | Description |
+| --- | --- | --- | --- |
+| **text** | **required** | string | String value. |
+| **value** | **required** | number | Numeric value. |
+
+### DirectionsPolyline
+[Polyline encoding](./polylineencoding.md) is a lossy compression algorithm that allows you to store a series of coordinates as a single string. Point coordinates are encoded using signed values. If you only have a few static points, you may also wish to use the interactive polyline encoding utility.
+
+The encoding process converts a binary value into a series of character codes for ASCII characters using the familiar base64 encoding scheme: to ensure proper display of these characters, encoded values are summed with 63 (the ASCII character '?') before converting them into ASCII. The algorithm also checks for additional character codes for a given point by checking the least significant bit of each byte group; if this bit is set to 1, the point is not yet fully formed and additional data must follow.
+
+Additionally, to conserve space, points only include the offset from the previous point (except of course for the first point). All points are encoded in Base64 as signed integers, as latitudes and longitudes are signed values. The encoding format within a polyline needs to represent two coordinates representing latitude and longitude to a reasonable precision. Given a maximum longitude of +/- 180 degrees to a precision of 5 decimal places (180.00000 to -180.00000), this results in the need for a 32 bit signed binary integer value.
+
+| Field | Required | Type | Description |
+| --- | --- | --- | --- |
+| **points** | **required** | string | A single string representation of the polyline. |
 
 
 
 ### DirectionsViaWaypoint
-### DirectionsStep
 ### DirectionsStatus
 ### TravelMode
 ### DirectionsTrafficSpeedEntry
+### DirectionsTransitDetails
 ### TimeZoneTextValueObject
-### TextValueObject
-### DirectionsPolyline
+
+
 
 ### Fare
 

@@ -21,8 +21,8 @@ The steps for encoding such a signed value are specified below.
 
   3. Convert the decimal value to binary. Note that a negative value must be calculated using its two's complement by inverting the binary value and adding one to the result:
 
-    **00000001 00010010 10100001 11110001**<br>
-    **11111110 11101101 01011110 00001110**<br>
+    **00000001 00010010 10100001 11110001** 
+    **11111110 11101101 01011110 00001110** 
     **11111110 11101101 01011110 00001111**
 
   4. Left-shift the binary value one bit:

@@ -645,10 +645,35 @@ Additionally, to conserve space, points only include the offset from the previou
 
 * **WALKING** requests calculation for walking via pedestrian paths & sidewalks (where available).
 
+### DirectionsTransitDetails
+Additional information that is not relevant for other modes of transportation.
+
+| Field | Required | Type | Description |
+| --- | --- | --- | --- |
+
+| **arrival_stop** | optional | [DirectionsTransitStop](#DirectionsTransitStop) | The arrival transit stop. |
+
+| **arrival_time** | optional | [TimeZoneTextValueObject](#TimeZoneTextValueObject) |  |
+
+| **departure_stop** | optional | [DirectionsTransitStop](#DirectionsTransitStop) | The departure transit stop. |
+
+| **departure_time** | optional | [TimeZoneTextValueObject](#TimeZoneTextValueObject) |  |
+
+| **headsign** | optional | string | Specifies the direction in which to travel on this line, as it is marked on the vehicle or at the departure stop. This will often be the terminus station. |
+
+| **headway** | optional | integer | Specifies the expected number of seconds between departures from the same stop at this time. For example, with a headway value of 600, you would expect a ten minute wait if you should miss your bus. |
+
+| **line** | optional | [DirectionsTransitLine](#DirectionsTransitLine) | Contains information about the transit line used in this step. |
+
+| **num_stops** | optional | integer | The number of stops from the departure to the arrival stop. This includes the arrival stop, but not the departure stop. For example, if your directions involve leaving from Stop A, passing through stops B and C, and arriving at stop D, **num_stops** will return 3. |
+
+| **trip_short_name** | optional | string | The text that appears in schedules and sign boards to identify a transit trip to passengers. The text should uniquely identify a trip within a service day. For example, "538" is the trip_short_name of the Amtrak train that leaves San Jose, CA at 15:10 on weekdays to Sacramento, CA. |
+
+
 ### DirectionsViaWaypoint
 ### DirectionsStatus
 ### DirectionsTrafficSpeedEntry
-### DirectionsTransitDetails
+
 ### TimeZoneTextValueObject
 
 

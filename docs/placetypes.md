@@ -25,7 +25,7 @@ The Place type values in Table 2 are used in the following ways:
 
   * As part of the result of a Place details request (for example, a call to fetchPlace()), or anywhere a Place result is returned. The request must specify the appropriate "types" data field.
 
-  * As part of an Autocomplete place prediction. For more information on the rules for using these values, see Places Autocomplete.
+  * As part of an Autocomplete place prediction. For more information on the rules for using these values, see [Places Autocomplete](./placeautocomplete.md).
 
   * To denote address components.
 
@@ -33,11 +33,20 @@ For more details on these types, refer to [Address Types](./geocoding.md#Address
 
 > **Note:** The types below are not supported in the type filter of a place search.
 
-| <!-- --> | <!-- --> |
-| --- | --- |
-| administrative_area_level_1 | plus_code |
-| administrative_area_level_2 | point_of_interest |
-  
+    administrative_area_level_1        plus_code 
+
+    administrative_area_level_2        point_of_interest 
+
+    administrative_area_level_3        political 
+
+    administrative_area_level_4        post_box
+
+    administrative_area_level_5        postal_code 
+
+    administrative_area_level_6        postal_code_prefix 
+
+    administrative_area_level_7        postal_code_suffix 
+
 
 ## Table 3: Type collections supported in Place Autocomplete requests
 Use the Place type values in Table 3, or the values in Table 1 and Table 2, as part of a Place Autocomplete request to restrict the results to a specific type.

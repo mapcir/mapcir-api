@@ -1,4 +1,4 @@
-# Reverse geocoding
+# Reverse Geocoding API
 > Convert latitude/longitude coordinates to addresses or Place IDs.
 
 ## Overview
@@ -9,11 +9,11 @@ The term *geocoding* generally refers to translating a human-readable address in
 ### Request
 A Reverse Geocoding API request takes the following form:
 
-http://{HOST}:{PORT}/geocode/?latlng=LATLNG&parameters
+http://{HOST}:{PORT}/geocode?latlng=LATLNG&parameters
 
 OR
 
-http://{HOST}:{PORT}/maps/api/geocode/json/?latlng=LATLNG&parameters
+http://{HOST}:{PORT}/maps/api/geocode/json?latlng=LATLNG&parameters
 
 ### Required parameters
 * **latlng** — The latitude and longitude values specifying the location for which you wish to obtain the closest, human-readable address.

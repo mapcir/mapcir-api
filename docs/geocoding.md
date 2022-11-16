@@ -1,4 +1,4 @@
-# Geocoding Service
+# Geocoding API
 > Convert addresses or Place IDs to latitude/longitude coordinates.
 
 ## Overview
@@ -11,11 +11,11 @@ You can also use the geocoder to find the address for a given place ID.
 ## Request
 A Geocoding API request takes the following form:
 ```code
-http://{HOST}:{PORT}/geocode/?parameters
+http://{HOST}:{PORT}/geocode?parameters
 
 OR
 
-http://{HOST}:{PORT}/maps/api/geocode/json/?parameters
+http://{HOST}:{PORT}/maps/api/geocode/json?parameters
 ```
 
 > **Note:** URLs must be properly encoded to be valid and are limited to 8192 characters for all web services. Be aware of this limit when constructing your URLs. Note that different browsers, proxies, and servers may have different URL character limits as well.

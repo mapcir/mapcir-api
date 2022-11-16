@@ -396,7 +396,6 @@ For example, a route from "Chicago, IL" to "Toronto, ONT" will display results i
 ### Region biasing
 You can set the Directions service to return results from a specific region by using the region parameter. This parameter takes a two-character [ccTLD](https://en.wikipedia.org/wiki/Country_code_top-level_domain) (country code top-level domain) argument specifying the region bias. Most ccTLD codes are identical to ISO 3166-1 alpha-2 codes, with some notable exceptions. For example, the United Kingdom's ccTLD is "uk" (.co.uk) while its ISO 3166-1 code is "gb" (technically for the entity of "The United Kingdom of Great Britain and Northern Ireland")
 
-You may utilize any domain in which the main Google Maps application has launched driving directions.
 
 ### Location Modifiers
 You can use location modifiers to indicate how drivers should approach a particular location, by using the **side_of_road** parameter to specify which side of the road to use, or by specifying a heading to indicate the correct direction of travel. These modifiers may be freely mixed with the via: modifier for intermediate waypoints.
@@ -467,7 +466,7 @@ Response:
             "northeast": { "lat": 41.8781139, "lng": -87.6297872 },
             "southwest": { "lat": 34.0523525, "lng": -118.2435717 },
           },
-        "copyrights": "Map data ©2022 Google, INEGI",
+        "copyrights": "Map data ©2022",
         "legs":
           [
             {

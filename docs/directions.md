@@ -422,3 +422,118 @@ The heading=X: modifier may only be used with the following restrictions:
   * The location is specified with a latitude/longitude value. You may not use heading with addresses, Place IDs, or encoded polylines.
 
 ## Directions responses
+A sample HTTP request is shown below, calculating the route from Chicago, IL to Los Angeles, CA via two waypoints in Joplin, MO and Oklahoma City, OK.
+
+```code
+http://127.0.0.1:8080/directions?origin=Chicago%2C%20IL&destination=Los%20Angeles%2C%20CA&waypoints=Joplin%2C%20MO%7COklahoma%20City%2C%20OK
+
+OR
+
+http://127.0.0.1:8080/maps/api/directions/json?origin=Chicago%2C%20IL&destination=Los%20Angeles%2C%20CA&waypoints=Joplin%2C%20MO%7COklahoma%20City%2C%20OK
+```
+
+Response:
+
+```code
+{
+  "geocoded_waypoints":
+    [
+      {
+        "geocoder_status": "OK",
+        "place_id": "ChIJ7cv00DwsDogRAMDACa2m4K8",
+        "types": ["locality", "political"],
+      },
+      {
+        "geocoder_status": "OK",
+        "place_id": "ChIJ69Pk6jdlyIcRDqM1KDY3Fpg",
+        "types": ["locality", "political"],
+      },
+      {
+        "geocoder_status": "OK",
+        "place_id": "ChIJgdL4flSKrYcRnTpP0XQSojM",
+        "types": ["locality", "political"],
+      },
+      {
+        "geocoder_status": "OK",
+        "place_id": "ChIJE9on3F3HwoAR9AhGJW_fL-I",
+        "types": ["locality", "political"],
+      },
+    ],
+  "routes":
+    [
+      {
+        "bounds":
+          {
+            "northeast": { "lat": 41.8781139, "lng": -87.6297872 },
+            "southwest": { "lat": 34.0523525, "lng": -118.2435717 },
+          },
+        "copyrights": "Map data ©2022 Google, INEGI",
+        "legs":
+          [
+            {
+              "distance": { "text": "579 mi", "value": 932311 },
+              "duration": { "text": "8 hours 48 mins", "value": 31653 },
+              "end_address": "Joplin, MO, USA",
+              "end_location": { "lat": 37.0842449, "lng": -94.513284 },
+              "start_address": "Chicago, IL, USA",
+              "start_location": { "lat": 41.8781139, "lng": -87.6297872 },
+              "steps":
+                [
+                  {
+                    "distance": { "text": "443 ft", "value": 135 },
+                    "duration": { "text": "1 min", "value": 24 },
+                    "end_location": { "lat": 41.8769003, "lng": -87.6297353 },
+                    "html_instructions": "Head <b>south</b> on <b>S Federal St</b> toward <b>W Van Buren St</b>",
+                    "polyline": { "points": "eir~FdezuOdCEjBC" },
+                    "start_location": { "lat": 41.8781139, "lng": -87.6297872 },
+                    "travel_mode": "DRIVING",
+                  },
+                  ...
+                  {
+                    "distance": { "text": "2.8 mi", "value": 4508 },
+                    "duration": { "text": "7 mins", "value": 412 },
+                    "end_location": { "lat": 37.0840469, "lng": -94.5134959 },
+                    "html_instructions": "Continue straight onto <b>I-44BL W</b>/<wbr/><b>E 7th St</b>",
+                    "maneuver": "straight",
+                    "polyline":
+                      {
+                        "points": "m}iaFjwp_QE`ICdCCfDCdDAfCCbCAr@AxAA~AAxAAxACdDA~@CzC?|@Ax@At@A~@AfAGh@ALAR?@?P?bAAdBAfBCbCAtAA|BAb@?n@?tC?~@@n@DxALXH`BLpBBZBl@Fp@HxAHpAHrABv@@DDxA@lA?`F?f@?~AAzA?|@?bA?rB?T?pEC`F?~EA`F?xAAl@?|A?jA?rC?~@AxB?h@?jBA~AAb@?\\?~A?pA?r@AbA?TApA?xEAr@?fAAv@@`@AP?JIV?x@?vACxDAvE?|BH^A|@?tBAfB?hC?pAAtA?tACnG?j@?N?lA?RAx@?zB?T?hAAhAAj@A`BAnAA\\ClB",
+                      },
+                    "start_location": { "lat": 37.0839082, "lng": -94.4627819 },
+                    "travel_mode": "DRIVING",
+                  },
+                  ...
+                ],
+              "traffic_speed_entry": [],
+              "via_waypoint": [],
+            },
+            ...
+          ],
+        "overview_polyline":
+          {
+            "points": "eir~FdezuOxyFzfFl`G|qZvtSzqo@d}EhlLtqIdjFhrTfvEdca@{_@p{\\~`\\f}MprT~qRbyPnvObbXd_TxaEdxYxjRxvUnz\\bDfeLbpLxv@pmLroD`fTxrYfkTti\\xp@baMj_MoG|xNrlNpiL~cKn`OloFroRbk@lmDn_FnxHnQnz^~Thlo@uVlcc@|rQrnM~lAvlP|sH~qUlkPbzRxvE`cF~rPn_K~b`@tbDpx\\toK|_g@ldD|s_@piIzwc@nzNtlNdrKxoTtkXpeXrsO`l_@brWbkjAptBxoa@npNfiRv_QtcbAxpBlwb@rt_@ry`@pcKjtPpuPj`H`mNpsFjzHfpN~hIdfbAp}JfxY`Fxo^vdUnhq@}k@~`bAkMvli@cClxIjmGfHblG~bRhtF|eI~jFffQzsLldRr`WdrKxtKxb_@zlNrxU|qUpfYdwNpzP|rRxsc@zgWfdYtdBrqR|~Iz~Qv`ApvRntK`jI`cZz}n@nsW`mcA`}WndvB~iCdiVpjJnlErfNplA`i@bcGojCpsl@yeEn|l@{hDtsu@tl@lxs@~~DditAjcJzrf@~qIr`l@bbJrme@~rI|zC~dBfrO|yEdne@qAj{y@Qrsj@diAdns@l}EpnYwmDjn|@ywAbso@~kB|au@`{Alj|@csLzxcBl^|cr@fyJvwd@rxNxnlAyuJhqWjtCbmy@lwNjwpA`cSdimApgBxeNwbCx~_@{dB|y~@cyC|tfBxU~di@inFpxi@_bLpad@~wEbcNkJdxTwkDdeX`aHxh\\pgKlhs@r]`c_@imGdjUeCvnYajFfnN`Gd}c@u_Unm\\itMldMinIpgBadIzhLskDdy\\}iFz|UuvPnfo@v_A`}n@nvR~da@pdS`qUfnDljY|qLrbRdwO|ig@jtKt}k@frM~qo@~~JpwS~bA~pSgeGbvQc{Bzib@yiWzkuAecD`dh@mjKnhf@qwBl_ZzpDn}Wg_CrfUonH~pVpA|bRapAthi@n|FbgPnd@|p[yi@vjVqzHrhd@cgG|zl@jyE~g^|oLjyYvvBprWlpDrtd@ahHbyhApiBteSxpNzkHjtw@|yDjaPrmTzu@tqZjv@f_TuyGjxL{yMlcFafGh{IxDthNpxC|nZvxBzyUnhEpieAdsN|zw@qmAblk@t}Bhb^gvA|ml@{vPjweAkkDhpj@mmFnyZ`eAnsLjxKbfDnhUnrTdaSjtH``m@f`b@xyBbyGrjJ_|DxyGcyD`~Gfe@drNluRd`GlaC}cBfgObcAhh]vM`q`@|oBvgv@",
+          },
+        "summary": "I-55 S and I-44",
+        "warnings": [],
+        "waypoint_order": [0, 1],
+      },
+    ],
+  "status": "OK",
+}
+```
+
+### DirectionsResponse
+| Field | Required | Type | Description |
+| --- | --- | --- | --- |
+| **routes** | **required** | Array< [DirectionsRoute](#DirectionsResponse) > | Contains an array of routes from the origin to the destination. Routes consist of nested Legs and Steps. |
+| **status** | **required** | [DirectionsStatus](#DirectionsStatus) | Contains the status of the request, and may contain debugging information to help you track down why the request failed. |
+| **available_travel_modes** |optional | Array<[TravelMode](#TravelMode)> | Contains an array of available travel modes. This field is returned when a request specifies a travel mode and gets no results. The array contains the available travel modes in the countries of the given set of waypoints. This field is not returned if one or more of the waypoints are 'via waypoints'. |
+| error_message | optional | string | When the service returns a status code other than OK, there may be an additional **error_message** field within the response object. This field contains more detailed information about the reasons behind the given status code. This field is not always returned, and its content is subject to change. |
+| **geocoded_waypoints** | optional | Array<[DirectionsGeocodedWaypoint](#DirectionsGeocodedWaypoint)> | Contains an array with details about the geocoding of origin, destination and waypoints. Elements in the geocoded_waypoints array correspond, by their zero-based position, to the origin, the waypoints in the order they are specified, and the destination. \ These details will not be present for waypoints specified as textual latitude/longitude values if the service returns no results. This is because such waypoints are only reverse geocoded to obtain their representative address after a route has been found. An empty JSON object will occupy the corresponding places in the geocoded_waypoints array. |
+
+
+### DirectionsResponse
+### DirectionsStatus
+### TravelMode
+
+

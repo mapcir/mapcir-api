@@ -131,6 +131,7 @@ For more details on these types, refer to [Address Types](./geocoding.md#Address
 
 > **Note:** The types below are not supported in the type filter of a place search.
 
+```code
     administrative_area_level_1        plus_code 
 
     administrative_area_level_2        point_of_interest 
@@ -178,6 +179,7 @@ For more details on these types, refer to [Address Types](./geocoding.md#Address
     neighborhood
 
     place_of_worship
+```
 
 
 ## Table 3: Type collections supported in Place Autocomplete requests

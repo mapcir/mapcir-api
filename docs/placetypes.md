@@ -15,9 +15,105 @@ The Place type values in Table 1 are used in the following ways:
 
 * As part of a Place details response. The request must specify the appropriate "types" data field.
 
-* As part of an Autocomplete place prediction. For more information on the rules for using these values, see Places Autocomplete.
+* As part of an Autocomplete place prediction. For more information on the rules for using these values, see [Places Autocomplete](./placeautocomplete.md).
 
-* In the type parameter for place searches (Places API only), to restrict the results to places matching the specified type.
+* In the **type** parameter for [place searches](./textsearch.md) (Places API only), to restrict the results to places matching the specified type.
+
+  accounting              lawyer 
+
+  airport                 library 
+
+  amusement_park          light_rail_station 
+
+  aquarium                liquor_store 
+
+  art_gallery             local_government_office 
+
+  atm                     locksmith 
+
+  bakery                  lodging 
+
+  bank                     meal_delivery 
+
+  bar                      meal_takeaway 
+
+  beauty_salon             mosque 
+
+  bicycle_store            movie_rental 
+
+  book_store               movie_theater 
+
+  bowling_alley            moving_company 
+
+  bus_station              museum 
+
+  cafe                     night_club 
+
+  campground               painter 
+
+  car_dealer               park 
+
+  car_rental               parking 
+
+  car_repair               pet_store 
+
+  car_wash                 pharmacy 
+
+  casino                   physiotherapist 
+
+  cemetery                 plumber 
+
+  church                   police 
+
+  city_hall                post_office 
+
+  clothing_store           primary_school 
+
+  convenience_store        real_estate_agency 
+
+  courthouse               restaurant 
+
+  dentist                  roofing_contractor 
+
+  department_store         rv_park 
+
+  doctor                   school 
+
+  drugstore                secondary_school 
+
+  electrician              shoe_store 
+
+  electronics_store        shopping_mall 
+
+  embassy                  spa 
+
+  fire_station             stadium 
+
+  florist                  storage 
+
+  funeral_home             store 
+
+  furniture_store          subway_station 
+
+  gas_station              supermarket 
+
+  gym                      synagogue 
+
+  hair_care                taxi_stand 
+
+  hardware_store           tourist_attraction 
+
+  hindu_temple             train_station 
+
+  home_goods_store         transit_station 
+
+  hospital                 university 
+
+  insurance_agency         university 
+
+  jewelry_store            veterinary_care 
+
+  laundry                  zoo 
 
 
 ## Table 2: Additional types returned by the Places service

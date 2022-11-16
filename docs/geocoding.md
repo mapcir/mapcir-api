@@ -8,10 +8,7 @@
 
 You can also use the geocoder to find the address for a given place ID.
 
-
-## Geocoding request and response
-
-### Request
+## Request
 A Geocoding API request takes the following form:
 ```code
 http://{HOST}:{PORT}/geocode/?parameters
@@ -30,7 +27,7 @@ The rest of this page describes geocoding and [reverse geocoding](./reversegeoco
 ### Geocoding (latitude/longitude lookup) parameters
 > All reserved characters (for example the plus sign "**+**") must be URL-encoded
 
-#### Required parameters in a geocoding request:
+### Required parameters in a geocoding request:
 
 * **address** — The street address that you want to geocode. Specify addresses in accordance with the format used by the national postal service of the country concerned. Additional address elements such as business names and unit, suite or floor numbers should be avoided. Street address elements should be delimited by spaces (shown here as url-escaped to **%20** ):
 
@@ -48,7 +45,7 @@ The rest of this page describes geocoding and [reverse geocoding](./reversegeoco
   
   **components** — A components filter with elements separated by a pipe (**|**). The components filter is also accepted as an optional parameter if an **address** is provided. Each element in the components filter consists of a **component:value** pair, and fully restricts the results from the geocoder. See more information about [component filtering](#component-filtering) below.
 
-#### Optional parameters in a Geocoding request:
+### Optional parameters in a Geocoding request:
 * **bounds** — The bounding box of the viewport within which to bias geocode results more prominently. This parameter will only influence, not fully restrict, results from the geocoder. (For more information see [Viewport Biasing](#viewport-biasing) below.)
 
 * **language** — The language in which to return results.
@@ -66,7 +63,7 @@ The rest of this page describes geocoding and [reverse geocoding](./reversegeoco
 
 * **components** — A components filter with elements separated by a pipe (**|**). The components filter is required if the request doesn't include an **address**. Each element in the components filter consists of a **component:value** pair, and fully restricts the results from the geocoder. See more information about [component filtering](#component-filtering) below.
 
-### Responses
+## Responses
 
 Geocoding responses are returned in the format indicated by the output flag within the URL request's path.
 
@@ -173,7 +170,7 @@ Note that the JSON response contains two root elements:
 
 Generally, only one entry in the **"results"** array is returned for address lookups,though the geocoder may return several results when address queries are ambiguous.
 
-### Status codes
+## Status codes
 The **"status"** field within the Geocoding response object contains the status of the request, and may contain debugging information to help you track down why geocoding is not working. The **"status"** field may contain the following values:
 
   * **"OK"** indicates that no errors occurred; the address was successfully parsed and at least one geocode was returned.
@@ -198,12 +195,12 @@ The **"status"** field within the Geocoding response object contains the status 
   
 * **"UNKNOWN_ERROR"** indicates that the request could not be processed due to a server error. The request may succeed if you try again.
 
-### Error messages
+## Error messages
 When the geocoder returns a status code other than **OK**, there may be an additional **error_message** field within the Geocoding response object. This field contains more detailed information about the reasons behind the given status code.
 
 > **Note:** This field is not guaranteed to be always present, and its content is subject to change.
 
-### Results
+## Results
 When the geocoder returns results, it places them within a (JSON) **results** array. Even if the geocoder returns no results (such as if the address doesn't exist) it still returns an empty **results** array.
 
 A typical result contains the following fields:

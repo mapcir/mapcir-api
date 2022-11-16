@@ -30,7 +30,7 @@ http://{HOST}:{PORT}/maps/api/directions?parameters
 
 As is standard in URLs, all parameters are separated using the ampersand (&) character. All reserved characters (for example the plus sign "+") must be [URL-encoded](./validurl.md). The list of parameters and their possible values are enumerated below.
 
-## Required parameters
+### Required parameters
 
 * **destination**
 
@@ -62,7 +62,7 @@ As is standard in URLs, all parameters are separated using the ampersand (&) cha
 
  > **Note:** For efficiency and accuracy, use place ID's when possible. These ID's are uniquely explicit like a lat/lng value pair and provide geocoding benefits for routing such as access points and traffic variables. Unlike an address, ID's do not require the service to perform a search or an intermediate request for place details; therefore, performance is better.
 
-## Optional parameters
+### Optional parameters
 * **alternatives**
   
   If set to true, specifies that the Directions service may provide more than one route alternative in the response. Note that providing route alternatives may increase the response time from the server. This is only available for requests without intermediate waypoints.

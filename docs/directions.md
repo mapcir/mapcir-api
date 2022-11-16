@@ -522,6 +522,7 @@ Response:
 }
 ```
 
+
 ### DirectionsResponse
 | Field | Required | Type | Description |
 | --- | --- | --- | --- |
@@ -530,6 +531,7 @@ Response:
 | **available_travel_modes** |optional | Array<[TravelMode](#TravelMode)> | Contains an array of available travel modes. This field is returned when a request specifies a travel mode and gets no results. The array contains the available travel modes in the countries of the given set of waypoints. This field is not returned if one or more of the waypoints are 'via waypoints'. |
 | error_message | optional | string | When the service returns a status code other than OK, there may be an additional **error_message** field within the response object. This field contains more detailed information about the reasons behind the given status code. This field is not always returned, and its content is subject to change. |
 | **geocoded_waypoints** | optional | Array<[DirectionsGeocodedWaypoint](#DirectionsGeocodedWaypoint)> | Contains an array with details about the geocoding of origin, destination and waypoints. Elements in the geocoded_waypoints array correspond, by their zero-based position, to the origin, the waypoints in the order they are specified, and the destination. <br><br>These details will not be present for waypoints specified as textual latitude/longitude values if the service returns no results. This is because such waypoints are only reverse geocoded to obtain their representative address after a route has been found. An empty JSON object will occupy the corresponding places in the geocoded_waypoints array. |
+
 
 ### DirectionsRoute
 Routes consist of nested legs and steps.
@@ -545,6 +547,7 @@ Routes consist of nested legs and steps.
 | **waypoint_order** | **required** | Array<integer> | An array indicating the order of any waypoints in the calculated route. This waypoints may be reordered if the request was passed optimize:true within its waypoints parameter. |
 | **fare** | optional |[Fare](#Fare) | If present, contains the total fare (that is, the total ticket costs) on this route. This property is only returned for transit requests and only for routes where fare information is available for all transit legs. |
 
+
 ### Bounds
 A rectangle in geographical coordinates from points at the southwest and northeast corners.
 
@@ -553,6 +556,7 @@ A rectangle in geographical coordinates from points at the southwest and northea
 | **northeast** | **required** | [LatLngLiteral](#LatLngLiteral) | See [LatLngLiteral](#LatLngLiteral) for more information. |
 | **southwest** | **required** | [LatLngLiteral](#LatLngLiteral) | See [LatLngLiteral](#LatLngLiteral) for more information. |
 
+
 ### LatLngLiteral
 An object describing a specific location with Latitude and Longitude in decimal degrees.
 
@@ -560,6 +564,7 @@ An object describing a specific location with Latitude and Longitude in decimal 
 | --- | --- | --- | --- |
 | **lat** | **required** | number | Latitude in decimal degrees. |
 | **lng** | **required** | number | Longitude in decimal degrees. |
+
 
 ### DirectionsLeg
 | Field | Required | Type | Description |
@@ -576,6 +581,7 @@ An object describing a specific location with Latitude and Longitude in decimal 
 | **distance** | optional | [TextValueObject](#TextValueObject) | The total distance covered by this leg. |
 | **duration** | optional | [TextValueObject](#TextValueObject) | The total duration of this leg. |
 | **duration_in_traffic** | optional | [TextValueObject](#TextValueObject) | Indicates the total duration of this leg. This value is an estimate of the time in traffic based on current and historical traffic conditions. See the **traffic_model** request parameter for the options you can use to request that the returned value is optimistic, pessimistic, or a best-guess estimate. The duration in traffic is returned only if all of the following are true: <br> <li> The request does not include stopover waypoints. If the request includes waypoints, they must be prefixed with **via**: to avoid stopovers. <li> The request is specifically for driving directions—the mode parameter is set to **driving**. <li> The request includes a **departure_time** parameter. <li> Traffic conditions are available for the requested route. |
+
 
 ### DirectionsStep
 Each element in the steps array defines a single step of the calculated directions. A step is the most atomic unit of a direction's route, containing a single step describing a specific, single instruction on the journey. E.g. "Turn left at W. 4th St." The step not only describes the instruction but also contains distance and duration information relating to how this step relates to the following step. For example, a step denoted as "Merge onto I-80 West" may contain a duration of "37 miles" and "40 minutes," indicating that the next step is 37 miles/40 minutes from this step.
@@ -595,6 +601,7 @@ When using the Directions API to search for transit directions, the steps array 
 | **steps** | optional |  | Contains detailed directions for walking or driving steps in transit directions. Substeps are only available when travel_mode is set to "transit". The inner steps array is of the same type as steps. |
 | **transit_details** | optional | [DirectionsTransitDetails](#DirectionsTransitDetails) | Details pertaining to this step if the travel mode is TRANSIT. |
 
+
 ### TextValueObject
 An object containing a numeric value and its formatted text representation.
 
@@ -602,6 +609,7 @@ An object containing a numeric value and its formatted text representation.
 | --- | --- | --- | --- |
 | **text** | **required** | string | String value. |
 | **value** | **required** | number | Numeric value. |
+
 
 ### DirectionsPolyline
 [Polyline encoding](./polylineencoding.md) is a lossy compression algorithm that allows you to store a series of coordinates as a single string. Point coordinates are encoded using signed values. If you only have a few static points, you may also wish to use the interactive polyline encoding utility.
@@ -614,6 +622,7 @@ Additionally, to conserve space, points only include the offset from the previou
 | --- | --- | --- | --- |
 | **points** | **required** | string | A single string representation of the polyline. |
 
+
 ### TravelMode
 
 * **DRIVING** (default) indicates calculation using the road network.
@@ -623,6 +632,7 @@ Additionally, to conserve space, points only include the offset from the previou
 * **TRANSIT** requests calculation via public transit routes (where available).
 
 * **WALKING** requests calculation for walking via pedestrian paths & sidewalks (where available).
+
 
 ### DirectionsTransitDetails
 Additional information that is not relevant for other modes of transportation.
@@ -646,14 +656,15 @@ Additional information that is not relevant for other modes of transportation.
 | **location** | **required** | [LatLngLiteral](#LatLngLiteral) | The location of the stop. |
 | **name** | **required** | string | The name of the transit stop. |
 
+
 ### TimeZoneTextValueObject
 An object containing Unix time, a time zone, and its formatted text representation.
-
 | Field | Required | Type | Description |
 | --- | --- | --- | --- |
 | **text** | **required** | string | The time specified as a string in the time zone. |
 | **time_zone** | **required** | string | Contains the time zone. The value is the name of the time zone as defined in the [IANA Time Zone Database](http://www.iana.org/time-zones), e.g. "America/New_York". |
 | **value** | **required** | number | The time specified as Unix time, or seconds since midnight, January 1, 1970 UTC. |
+
 
 ### DirectionsTransitLine
 | Field | Required | Type | Description |
@@ -667,12 +678,14 @@ An object containing Unix time, a time zone, and its formatted text representati
 | **url** | optional | string | Contains the URL for this transit line as provided by the transit agency. |
 | **vehicle** | optional | [DirectionsTransitVehicle](#DirectionsTransitVehicle) | The type of vehicle that operates on this transit line. |
 
+
 ### DirectionsTransitAgency
 | Field | Required | Type | Description |
 | --- | --- | --- | --- |
 | **name** | optional | string | The name of this transit agency. |
 | **phone** | optional | string | The transit agency's phone number. |
 | **url** | optional | string | The transit agency's URL. |
+
 
 ### DirectionsTransitVehicle
 | Field | Required | Type | Description |
@@ -683,14 +696,74 @@ An object containing Unix time, a time zone, and its formatted text representati
 | **local_icon** | optional | string | Contains the URL for the icon associated with this vehicle type, based on the local transport signage. |
 
 
+### DirectionsTrafficSpeedEntry
+| Field | Required | Type | Description |
+| --- | --- | --- | --- |
+| **offset_meters** | **required** | number | The offset along the path (in meters) up to which this speed category is valid. |
+| **speed_category** | **required** | string | The current traffic/speed conditions on this portion of a path. |
+
 
 ### DirectionsViaWaypoint
-### DirectionsStatus
-### DirectionsTrafficSpeedEntry
-
-
-
+| Field | Required | Type | Description |
+| --- | --- | --- | --- |
+| **location** | optional | [LatLngLiteral](#LatLngLiteral) | The location of the waypoint. |
+| **step_index** | optional | integer | The index of the step containing the waypoint. |
+| **step_interpolation** | optional | number | The position of the waypoint along the step's polyline, expressed as a ratio from 0 to 1. |
 
 
 ### Fare
+The total fare for the route.
 
+```code
+{
+  "currency" : "USD",
+  "value" : 6,
+  "text" : "$6.00"
+}
+```
+
+| Field | Required | Type | Description |
+| --- | --- | --- | --- |
+| **currency** | **required** | string | An [ISO 4217 currency code](https://en.wikipedia.org/wiki/ISO_4217) indicating the currency that the amount is expressed in. |
+| **text** | **required** | string | The total fare amount, formatted in the requested language. |
+| **value** | **required** | number | The total fare amount, in the currency specified. |
+
+
+### DirectionsGeocodedWaypoint
+| Field | Required | Type | Description |
+| --- | --- | --- | --- |
+| **geocoder_status** | optional | string | Indicates the status code resulting from the geocoding operation. This field may contain the following values.<br><br>The allowed values include: **OK**, and **ZERO_RESULTS** |
+| **partial_match** | optional |  | Indicates that the geocoder did not return an exact match for the original request, though it was able to match part of the requested address. You may wish to examine the original request for misspellings and/or an incomplete address.<br><br>Partial matches most often occur for street addresses that do not exist within the locality you pass in the request. Partial matches may also be returned when a request matches two or more locations in the same locality. For example, "21 Henr St, Bristol, UK" will return a partial match for both Henry Street and Henrietta Street. Note that if a request includes a misspelled address component, the geocoding service may suggest an alternative address. Suggestions triggered in this way will also be marked as a partial match. |
+| **place_id** | optional | string | A unique identifier that can be used with other Mapcir APIs. |
+| **types** | optional | Array<string> | Indicates the address type of the geocoding result used for calculating directions.<br><br><li>**administrative_area_level_1** indicates a first-order civil entity below the country level. Within the United States, these administrative levels are states. Not all nations exhibit these administrative levels. In most cases, administrative_area_level_1 short names will closely match ISO 3166-2 subdivisions and other widely circulated lists; however this is not guaranteed as our geocoding results are based on a variety of signals and location data.<li>**administrative_area_level_2** indicates a second-order civil entity below the country level. Within the United States, these administrative levels are counties. Not all nations exhibit these administrative levels.<li>**administrative_area_level_3** indicates a third-order civil entity below the country level. This type indicates a minor civil division. Not all nations exhibit these administrative levels.<li>**administrative_area_level_4** indicates a fourth-order civil entity below the country level. This type indicates a minor civil division. Not all nations exhibit these administrative levels.<li>**administrative_area_level_5** indicates a fifth-order civil entity below the country level. This type indicates a minor civil division. Not all nations exhibit these administrative levels.<li>**airport** indicates an airport.<li>**colloquial_area** indicates a commonly-used alternative name for the entity.<li>**country** indicates the national political entity, and is typically the highest order type returned by the Geocoder.<li>**intersection** indicates a major intersection, usually of two major roads.<li>**locality** indicates an incorporated city or town political entity.<li>**natural_feature** indicates a prominent natural feature.<li>**neighborhood** indicates a named neighborhood<li>**park** indicates a named park.<li>**plus_code** indicates an encoded location reference, derived from latitude and longitude. Plus codes can be used as a replacement for street addresses in places where they do not exist (where buildings are not numbered or streets are not named).<li>**point_of_interest** indicates a named point of interest. Typically, these "POI"s are prominent local entities that don't easily fit in another category, such as "Empire State Building" or "Eiffel Tower".<li>**political** indicates a political entity. Usually, this type indicates a polygon of some civil administration.<li>**postal_code** indicates a postal code as used to address postal mail within the country.<li>**premise** indicates a named location, usually a building or collection of buildings with a common name.<li>**route** indicates a named route (such as "US 101").<li>**street_address** indicates a precise street address.<li>**sublocality** indicates a first-order civil entity below a locality. For some locations may receive one of the additional types: sublocality_level_1 to sublocality_level_5. Each sublocality level is a civil entity. Larger numbers indicate a smaller geographic area.<li>**subpremise** indicates a first-order entity below a named location, usually a singular building within a collection of buildings with a common name.<li>**tourist_attraction** indicates a tourist attraction.<li>**train_station** indicates a train station.<li>**transit_station** indicates a transit station.<br><br>An empty list of types indicates there are no known types for the particular address component, for example, Lieu-dit in France. |
+
+### DirectionsStatus
+The status field within the Directions response object contains the status of the request, and may contain debugging information to help you track down why the Directions service failed. The status field may contain the following values:
+
+* **OK** indicates the response contains a valid result.
+
+* **NOT_FOUND** indicates at least one of the locations specified in the request's origin, destination, or waypoints could not be geocoded.
+
+* **ZERO_RESULTS** indicates no route could be found between the origin and destination.
+
+* **MAX_WAYPOINTS_EXCEEDED** indicates that too many waypoints were provided in the request. For applications using the Directions API as a web service.
+
+* **MAX_ROUTE_LENGTH_EXCEEDED** indicates the requested route is too long and cannot be processed. This error occurs when more complex directions are returned. Try reducing the number of waypoints, turns, or instructions.
+
+* **INVALID_REQUEST** indicates that the provided request was invalid. Common causes of this status include an invalid parameter or parameter value.
+
+* **OVER_DAILY_LIMIT** indicates any of the following:
+  
+  * The API account is missing or invalid.
+    
+  * Billing has not been enabled on your account.
+    
+  * A self-imposed usage cap has been exceeded.
+    
+  * The provided method of payment is no longer valid (for example, a credit card has expired).
+
+* **OVER_QUERY_LIMIT** indicates the service has received too many requests from your application within the allowed time period.
+
+* **REQUEST_DENIED** indicates that the service denied use of the directions service by your application.
+
+* **UNKNOWN_ERROR** indicates a directions request could not be processed due to a server error. The request may succeed if you try again.

@@ -33,7 +33,7 @@ For more details on these types, refer to [Address Types](./geocoding.md#Address
 
 > **Note:** The types below are not supported in the type filter of a place search.
 
-|  |  |
+| <!-- --> | <!-- --> |
 | --- | --- |
 | administrative_area_level_1 | plus_code |
 | administrative_area_level_2 | point_of_interest |

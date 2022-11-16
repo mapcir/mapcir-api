@@ -84,7 +84,7 @@ Certain parameters are required while others are optional. As is standard in URL
 
   The language in which to return results.
 
-  * See the [list of supported languages](./language.md). Google often updates the supported languages, so this list may not be exhaustive.
+  * See the [list of supported languages](./language.md). Mapcir often updates the supported languages, so this list may not be exhaustive.
 
   * If **language** is not supplied, the API attempts to use the preferred language as specified in the **Accept-Language** header.
 
@@ -461,15 +461,54 @@ Status codes returned by service.
 
 ## DistanceMatrixRow
 
+| Field | Required | Type | Description |
+| --- | --- | --- | --- |
+| **elements** | **required** | Array<[DistanceMatrixElement](#DistanceMatrixElement)> | When the Distance Matrix API returns results, it places them within a JSON rows array. Even if no results are returned (such as when the origins and/or destinations don't exist), it still returns an empty array.<br><br>Rows are ordered according to the values in the origin parameter of the request. Each row corresponds to an origin, and each element within that row corresponds to a pairing of the origin with a destination value.<br><br>Each row array contains one or more element entries, which in turn contain the information about a single origin-destination pairing. |
 
 
+## DistanceMatrixElement
 
+| Field | Required | Type | Description |
+| --- | --- | --- | --- |
+| **status** | **required** | [DistanceMatrixElementStatus](#DistanceMatrixElementStatus) | A status for the element. |
+| **distance**| optional | [TextValueObject](#TextValueObject) | The total distance of this route, expressed in meters (value) and as text. The textual value uses the unit system specified with the unit parameter of the original request, or the origin's region. |
+| **duration** | optional | [TextValueObject](#TextValueObject) | The length of time it takes to travel this route, expressed in seconds (the value field) and as text. The textual representation is localized according to the query's language parameter. |
+| **duration_in_traffic** | optional | [TextValueObject](#TextValueObject) | The length of time it takes to travel this route, based on current and historical traffic conditions. See the **traffic_model** request parameter for the options you can use to request that the returned value is optimistic, pessimistic, or a best-guess estimate. The duration is expressed in seconds (the value field) and as text. The textual representation is localized according to the query's language parameter. The duration in traffic is returned only if all of the following are true:<br><br><li>The request includes a **departure_time** parameter.<li>Traffic conditions are available for the requested route.<li>The mode parameter is set to driving. |
+| **fare** | optional | [Fare](#Fare) | If present, contains the total fare (that is, the total ticket costs) on this route. This property is only returned for transit requests and only for transit providers where fare information is available. |
 
+## Fare
+The total fare for the route.
 
+```code
+{
+  "currency" : "USD",
+  "value" : 6,
+  "text" : "$6.00"
+}
+```
 
+| Field | Required | Type | Description |
+| --- | --- | --- | --- |
+| **currency** | **required** | string | An [ISO 4217 currency code](https://en.wikipedia.org/wiki/ISO_4217) indicating the currency that the amount is expressed in. |
+| **text** | **required** | string | The total fare amount, formatted in the requested language. |
+| **value** | **required** | number | The total fare amount, in the currency specified. |
 
+## DistanceMatrixElementStatus
+* **OK** indicates the response contains a valid result.
 
+* **NOT_FOUND** indicates that the origin and/or destination of this pairing could not be geocoded.
 
+* **ZERO_RESULTS** indicates no route could be found between the origin and destination.
+
+* **MAX_ROUTE_LENGTH_EXCEEDED** indicates the requested route is too long and cannot be processed.
+
+## TextValueObject
+An object containing a numeric value and its formatted text representation.
+
+| Field | Required | Type | Description |
+| --- | --- | --- | --- |
+| **text** | **required** | string | String value. |
+| **value** | **required** | number | Numeric value. |
 
 
 

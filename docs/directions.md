@@ -642,14 +642,53 @@ Additional information that is not relevant for other modes of transportation.
 
 ### DirectionsTransitStop
 | Field | Required | Type | Description |
+| --- | --- | --- | --- |
 | **location** | **required** | [LatLngLiteral](#LatLngLiteral) | The location of the stop. |
 | **name** | **required** | string | The name of the transit stop. |
+
+### TimeZoneTextValueObject
+An object containing Unix time, a time zone, and its formatted text representation.
+
+| Field | Required | Type | Description |
+| --- | --- | --- | --- |
+| **text** | **required** | string | The time specified as a string in the time zone. |
+| **time_zone** | **required** | string | Contains the time zone. The value is the name of the time zone as defined in the [IANA Time Zone Database](http://www.iana.org/time-zones), e.g. "America/New_York". |
+| **value** | **required** | number | The time specified as Unix time, or seconds since midnight, January 1, 1970 UTC. |
+
+### DirectionsTransitLine
+| Field | Required | Type | Description |
+| --- | --- | --- | --- |
+| **agencies** | **required** | Array<[DirectionsTransitAgency](#DirectionsTransitAgency)> | The transit agency (or agencies) that operates this transit line. |
+| **name** | **required** | string | The full name of this transit line, e.g. "8 Avenue Local". |
+| **color** | optional | string | The color commonly used in signage for this line. |
+| **icon** | optional | string | Contains the URL for the icon associated with this line. |
+| **short_name** | optional | string | The short name of this transit line. This will normally be a line number, such as "M7" or "355". |
+| **text_color** | optional | string | The color commonly used in signage for this line. |
+| **url** | optional | string | Contains the URL for this transit line as provided by the transit agency. |
+| **vehicle** | optional | [DirectionsTransitVehicle](#DirectionsTransitVehicle) | The type of vehicle that operates on this transit line. |
+
+### DirectionsTransitAgency
+| Field | Required | Type | Description |
+| --- | --- | --- | --- |
+| **name** | optional | string | The name of this transit agency. |
+| **phone** | optional | string | The transit agency's phone number. |
+| **url** | optional | string | The transit agency's URL. |
+
+### DirectionsTransitVehicle
+| Field | Required | Type | Description |
+| --- | --- | --- | --- |
+| **name** | **required** | string | The name of this vehicle, capitalized. |
+| **type** | **required** | string | The type of vehicle used.<br><li>**BUS** - Bus.<li>**CABLE_CAR** - A vehicle that operates on a cable, usually on the ground. Aerial cable cars may be of the type GONDOLA_LIFT.<br>The allowed values include: BUS, CABLE_CAR, COMMUTER_TRAIN, FERRY, FUNICULAR, GONDOLA_LIFT, HEAVY_RAIL, HIGH_SPEED_TRAIN, INTERCITY_BUS, LONG_DISTANCE_TRAIN, METRO_RAIL, MONORAIL, OTHER, RAIL, SHARE_TAXI, SUBWAY, TRAM, and TROLLEYBUS |
+| **icon** | optional | string | Contains the URL for an icon associated with this vehicle type. |
+| **local_icon** | optional | string | Contains the URL for the icon associated with this vehicle type, based on the local transport signage. |
+
+
 
 ### DirectionsViaWaypoint
 ### DirectionsStatus
 ### DirectionsTrafficSpeedEntry
 
-### TimeZoneTextValueObject
+
 
 
 

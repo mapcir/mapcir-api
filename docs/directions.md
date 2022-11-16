@@ -545,10 +545,48 @@ Routes consist of nested legs and steps.
 | **waypoint_order** | **required** | Array<integer> | An array indicating the order of any waypoints in the calculated route. This waypoints may be reordered if the request was passed optimize:true within its waypoints parameter. |
 | **fare** | optional |[Fare](#Fare) | If present, contains the total fare (that is, the total ticket costs) on this route. This property is only returned for transit requests and only for routes where fare information is available for all transit legs. |
 
+### Bounds
+A rectangle in geographical coordinates from points at the southwest and northeast corners.
+
+| Field | Required | Type | Description |
+| --- | --- | --- | --- |
+| **northeast** | **required** | [LatLngLiteral](#LatLngLiteral) | See [LatLngLiteral](#LatLngLiteral) for more information. |
+| **southwest** | **required** | [LatLngLiteral](#LatLngLiteral) | See [LatLngLiteral](#LatLngLiteral) for more information. |
+
+### LatLngLiteral
+An object describing a specific location with Latitude and Longitude in decimal degrees.
+
+| Field | Required | Type | Description |
+| --- | --- | --- | --- |
+| **lat** | **required** | number | Latitude in decimal degrees. |
+| **lng** | **required** | number | Longitude in decimal degrees. |
+
+### DirectionsLeg
+| Field | Required | Type | Description |
+| --- | --- | --- | --- |
+| **end_address** | **required** | string | Contains the human-readable address (typically a street address) from reverse geocoding the **end_location** of this leg. This content is meant to be read as-is. Do not programmatically parse the formatted address. |
+| **end_location** | **required** | [LatLngLiteral](#LatLngLiteral) | The latitude/longitude coordinates of the given destination of this leg. Because the Directions API calculates directions between locations by using the nearest transportation option (usually a road) at the start and end points, **end_location** may be different than the provided destination of this leg if, for example, a road is not near the destination. |
+| **start_address** | **required** | string | Contains the human-readable address (typically a street address) resulting from reverse geocoding the **start_location** of this leg. This content is meant to be read as-is. Do not programmatically parse the formatted address. |
+| **start_location** | **required** | [LatLngLiteral](#LatLngLiteral) | The latitude/longitude coordinates of the origin of this leg. Because the Directions API calculates directions between locations by using the nearest transportation option (usually a road) at the start and end points, **start_location** may be different than the provided origin of this leg if, for example, a road is not near the origin. |
+| **steps** | **required** | Array<[DirectionsStep](#DirectionsStep)> | An array of steps denoting information about each separate step of the leg of the journey. |
+| **traffic_speed_entry** | **required** | Array<[DirectionsTrafficSpeedEntry](#DirectionsTrafficSpeedEntry)> | Information about traffic speed along the leg. |
+| **via_waypoint** | **required** | Array<[DirectionsViaWaypoint](#DirectionsViaWaypoint)> | The locations of via waypoints along this leg. |
+| **arrival_time** | optional | [TimeZoneTextValueObject](#TimeZoneTextValueObject) | Contains the estimated time of departure for this leg, specified as a Time object. The **departure_time** is only available for transit directions. |
+| **departure_time** | optional | [TextValueObject](#TextValueObject) | The total distance covered by this leg. |
+| **duration** | optional | [TextValueObject](#TextValueObject) | The total duration of this leg. |
+| **duration_in_traffic** | optional | [TextValueObject](#TextValueObject) | Indicates the total duration of this leg. This value is an estimate of the time in traffic based on current and historical traffic conditions. See the **traffic_model** request parameter for the options you can use to request that the returned value is optimistic, pessimistic, or a best-guess estimate. The duration in traffic is returned only if all of the following are true: <br> * The request does not include stopover waypoints. If the request includes waypoints, they must be prefixed with via: to avoid stopovers. * The request is specifically for driving directions—the mode parameter is set to driving. * The request includes a departure_time parameter. * Traffic conditions are available for the requested route.|
+| **aaaaaa** | optional | aaaaa | aaaaaa |
+
+
+
+### DirectionsViaWaypoint
+### DirectionsStep
 ### DirectionsStatus
 ### TravelMode
-### DirectionsLeg
+### DirectionsTrafficSpeedEntry
+### TimeZoneTextValueObject
+### TextValueObject
 ### DirectionsPolyline
-### Bounds
+
 ### Fare
 

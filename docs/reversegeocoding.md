@@ -210,10 +210,6 @@ The **"status"** field within the Geocoding response object contains the status 
 
 * **"ZERO_RESULTS"** indicates that the reverse geocoding was successful but returned no results. This may occur if the geocoder was passed a latlng in a remote location.
 
-* **"OVER_QUERY_LIMIT"** indicates that you are over your quota.
-
-* **"REQUEST_DENIED"** indicates that the request was denied.
-
 * **"INVALID_REQUEST"** generally indicates one of the following:
   * The query (**address**, **components** or **latlng**) is missing.
   * An invalid **result_type** or **location_type** was given.

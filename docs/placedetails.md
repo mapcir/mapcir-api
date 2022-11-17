@@ -344,19 +344,7 @@ Status codes returned by service.
 
 * **ZERO_RESULTS** indicating that the referenced location, **place_id**, was valid but no longer refers to a valid result. This may occur if the establishment is no longer in business.
 
-* **NOT_FOUND** indicating that that the referenced location, place_id, was not found in the Places database.
-
 * **INVALID_REQUEST** indicating the API request was malformed.
-
-* **OVER_QUERY_LIMIT** indicating any of the following:
-
-  * Billing has not been enabled on your account.
-
-  * The provided method of payment is no longer valid.
-
-* **REQUEST_DENIED** indicating that your request was denied, generally because:
-
-  * The API account is missing or invalid.
 
 * **UNKNOWN_ERROR** indicating an unknown error.
 
@@ -392,7 +380,7 @@ Attributes describing a place. Not all attributes will be available for all plac
 | **secondary_opening_hours** | optional | [PlaceOpeningHours](#PlaceOpeningHours) | Contains an array of entries for the next seven days including information about secondary hours of a business. Secondary hours are different from a business's main hours. For example, a restaurant can specify drive through hours or delivery hours as its secondary hours. This field populates the **type** subfield, which draws from a predefined list of opening hours types (such as **DRIVE_THROUGH**, **PICKUP**, or **TAKEOUT**) based on the types of the place. This field includes the **special_days** subfield of all hours, set for dates that have exceptional hours. |
 | **takeout** | optional | boolean | Specifies if the business supports takeout. |
 | **types** | optional | Array<string> | Contains an array of feature types describing the given result. See the list of [supported types](./placetypes.md). |
-| **abc** | optional | --- | --- |
+| **url** | optional | string | Contains the URL of the official Google page for this place. This will be the Google-owned page that contains the best available information about the place. Applications must link to or embed this page on any screen that shows detailed results about the place to the user. |
 | **abc** | optional | --- | --- |
 | **abc** | optional | --- | --- |
 | **abc** | optional | --- | --- |

@@ -204,7 +204,6 @@ The "status" field within the API response object contains the status of the req
 
 - "**OK**" indicates that no errors occurred; the address was successfully parsed and at least one result was returned.
 - "**ZERO_RESULTS**" indicates that the API was successful but returned no results. 
-- "**REQUEST_DENIED**" indicates that your request was denied.
 - "**INVALID_REQUEST**" generally indicates that the query is missing.
 - "**UNKNOWN_ERROR**" indicates that the request could not be processed due to a server error. The request may succeed if you try again.
 

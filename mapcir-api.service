@@ -31,7 +31,7 @@ if [ -z "$PIDFILE" ]; then
 fi
 
 if [ -n "$ULIMIT" ]; then
-    # Set ulimit if it is set in /etc/default/mapcirApi
+    # Set ulimit if it is set in /etc/default/mapcir-api
     ulimit $ULIMIT
 fi
 

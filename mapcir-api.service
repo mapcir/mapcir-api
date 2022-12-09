@@ -1,5 +1,6 @@
 #!/bin/bash -e
 
+##############
 USER=root
 NAME=mapcir-api
 DESC="Mapcir API Service"
@@ -9,17 +10,6 @@ STOP_SIGNAL=INT
 DAEMON=$ROOT_DIR/$NAME
 DAEMON_COMMON_OPTIONS="--quiet --chuid $USER --pidfile $PIDFILE"
 DAEMON_ARGS=""
-
-ENV_KEY_PATTERN="^mapcir_"
-DAEMON_ARGS=$(printenv | while read -r VARNAME; do
-    if [[ $VARNAME =~ $ENV_KEY_PATTERN ]]; then 
-        KEY=$(echo "$VARNAME" | sed -e 's|^mapcir_\(.*\)|\1|g')
-        echo " --$KEY"
-    fi
-done)
-DAEMON_ARGS=$((echo $DAEMON_ARGS) | sed ':a;N;$!ba;s/\n/ /g')
-
-test -x $DAEMON || exit 0
 
 . /lib/lsb/init-functions
 
@@ -36,6 +26,17 @@ if [ -n "$ULIMIT" ]; then
 fi
 
 do_start(){
+    test -x $DAEMON || exit 0
+
+    ENV_KEY_PATTERN="^mapcir_"
+    DAEMON_ARGS=$(printenv | while read -r VARNAME; do
+        if [[ $VARNAME =~ $ENV_KEY_PATTERN ]]; then 
+            KEY=$(echo "$VARNAME" | sed -e 's|^mapcir_\(.*\)|\1|g')
+            echo " --$KEY"
+        fi
+    done)
+    DAEMON_ARGS=$((echo $DAEMON_ARGS) | sed ':a;N;$!ba;s/\n/ /g')
+
     start-stop-daemon --start $DAEMON_COMMON_OPTIONS --chdir $ROOT_DIR --make-pidfile --background --startas \
         /bin/bash -- -c "exec $DAEMON $DAEMON_ARGS 2>&1"
 }
@@ -68,8 +69,8 @@ case "$1" in
         do_status
         ;;
   start)
-        log_daemon_msg "Starting $NAME"
         do_start
+        log_daemon_msg "Starting $NAME"
         ;;
   stop)
         log_daemon_msg "Stopping $NAME"

@@ -38,8 +38,8 @@ COPY mapcir-api ${MAPCIR_APP}
 COPY mapcir-api.service ${MAPCIR_SERVICE}
 
 # configuration
-RUN sed -i -e "s|USER=root|USER=${MAPCIR_USER}|g" ${MAPCIR_SERVICE} && \
-	sed -i -e "s|ROOT_DIR=/var/mapcir|ROOT_DIR=${MAPCIR_DIR}|g" ${MAPCIR_SERVICE}
+# RUN sed -i -e "s|USER=root|USER=${MAPCIR_USER}|g" ${MAPCIR_SERVICE} && \
+#	  sed -i -e "s|ROOT_DIR=/var/mapcir|ROOT_DIR=${MAPCIR_DIR}|g" ${MAPCIR_SERVICE}
 
 # run service
 RUN chmod +x ${MAPCIR_SERVICE}
